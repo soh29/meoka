@@ -3174,7 +3174,6 @@
 			</div>
 		</footer>
 	</section>
-
 	<script src="./resources/js/bootstrap.bundle.min.js
 		type="text/javascript"></script>
 	<script src="./resources/js/html5.min.js
