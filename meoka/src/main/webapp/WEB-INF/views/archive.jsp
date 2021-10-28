@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <!-- saved from url=(0047)https://fabrx.co/preview/tastebite/archive.html -->
 <html dir="ltr" lang="en-US">
@@ -519,7 +522,7 @@
 							</a>
 							<figcaption class="mt-2">
 								<a href="https://fabrx.co/preview/tastebite/archive.html#0"
-									class="text-black d-block mt-1 font-weight-semibold big">M&amp;M’s
+									class="text-black d-block mt-1 font-weight-semibold big">M&amp;Mâs
 									Chocolate Cake</a>
 							</figcaption>
 						</figure>
@@ -647,7 +650,7 @@
 				<hr>
 				<div class="row pb-4 pt-2 align-items-center">
 					<div class="col-md-6 order-2 order-md-0">
-						<p class="text-gray-300 small text-left mb-0">© 2020 Tastebite
+						<p class="text-gray-300 small text-left mb-0">Â© 2020 Tastebite
 							- All rights reserved</p>
 					</div>
 					<div class="col-md-6">
@@ -702,17 +705,17 @@
 		</footer>
 	</section>
 
-	<script src="./archive_files/bootstrap.bundle.min.js.다운로드"
+	<script src="./archive_files/bootstrap.bundle.min.js.ë¤ì´ë¡ë"
 		type="text/javascript"></script>
-	<script src="./archive_files/html5.min.js.다운로드" type="text/javascript"></script>
-	<script src="./archive_files/sticky.min.js.다운로드" type="text/javascript"></script>
-	<script src="./archive_files/swiper-bundle.min.js.다운로드"
+	<script src="./archive_files/html5.min.js.ë¤ì´ë¡ë" type="text/javascript"></script>
+	<script src="./archive_files/sticky.min.js.ë¤ì´ë¡ë" type="text/javascript"></script>
+	<script src="./archive_files/swiper-bundle.min.js.ë¤ì´ë¡ë"
 		type="text/javascript"></script>
-	<script src="./archive_files/masonry.min.js.다운로드"
+	<script src="./archive_files/masonry.min.js.ë¤ì´ë¡ë"
 		type="text/javascript"></script>
-	<script src="./archive_files/tastebite-scripts.js.다운로드"
+	<script src="./archive_files/tastebite-scripts.js.ë¤ì´ë¡ë"
 		type="text/javascript"></script>
-	<script defer="" src="./archive_files/beacon.min.js.다운로드"
+	<script defer="" src="./archive_files/beacon.min.js.ë¤ì´ë¡ë"
 		data-cf-beacon="{&quot;rayId&quot;:&quot;6a50cadedefc0af4&quot;,&quot;version&quot;:&quot;2021.10.0&quot;,&quot;r&quot;:1,&quot;token&quot;:&quot;9ae02b4a12234f118cf01e6f25c04e9d&quot;,&quot;si&quot;:100}"></script>
 
 </body>

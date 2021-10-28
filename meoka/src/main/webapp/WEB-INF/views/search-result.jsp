@@ -1,5 +1,8 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
-<!-- saved from url=(0053)https://fabrx.co/preview/tastebite/search-result.html -->
+<!-- saved from url=(0053)search-result.html -->
 <html dir="ltr" lang="en-US">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -11,10 +14,10 @@
 	content="width=device-width, initial-scale=1, maximum-scale=1">
 <title>Tastebite - Search Result</title>
 <link
-	href="https://fabrx.co/preview/tastebite/assets/images/favicon.ico"
+	href="assets/images/favicon.ico"
 	rel="shortcut icon" type="image/x-icon">
 
-<link href="./search-result_files/tastebite-styles.css" rel="stylesheet"
+<link href="./resources/css/tastebite-styles.css" rel="stylesheet"
 	type="text/css" media="all">
 </head>
 <body>
@@ -25,8 +28,8 @@
 			<header class="tstbite-header bg-white">
 				<nav class="navbar navbar-expand-lg has-header-inner px-0">
 					<a class="navbar-brand"
-						href="https://fabrx.co/preview/tastebite/index.html"> <img
-						src="./search-result_files/brand4.svg" style="max-width: 161px;"
+						href="index.html"> <img
+						src="./resources/js/brand4.svg" style="max-width: 161px;"
 						alt="Tastebite">
 					</a>
 					<div
@@ -37,9 +40,9 @@
 <path
 									d="M24.39,26.276l-4.9-4.9a12.012,12.012,0,1,1,1.885-1.885l4.9,4.9a1.334,1.334,0,0,1-1.886,1.886ZM2.666,12a9.329,9.329,0,0,0,15.827,6.7,1.338,1.338,0,0,1,.206-.206A9.332,9.332,0,1,0,2.666,12Z"></path>
 </svg>
-						</a> <a href="https://fabrx.co/preview/tastebite/search-result.html#0"
+						</a> <a href="search-result.html#0"
 							class="ml-4 ml-md-4 mr-2 mr-md-0 circle"><img
-							src="./search-result_files/avatar1.png" alt="Avatar"></a>
+							src="./resources/js/avatar1.png" alt="Avatar"></a>
 					</div>
 					<button class="navbar-toggler pr-0 ml-2 ml-md-3" type="button"
 						data-toggle="collapse" data-target="#menu-4"
@@ -55,7 +58,7 @@
 					<div class="collapse navbar-collapse" id="menu-4">
 						<ul class="navbar-nav m-auto pt-3 pt-lg-0">
 							<li class="nav-item dropdown"><a class="nav-link"
-								href="https://fabrx.co/preview/tastebite/search-result.html#"
+								href="search-result.html#"
 								role="button" id="HomePage" data-toggle="dropdown"
 								aria-haspopup="true" aria-expanded="false"> <span>Home
 										Page</span> <svg xmlns="http://www.w3.org/2000/svg" width="9.333"
@@ -66,15 +69,15 @@
 							</a>
 								<div class="dropdown-menu" aria-labelledby="HomePage">
 									<a class="dropdown-item"
-										href="https://fabrx.co/preview/tastebite/index.html">Home
+										href="index.html">Home
 										V1</a> <a class="dropdown-item"
-										href="https://fabrx.co/preview/tastebite/home-v2.html">Home
+										href="home-v2.html">Home
 										V2</a> <a class="dropdown-item"
-										href="https://fabrx.co/preview/tastebite/home-v3.html">Home
+										href="home-v3.html">Home
 										V3</a>
 								</div></li>
 							<li class="nav-item dropdown"><a class="nav-link"
-								href="https://fabrx.co/preview/tastebite/search-result.html#"
+								href="search-result.html#"
 								role="button" id="RecipePage" data-toggle="dropdown"
 								aria-haspopup="true" aria-expanded="false"> <span>Recipe
 										Page</span> <svg xmlns="http://www.w3.org/2000/svg" width="9.333"
@@ -85,12 +88,12 @@
 							</a>
 								<div class="dropdown-menu" aria-labelledby="RecipePage">
 									<a class="dropdown-item"
-										href="https://fabrx.co/preview/tastebite/recipe-full-width.html">Full
+										href="recipe-full-width.html">Full
 										Width</a> <a class="dropdown-item"
-										href="https://fabrx.co/preview/tastebite/recipe-sidebar.html">Sidebar</a>
+										href="recipe-sidebar.html">Sidebar</a>
 								</div></li>
 							<li class="nav-item dropdown"><a class="nav-link"
-								href="https://fabrx.co/preview/tastebite/search-result.html#"
+								href="search-result.html#"
 								role="button" id="Pages" data-toggle="dropdown"
 								aria-haspopup="true" aria-expanded="false"> <span>Pages</span>
 									<svg xmlns="http://www.w3.org/2000/svg" width="9.333"
@@ -101,23 +104,23 @@
 							</a>
 								<div class="dropdown-menu" aria-labelledby="Pages">
 									<a class="dropdown-item"
-										href="https://fabrx.co/preview/tastebite/category.html">Category</a>
+										href="category.html">Category</a>
 									<a class="dropdown-item"
-										href="https://fabrx.co/preview/tastebite/archive.html">Archive</a>
+										href="archive.html">Archive</a>
 									<a class="dropdown-item"
-										href="https://fabrx.co/preview/tastebite/favorites.html">Favorites</a>
+										href="favorites.html">Favorites</a>
 									<a class="dropdown-item"
-										href="https://fabrx.co/preview/tastebite/profile.html">Profile</a>
+										href="profile.html">Profile</a>
 									<a class="dropdown-item"
-										href="https://fabrx.co/preview/tastebite/about.html">About</a>
+										href="about.html">About</a>
 									<a class="dropdown-item"
-										href="https://fabrx.co/preview/tastebite/blog.html">Blog
+										href="blog.html">Blog
 										Page</a> <a class="dropdown-item"
-										href="https://fabrx.co/preview/tastebite/search-result.html">Search
+										href="search-result.html">Search
 										Results</a>
 								</div></li>
 							<li class="nav-item"><a class="nav-link"
-								href="https://fabrx.co/preview/tastebite/elements.html">Elements</a>
+								href="elements.html">Elements</a>
 							</li>
 							<li class="nav-item"><a class="nav-link"
 								href="https://fabrx.co/tastebite-food-recipes-website-template/"
@@ -134,14 +137,14 @@
 					<input type="text" name="Search" placeholder="Search"
 						class="form-control" id="Search">
 					<button type="button">
-						<img src="./search-result_files/close.svg" alt="img">
+						<img src="./resources/js/close.svg" alt="img">
 					</button>
 				</div>
 				<div class="search-results" id="SearchList">
 					<div class="tstbite-search-list">
-						<a href="https://fabrx.co/preview/tastebite/search-result.html#0">
+						<a href="search-result.html#0">
 							<figure>
-								<img src="./search-result_files/menu111.png"
+								<img src="./resources/js/menu111.png"
 									class="rounded-circle" alt="Menu">
 							</figure>
 							<div class="tstbite-search-name">
@@ -150,9 +153,9 @@
 						</a>
 					</div>
 					<div class="tstbite-search-list">
-						<a href="https://fabrx.co/preview/tastebite/search-result.html#0">
+						<a href="search-result.html#0">
 							<figure>
-								<img src="./search-result_files/menu112.jpg" class="rounded-2"
+								<img src="./resources/js/menu112.jpg" class="rounded-2"
 									alt="Menu">
 							</figure>
 							<div class="tstbite-search-name">
@@ -161,9 +164,9 @@
 						</a>
 					</div>
 					<div class="tstbite-search-list">
-						<a href="https://fabrx.co/preview/tastebite/search-result.html#0">
+						<a href="search-result.html#0">
 							<figure>
-								<img src="./search-result_files/menu113.jpg" class="rounded-2"
+								<img src="./resources/js/menu113.jpg" class="rounded-2"
 									alt="Menu">
 							</figure>
 							<div class="tstbite-search-name">
@@ -172,9 +175,9 @@
 						</a>
 					</div>
 					<div class="tstbite-search-list">
-						<a href="https://fabrx.co/preview/tastebite/search-result.html#0">
+						<a href="search-result.html#0">
 							<figure>
-								<img src="./search-result_files/menu114.jpg" class="rounded-2"
+								<img src="./resources/js/menu114.jpg" class="rounded-2"
 									alt="Menu">
 							</figure>
 							<div class="tstbite-search-name">
@@ -183,9 +186,9 @@
 						</a>
 					</div>
 					<div class="tstbite-search-list">
-						<a href="https://fabrx.co/preview/tastebite/search-result.html#0">
+						<a href="search-result.html#0">
 							<figure>
-								<img src="./search-result_files/menu115.jpg" class="rounded-2"
+								<img src="./resources/js/menu115.jpg" class="rounded-2"
 									alt="Menu">
 							</figure>
 							<div class="tstbite-search-name">
@@ -194,9 +197,9 @@
 						</a>
 					</div>
 					<div class="tstbite-search-list">
-						<a href="https://fabrx.co/preview/tastebite/search-result.html#0">
+						<a href="search-result.html#0">
 							<figure>
-								<img src="./search-result_files/menu116.jpg" class="rounded-2"
+								<img src="./resources/js/menu116.jpg" class="rounded-2"
 									alt="Menu">
 							</figure>
 							<div class="tstbite-search-name">
@@ -205,7 +208,7 @@
 						</a>
 					</div>
 					<div class="text-center py-4">
-						<a href="https://fabrx.co/preview/tastebite/search-result.html#0"
+						<a href="search-result.html#0"
 							class="btn btn-sm btn-outline-dark px-4 py-2">See all 343
 							results</a>
 					</div>
@@ -221,18 +224,18 @@
 						class="form-control bg-white" id="Search2"> <span
 						class="mt-2 mr-1">(98 Recipes)</span>
 					<button type="button">
-						<img src="./search-result_files/close.svg" alt="img">
+						<img src="./resources/js/close.svg" alt="img">
 					</button>
 				</div>
 				<div class="row">
 					<div class="col-lg-3 col-md-4 col-6">
 						<figure class="my-3 my-md-4 tstbite-card">
-							<a href="https://fabrx.co/preview/tastebite/recipe-sidebar.html"
+							<a href="recipe-sidebar.html"
 								class="tstbite-animation stretched-link rounded-6"> <img
-								src="./search-result_files/menu117.jpg" class="w-100" alt="Menu">
+								src="./resources/js/menu117.jpg" class="w-100" alt="Menu">
 							</a>
 							<figcaption class="mt-2">
-								<a href="https://fabrx.co/preview/tastebite/recipe-sidebar.html"
+								<a href="recipe-sidebar.html"
 									class="text-black d-block mt-1 font-weight-semibold big">Decadent
 									Raspberry and Cream Cake</a>
 							</figcaption>
@@ -240,12 +243,12 @@
 					</div>
 					<div class="col-lg-3 col-md-4 col-6">
 						<figure class="my-3 my-md-4 tstbite-card">
-							<a href="https://fabrx.co/preview/tastebite/recipe-sidebar.html"
+							<a href="recipe-sidebar.html"
 								class="tstbite-animation stretched-link rounded-6"> <img
-								src="./search-result_files/menu118.jpg" class="w-100" alt="Menu">
+								src="./resources/js/menu118.jpg" class="w-100" alt="Menu">
 							</a>
 							<figcaption class="mt-2">
-								<a href="https://fabrx.co/preview/tastebite/recipe-sidebar.html"
+								<a href="recipe-sidebar.html"
 									class="text-black d-block mt-1 font-weight-semibold big">Tripple
 									Chocolate Mousse Cake</a>
 							</figcaption>
@@ -253,12 +256,12 @@
 					</div>
 					<div class="col-lg-3 col-md-4 col-6">
 						<figure class="my-3 my-md-4 tstbite-card">
-							<a href="https://fabrx.co/preview/tastebite/recipe-sidebar.html"
+							<a href="recipe-sidebar.html"
 								class="tstbite-animation stretched-link rounded-6"> <img
-								src="./search-result_files/menu119.jpg" class="w-100" alt="Menu">
+								src="./resources/js/menu119.jpg" class="w-100" alt="Menu">
 							</a>
 							<figcaption class="mt-2">
-								<a href="https://fabrx.co/preview/tastebite/recipe-sidebar.html"
+								<a href="recipe-sidebar.html"
 									class="text-black d-block mt-1 font-weight-semibold big">Cranberry
 									Curd Layered Sponge Cake</a>
 							</figcaption>
@@ -266,12 +269,12 @@
 					</div>
 					<div class="col-lg-3 col-md-4 col-6">
 						<figure class="my-3 my-md-4 tstbite-card">
-							<a href="https://fabrx.co/preview/tastebite/recipe-sidebar.html"
+							<a href="recipe-sidebar.html"
 								class="tstbite-animation stretched-link rounded-6"> <img
-								src="./search-result_files/menu120.jpg" class="w-100" alt="Menu">
+								src="./resources/js/menu120.jpg" class="w-100" alt="Menu">
 							</a>
 							<figcaption class="mt-2">
-								<a href="https://fabrx.co/preview/tastebite/recipe-sidebar.html"
+								<a href="recipe-sidebar.html"
 									class="text-black d-block mt-1 font-weight-semibold big">Orange
 									and Lemon Curd Tartlets</a>
 							</figcaption>
@@ -279,12 +282,12 @@
 					</div>
 					<div class="col-lg-3 col-md-4 col-6">
 						<figure class="my-3 my-md-4 tstbite-card">
-							<a href="https://fabrx.co/preview/tastebite/recipe-sidebar.html"
+							<a href="recipe-sidebar.html"
 								class="tstbite-animation stretched-link rounded-6"> <img
-								src="./search-result_files/menu121.jpg" class="w-100" alt="Menu">
+								src="./resources/js/menu121.jpg" class="w-100" alt="Menu">
 							</a>
 							<figcaption class="mt-2">
-								<a href="https://fabrx.co/preview/tastebite/recipe-sidebar.html"
+								<a href="recipe-sidebar.html"
 									class="text-black d-block mt-1 font-weight-semibold big">Creamt
 									Chocolate Nutella Fudge Cake</a>
 							</figcaption>
@@ -292,12 +295,12 @@
 					</div>
 					<div class="col-lg-3 col-md-4 col-6">
 						<figure class="my-3 my-md-4 tstbite-card">
-							<a href="https://fabrx.co/preview/tastebite/recipe-sidebar.html"
+							<a href="recipe-sidebar.html"
 								class="tstbite-animation stretched-link rounded-6"> <img
-								src="./search-result_files/menu122.jpg" class="w-100" alt="Menu">
+								src="./resources/js/menu122.jpg" class="w-100" alt="Menu">
 							</a>
 							<figcaption class="mt-2">
-								<a href="https://fabrx.co/preview/tastebite/recipe-sidebar.html"
+								<a href="recipe-sidebar.html"
 									class="text-black d-block mt-1 font-weight-semibold big">Homemade
 									Mixed Berries Wedding Cake</a>
 							</figcaption>
@@ -305,12 +308,12 @@
 					</div>
 					<div class="col-lg-3 col-md-4 col-6">
 						<figure class="my-3 my-md-4 tstbite-card">
-							<a href="https://fabrx.co/preview/tastebite/recipe-sidebar.html"
+							<a href="recipe-sidebar.html"
 								class="tstbite-animation stretched-link rounded-6"> <img
-								src="./search-result_files/menu123.jpg" class="w-100" alt="Menu">
+								src="./resources/js/menu123.jpg" class="w-100" alt="Menu">
 							</a>
 							<figcaption class="mt-2">
-								<a href="https://fabrx.co/preview/tastebite/recipe-sidebar.html"
+								<a href="recipe-sidebar.html"
 									class="text-black d-block mt-1 font-weight-semibold big">Black
 									Forest Birthday Cake</a>
 							</figcaption>
@@ -318,12 +321,12 @@
 					</div>
 					<div class="col-lg-3 col-md-4 col-6">
 						<figure class="my-3 my-md-4 tstbite-card">
-							<a href="https://fabrx.co/preview/tastebite/recipe-sidebar.html"
+							<a href="recipe-sidebar.html"
 								class="tstbite-animation stretched-link rounded-6"> <img
-								src="./search-result_files/menu124.jpg" class="w-100" alt="Menu">
+								src="./resources/js/menu124.jpg" class="w-100" alt="Menu">
 							</a>
 							<figcaption class="mt-2">
-								<a href="https://fabrx.co/preview/tastebite/recipe-sidebar.html"
+								<a href="recipe-sidebar.html"
 									class="text-black d-block mt-1 font-weight-semibold big">Double
 									Thick Layered Sponge Cake</a>
 							</figcaption>
@@ -331,12 +334,12 @@
 					</div>
 					<div class="col-lg-3 col-md-4 col-6">
 						<figure class="my-3 my-md-4 tstbite-card">
-							<a href="https://fabrx.co/preview/tastebite/recipe-sidebar.html"
+							<a href="recipe-sidebar.html"
 								class="tstbite-animation stretched-link rounded-6"> <img
-								src="./search-result_files/menu125.jpg" class="w-100" alt="Menu">
+								src="./resources/js/menu125.jpg" class="w-100" alt="Menu">
 							</a>
 							<figcaption class="mt-2">
-								<a href="https://fabrx.co/preview/tastebite/recipe-sidebar.html"
+								<a href="recipe-sidebar.html"
 									class="text-black d-block mt-1 font-weight-semibold big">Lemon
 									Cake with Chocolate Ganache</a>
 							</figcaption>
@@ -344,12 +347,12 @@
 					</div>
 					<div class="col-lg-3 col-md-4 col-6">
 						<figure class="my-3 my-md-4 tstbite-card">
-							<a href="https://fabrx.co/preview/tastebite/recipe-sidebar.html"
+							<a href="recipe-sidebar.html"
 								class="tstbite-animation stretched-link rounded-6"> <img
-								src="./search-result_files/menu126.jpg" class="w-100" alt="Menu">
+								src="./resources/js/menu126.jpg" class="w-100" alt="Menu">
 							</a>
 							<figcaption class="mt-2">
-								<a href="https://fabrx.co/preview/tastebite/recipe-sidebar.html"
+								<a href="recipe-sidebar.html"
 									class="text-black d-block mt-1 font-weight-semibold big">Cranberry
 									Macaroon Ice Cream Cake</a>
 							</figcaption>
@@ -357,12 +360,12 @@
 					</div>
 					<div class="col-lg-3 col-md-4 col-6">
 						<figure class="my-3 my-md-4 tstbite-card">
-							<a href="https://fabrx.co/preview/tastebite/recipe-sidebar.html"
+							<a href="recipe-sidebar.html"
 								class="tstbite-animation stretched-link rounded-6"> <img
-								src="./search-result_files/menu127.jpg" class="w-100" alt="Menu">
+								src="./resources/js/menu127.jpg" class="w-100" alt="Menu">
 							</a>
 							<figcaption class="mt-2">
-								<a href="https://fabrx.co/preview/tastebite/recipe-sidebar.html"
+								<a href="recipe-sidebar.html"
 									class="text-black d-block mt-1 font-weight-semibold big">No
 									Bake Cheesecake</a>
 							</figcaption>
@@ -370,12 +373,12 @@
 					</div>
 					<div class="col-lg-3 col-md-4 col-6">
 						<figure class="my-3 my-md-4 tstbite-card">
-							<a href="https://fabrx.co/preview/tastebite/recipe-sidebar.html"
+							<a href="recipe-sidebar.html"
 								class="tstbite-animation stretched-link rounded-6"> <img
-								src="./search-result_files/menu128.jpg" class="w-100" alt="Menu">
+								src="./resources/js/menu128.jpg" class="w-100" alt="Menu">
 							</a>
 							<figcaption class="mt-2">
-								<a href="https://fabrx.co/preview/tastebite/recipe-sidebar.html"
+								<a href="recipe-sidebar.html"
 									class="text-black d-block mt-1 font-weight-semibold big">Almond
 									Cinnamon Sponge Cake</a>
 							</figcaption>
@@ -383,12 +386,12 @@
 					</div>
 					<div class="col-lg-3 col-md-4 col-6">
 						<figure class="my-3 my-md-4 tstbite-card">
-							<a href="https://fabrx.co/preview/tastebite/recipe-sidebar.html"
+							<a href="recipe-sidebar.html"
 								class="tstbite-animation stretched-link rounded-6"> <img
-								src="./search-result_files/menu129.jpg" class="w-100" alt="Menu">
+								src="./resources/js/menu129.jpg" class="w-100" alt="Menu">
 							</a>
 							<figcaption class="mt-2">
-								<a href="https://fabrx.co/preview/tastebite/recipe-sidebar.html"
+								<a href="recipe-sidebar.html"
 									class="text-black d-block mt-1 font-weight-semibold big">Mixed
 									Candy Cake</a>
 							</figcaption>
@@ -396,12 +399,12 @@
 					</div>
 					<div class="col-lg-3 col-md-4 col-6">
 						<figure class="my-3 my-md-4 tstbite-card">
-							<a href="https://fabrx.co/preview/tastebite/recipe-sidebar.html"
+							<a href="recipe-sidebar.html"
 								class="tstbite-animation stretched-link rounded-6"> <img
-								src="./search-result_files/menu130.jpg" class="w-100" alt="Menu">
+								src="./resources/js/menu130.jpg" class="w-100" alt="Menu">
 							</a>
 							<figcaption class="mt-2">
-								<a href="https://fabrx.co/preview/tastebite/recipe-sidebar.html"
+								<a href="recipe-sidebar.html"
 									class="text-black d-block mt-1 font-weight-semibold big">Cherry
 									Ice Cream Cake</a>
 							</figcaption>
@@ -409,12 +412,12 @@
 					</div>
 					<div class="col-lg-3 col-md-4 col-6">
 						<figure class="my-3 my-md-4 tstbite-card">
-							<a href="https://fabrx.co/preview/tastebite/recipe-sidebar.html"
+							<a href="recipe-sidebar.html"
 								class="tstbite-animation stretched-link rounded-6"> <img
-								src="./search-result_files/menu131.jpg" class="w-100" alt="Menu">
+								src="./resources/js/menu131.jpg" class="w-100" alt="Menu">
 							</a>
 							<figcaption class="mt-2">
-								<a href="https://fabrx.co/preview/tastebite/recipe-sidebar.html"
+								<a href="recipe-sidebar.html"
 									class="text-black d-block mt-1 font-weight-semibold big">Four
 									Layer Coffee Cake</a>
 							</figcaption>
@@ -422,12 +425,12 @@
 					</div>
 					<div class="col-lg-3 col-md-4 col-6">
 						<figure class="my-3 my-md-4 tstbite-card">
-							<a href="https://fabrx.co/preview/tastebite/recipe-sidebar.html"
+							<a href="recipe-sidebar.html"
 								class="tstbite-animation stretched-link rounded-6"> <img
-								src="./search-result_files/menu132.jpg" class="w-100" alt="Menu">
+								src="./resources/js/menu132.jpg" class="w-100" alt="Menu">
 							</a>
 							<figcaption class="mt-2">
-								<a href="https://fabrx.co/preview/tastebite/recipe-sidebar.html"
+								<a href="recipe-sidebar.html"
 									class="text-black d-block mt-1 font-weight-semibold big">Oreo
 									Brownie Ice Cream Cake</a>
 							</figcaption>
@@ -435,12 +438,12 @@
 					</div>
 					<div class="col-lg-3 col-md-4 col-6">
 						<figure class="my-3 my-md-4 tstbite-card">
-							<a href="https://fabrx.co/preview/tastebite/recipe-sidebar.html"
+							<a href="recipe-sidebar.html"
 								class="tstbite-animation stretched-link rounded-6"> <img
-								src="./search-result_files/menu133.jpg" class="w-100" alt="Menu">
+								src="./resources/js/menu133.jpg" class="w-100" alt="Menu">
 							</a>
 							<figcaption class="mt-2">
-								<a href="https://fabrx.co/preview/tastebite/recipe-sidebar.html"
+								<a href="recipe-sidebar.html"
 									class="text-black d-block mt-1 font-weight-semibold big">Caramel
 									Glaze Cake</a>
 							</figcaption>
@@ -448,12 +451,12 @@
 					</div>
 					<div class="col-lg-3 col-md-4 col-6">
 						<figure class="my-3 my-md-4 tstbite-card">
-							<a href="https://fabrx.co/preview/tastebite/recipe-sidebar.html"
+							<a href="recipe-sidebar.html"
 								class="tstbite-animation stretched-link rounded-6"> <img
-								src="./search-result_files/menu134.jpg" class="w-100" alt="Menu">
+								src="./resources/js/menu134.jpg" class="w-100" alt="Menu">
 							</a>
 							<figcaption class="mt-2">
-								<a href="https://fabrx.co/preview/tastebite/recipe-sidebar.html"
+								<a href="recipe-sidebar.html"
 									class="text-black d-block mt-1 font-weight-semibold big">No
 									Bake Cinnamon Cheesecake</a>
 							</figcaption>
@@ -461,12 +464,12 @@
 					</div>
 					<div class="col-lg-3 col-md-4 col-6">
 						<figure class="my-3 my-md-4 tstbite-card">
-							<a href="https://fabrx.co/preview/tastebite/recipe-sidebar.html"
+							<a href="recipe-sidebar.html"
 								class="tstbite-animation stretched-link rounded-6"> <img
-								src="./search-result_files/menu135.jpg" class="w-100" alt="Menu">
+								src="./resources/js/menu135.jpg" class="w-100" alt="Menu">
 							</a>
 							<figcaption class="mt-2">
-								<a href="https://fabrx.co/preview/tastebite/recipe-sidebar.html"
+								<a href="recipe-sidebar.html"
 									class="text-black d-block mt-1 font-weight-semibold big">Apple
 									Cinnamon Bundt Cake</a>
 							</figcaption>
@@ -474,12 +477,12 @@
 					</div>
 					<div class="col-lg-3 col-md-4 col-6">
 						<figure class="my-3 my-md-4 tstbite-card">
-							<a href="https://fabrx.co/preview/tastebite/recipe-sidebar.html"
+							<a href="recipe-sidebar.html"
 								class="tstbite-animation stretched-link rounded-6"> <img
-								src="./search-result_files/menu136.jpg" class="w-100" alt="Menu">
+								src="./resources/js/menu136.jpg" class="w-100" alt="Menu">
 							</a>
 							<figcaption class="mt-2">
-								<a href="https://fabrx.co/preview/tastebite/recipe-sidebar.html"
+								<a href="recipe-sidebar.html"
 									class="text-black d-block mt-1 font-weight-semibold big">Rainbow
 									Explosion Birthday Cake</a>
 							</figcaption>
@@ -487,12 +490,12 @@
 					</div>
 					<div class="col-lg-3 col-md-4 col-6">
 						<figure class="my-3 my-md-4 tstbite-card">
-							<a href="https://fabrx.co/preview/tastebite/recipe-sidebar.html"
+							<a href="recipe-sidebar.html"
 								class="tstbite-animation stretched-link rounded-6"> <img
-								src="./search-result_files/menu137.jpg" class="w-100" alt="Menu">
+								src="./resources/js/menu137.jpg" class="w-100" alt="Menu">
 							</a>
 							<figcaption class="mt-2">
-								<a href="https://fabrx.co/preview/tastebite/recipe-sidebar.html"
+								<a href="recipe-sidebar.html"
 									class="text-black d-block mt-1 font-weight-semibold big">Chocolate
 									Peanut Butter Mini Cupcakes</a>
 							</figcaption>
@@ -500,25 +503,25 @@
 					</div>
 					<div class="col-lg-3 col-md-4 col-6">
 						<figure class="my-3 my-md-4 tstbite-card">
-							<a href="https://fabrx.co/preview/tastebite/recipe-sidebar.html"
+							<a href="recipe-sidebar.html"
 								class="tstbite-animation stretched-link rounded-6"> <img
-								src="./search-result_files/menu138.jpg" class="w-100" alt="Menu">
+								src="./resources/js/menu138.jpg" class="w-100" alt="Menu">
 							</a>
 							<figcaption class="mt-2">
-								<a href="https://fabrx.co/preview/tastebite/recipe-sidebar.html"
-									class="text-black d-block mt-1 font-weight-semibold big">M&amp;M’s
+								<a href="recipe-sidebar.html"
+									class="text-black d-block mt-1 font-weight-semibold big">M&amp;Mâs
 									Chocolate Cake</a>
 							</figcaption>
 						</figure>
 					</div>
 					<div class="col-lg-3 col-md-4 col-6">
 						<figure class="my-3 my-md-4 tstbite-card">
-							<a href="https://fabrx.co/preview/tastebite/recipe-sidebar.html"
+							<a href="recipe-sidebar.html"
 								class="tstbite-animation stretched-link rounded-6"> <img
-								src="./search-result_files/menu139.jpg" class="w-100" alt="Menu">
+								src="./resources/js/menu139.jpg" class="w-100" alt="Menu">
 							</a>
 							<figcaption class="mt-2">
-								<a href="https://fabrx.co/preview/tastebite/recipe-sidebar.html"
+								<a href="recipe-sidebar.html"
 									class="text-black d-block mt-1 font-weight-semibold big">Strawberry
 									Cream Cake Bites</a>
 							</figcaption>
@@ -526,12 +529,12 @@
 					</div>
 					<div class="col-lg-3 col-md-4 col-6">
 						<figure class="my-3 my-md-4 tstbite-card">
-							<a href="https://fabrx.co/preview/tastebite/recipe-sidebar.html"
+							<a href="recipe-sidebar.html"
 								class="tstbite-animation stretched-link rounded-6"> <img
-								src="./search-result_files/menu140.jpg" class="w-100" alt="Menu">
+								src="./resources/js/menu140.jpg" class="w-100" alt="Menu">
 							</a>
 							<figcaption class="mt-2">
-								<a href="https://fabrx.co/preview/tastebite/recipe-sidebar.html"
+								<a href="recipe-sidebar.html"
 									class="text-black d-block mt-1 font-weight-semibold big">Tiramisu
 									Cheescake</a>
 							</figcaption>
@@ -539,7 +542,7 @@
 					</div>
 				</div>
 				<div class="text-center py-5">
-					<a href="https://fabrx.co/preview/tastebite/search-result.html#0"
+					<a href="search-result.html#0"
 						class="btn btn-outline-dark px-4 px-md-5 py-1 py-md-2 big font-weight-medium">Load
 						More</a>
 				</div>
@@ -551,8 +554,8 @@
 				<div class="row pt-4 pb-0 pb-md-5">
 					<div class="col-md-6">
 						<div class="tastebite-footer-contnet pr-0 pr-lg-5 mr-0 mr-md-5">
-							<a href="https://fabrx.co/preview/tastebite/index.html"> <img
-								src="./search-result_files/brand4.svg" alt="Tastebite">
+							<a href="index.html"> <img
+								src="./resources/js/brand4.svg" alt="Tastebite">
 							</a>
 							<p class="mt-3 text-gray-300 pr-0 pr-lg-5 mr-0 mr-lg-4">"On
 								the other hand, we denounce with righteous indignation and
@@ -573,15 +576,15 @@
 						</h6>
 						<ul>
 							<li><a
-								href="https://fabrx.co/preview/tastebite/search-result.html#0">About
+								href="search-result.html#0">About
 									us</a></li>
 							<li><a
-								href="https://fabrx.co/preview/tastebite/search-result.html#0">Careers</a></li>
+								href="search-result.html#0">Careers</a></li>
 							<li><a
-								href="https://fabrx.co/preview/tastebite/search-result.html#0">Contact
+								href="search-result.html#0">Contact
 									us</a></li>
 							<li><a
-								href="https://fabrx.co/preview/tastebite/search-result.html#0">Feedback</a></li>
+								href="search-result.html#0">Feedback</a></li>
 						</ul>
 					</div>
 					<div class="col-md-2">
@@ -597,13 +600,13 @@
 						</h6>
 						<ul>
 							<li><a
-								href="https://fabrx.co/preview/tastebite/search-result.html#0">Terms</a></li>
+								href="search-result.html#0">Terms</a></li>
 							<li><a
-								href="https://fabrx.co/preview/tastebite/search-result.html#0">Conditions</a></li>
+								href="search-result.html#0">Conditions</a></li>
 							<li><a
-								href="https://fabrx.co/preview/tastebite/search-result.html#0">Cookies</a></li>
+								href="search-result.html#0">Cookies</a></li>
 							<li><a
-								href="https://fabrx.co/preview/tastebite/search-result.html#0">Copyright</a></li>
+								href="search-result.html#0">Copyright</a></li>
 						</ul>
 					</div>
 					<div class="col-md-2">
@@ -619,13 +622,13 @@
 						</h6>
 						<ul>
 							<li><a
-								href="https://fabrx.co/preview/tastebite/search-result.html#0">Facebook</a></li>
+								href="search-result.html#0">Facebook</a></li>
 							<li><a
-								href="https://fabrx.co/preview/tastebite/search-result.html#0">Twitter</a></li>
+								href="search-result.html#0">Twitter</a></li>
 							<li><a
-								href="https://fabrx.co/preview/tastebite/search-result.html#0">Instagram</a></li>
+								href="search-result.html#0">Instagram</a></li>
 							<li><a
-								href="https://fabrx.co/preview/tastebite/search-result.html#0">Youtube</a></li>
+								href="search-result.html#0">Youtube</a></li>
 						</ul>
 					</div>
 				</div>
@@ -634,12 +637,12 @@
 				<hr>
 				<div class="row pb-4 pt-2 align-items-center">
 					<div class="col-md-6 order-2 order-md-0">
-						<p class="text-gray-300 small text-left mb-0">© 2020 Tastebite
+						<p class="text-gray-300 small text-left mb-0">Â© 2020 Tastebite
 							- All rights reserved</p>
 					</div>
 					<div class="col-md-6">
 						<div class="tstbite-social text-left text-md-right my-4 my-md-0">
-							<a href="https://fabrx.co/preview/tastebite/search-result.html#0">
+							<a href="search-result.html#0">
 								<svg data-name="feather-icon/facebook"
 									xmlns="http://www.w3.org/2000/svg" width="20" height="20"
 									viewBox="0 0 20 20">
@@ -650,7 +653,7 @@
 										transform="translate(5 0.833)" fill="#7f7f7f"></path>
 </svg>
 							</a> <a
-								href="https://fabrx.co/preview/tastebite/search-result.html#0">
+								href="search-result.html#0">
 								<svg data-name="feather-icon/instagram"
 									xmlns="http://www.w3.org/2000/svg" width="20" height="20"
 									viewBox="0 0 20 20">
@@ -661,7 +664,7 @@
 										transform="translate(0.833 0.833)" fill="#7f7f7f"></path>
 </svg>
 							</a> <a
-								href="https://fabrx.co/preview/tastebite/search-result.html#0">
+								href="search-result.html#0">
 								<svg xmlns="http://www.w3.org/2000/svg" width="20.004"
 									height="20" viewBox="0 0 20.004 20">
 <g data-name="feather-icon/twitter" transform="translate(0.002)">
@@ -673,7 +676,7 @@
 </g>
 </svg>
 							</a> <a
-								href="https://fabrx.co/preview/tastebite/search-result.html#0">
+								href="search-result.html#0">
 								<svg xmlns="http://www.w3.org/2000/svg" width="20.001"
 									height="20" viewBox="0 0 20.001 20">
 <g data-name="feather-icon/youtube" transform="translate(0)">
@@ -692,19 +695,19 @@
 		</footer>
 	</section>
 
-	<script src="./search-result_files/bootstrap.bundle.min.js.다운로드"
+	<script src="./resources/js/bootstrap.bundle.min.js"
 		type="text/javascript"></script>
-	<script src="./search-result_files/html5.min.js.다운로드"
+	<script src="./resources/js/html5.min.js"
 		type="text/javascript"></script>
-	<script src="./search-result_files/sticky.min.js.다운로드"
+	<script src="./resources/js/sticky.min.js"
 		type="text/javascript"></script>
-	<script src="./search-result_files/swiper-bundle.min.js.다운로드"
+	<script src="./resources/js/swiper-bundle.min.js"
 		type="text/javascript"></script>
-	<script src="./search-result_files/masonry.min.js.다운로드"
+	<script src="./resources/js/masonry.min.js"
 		type="text/javascript"></script>
-	<script src="./search-result_files/tastebite-scripts.js.다운로드"
+	<script src="./resources/js/tastebite-scripts.js"
 		type="text/javascript"></script>
-	<script defer="" src="./search-result_files/beacon.min.js.다운로드"
+	<script defer="" src="./resources/js/beacon.min.js"
 		data-cf-beacon="{&quot;rayId&quot;:&quot;6a50d5b1f8402079&quot;,&quot;version&quot;:&quot;2021.10.0&quot;,&quot;r&quot;:1,&quot;token&quot;:&quot;9ae02b4a12234f118cf01e6f25c04e9d&quot;,&quot;si&quot;:100}"></script>
 
 </body>

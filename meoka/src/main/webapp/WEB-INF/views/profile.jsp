@@ -1,5 +1,8 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+	
 <!DOCTYPE html>
-<!-- saved from url=(0047)/profile.html -->
+<!-- saved from url=(0047)profile.html -->
 <html dir="ltr" lang="en-US">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -25,7 +28,7 @@
 			<header class="tstbite-header bg-white">
 				<nav class="navbar navbar-expand-lg has-header-inner px-0">
 					<a class="navbar-brand"
-						href="/index.html"> <img
+						href="index.html"> <img
 						src="./resources/img/brand4.svg" style="max-width: 161px;"
 						alt="Tastebite">
 					</a>
@@ -37,7 +40,7 @@
 <path
 									d="M24.39,26.276l-4.9-4.9a12.012,12.012,0,1,1,1.885-1.885l4.9,4.9a1.334,1.334,0,0,1-1.886,1.886ZM2.666,12a9.329,9.329,0,0,0,15.827,6.7,1.338,1.338,0,0,1,.206-.206A9.332,9.332,0,1,0,2.666,12Z"></path>
 </svg>
-						</a> <a href="/profile.html#0"
+						</a> <a href="profile.html#0"
 							class="ml-4 ml-md-4 mr-2 mr-md-0 circle"><img
 							src="./resources/img/avatar1.png" alt="Avatar"></a>
 					</div>
@@ -55,7 +58,7 @@
 					<div class="collapse navbar-collapse" id="menu-4">
 						<ul class="navbar-nav m-auto pt-3 pt-lg-0">
 							<li class="nav-item dropdown"><a class="nav-link"
-								href="/profile.html#"
+								href="profile.html#"
 								role="button" id="HomePage" data-toggle="dropdown"
 								aria-haspopup="true" aria-expanded="false"> <span>Home
 										Page</span> <svg xmlns="http://www.w3.org/2000/svg" width="9.333"
@@ -66,15 +69,15 @@
 							</a>
 								<div class="dropdown-menu" aria-labelledby="HomePage">
 									<a class="dropdown-item"
-										href="/index.html">Home
+										href="index.html">Home
 										V1</a> <a class="dropdown-item"
-										href="/home-v2.html">Home
+										href="home-v2.html">Home
 										V2</a> <a class="dropdown-item"
-										href="/home-v3.html">Home
+										href="home-v3.html">Home
 										V3</a>
 								</div></li>
 							<li class="nav-item dropdown"><a class="nav-link"
-								href="/profile.html#"
+								href="profile.html#"
 								role="button" id="RecipePage" data-toggle="dropdown"
 								aria-haspopup="true" aria-expanded="false"> <span>Recipe
 										Page</span> <svg xmlns="http://www.w3.org/2000/svg" width="9.333"
@@ -85,12 +88,12 @@
 							</a>
 								<div class="dropdown-menu" aria-labelledby="RecipePage">
 									<a class="dropdown-item"
-										href="/recipe-full-width.html">Full
+										href="recipe-full-width.html">Full
 										Width</a> <a class="dropdown-item"
-										href="/recipe-sidebar.html">Sidebar</a>
+										href="recipe-sidebar.html">Sidebar</a>
 								</div></li>
 							<li class="nav-item dropdown"><a class="nav-link"
-								href="/profile.html#"
+								href="profile.html#"
 								role="button" id="Pages" data-toggle="dropdown"
 								aria-haspopup="true" aria-expanded="false"> <span>Pages</span>
 									<svg xmlns="http://www.w3.org/2000/svg" width="9.333"
@@ -101,13 +104,13 @@
 							</a>
 								<div class="dropdown-menu" aria-labelledby="Pages">
 									<a class="dropdown-item"
-										href="/category.html">Category</a>
+										href="category.html">Category</a>
 									<a class="dropdown-item"
-										href="/archive.html">Archive</a>
+										href="archive.html">Archive</a>
 									<a class="dropdown-item"
-										href="/favorites.html">Favorites</a>
+										href="favorites.html">Favorites</a>
 									<a class="dropdown-item"
-										href="/profile.html">Profile</a>
+										href="profile.html">Profile</a>
 									<a class="dropdown-item"
 										href="/about.html">About</a>
 									<a class="dropdown-item"
@@ -117,7 +120,7 @@
 										Results</a>
 								</div></li>
 							<li class="nav-item"><a class="nav-link"
-								href="/elements.html">Elements</a>
+								href="elements.html">Elements</a>
 							</li>
 							<li class="nav-item"><a class="nav-link"
 								href="https://fabrx.co/tastebite-food-recipes-website-template/"
@@ -139,7 +142,7 @@
 				</div>
 				<div class="search-results" id="SearchList">
 					<div class="tstbite-search-list">
-						<a href="/profile.html#0">
+						<a href="profile.html#0">
 							<figure>
 								<img src="./resources/img/menu111.png" class="rounded-circle"
 									alt="Menu">
@@ -150,7 +153,7 @@
 						</a>
 					</div>
 					<div class="tstbite-search-list">
-						<a href="/profile.html#0">
+						<a href="profile.html#0">
 							<figure>
 								<img src="./resources/img/menu112.jpg" class="rounded-2"
 									alt="Menu">
@@ -161,7 +164,7 @@
 						</a>
 					</div>
 					<div class="tstbite-search-list">
-						<a href="/profile.html#0">
+						<a href="profile.html#0">
 							<figure>
 								<img src="./resources/img/menu113.jpg" class="rounded-2"
 									alt="Menu">
@@ -172,7 +175,7 @@
 						</a>
 					</div>
 					<div class="tstbite-search-list">
-						<a href="/profile.html#0">
+						<a href="profile.html#0">
 							<figure>
 								<img src="./resources/img/menu114.jpg" class="rounded-2"
 									alt="Menu">
@@ -183,7 +186,7 @@
 						</a>
 					</div>
 					<div class="tstbite-search-list">
-						<a href="/profile.html#0">
+						<a href="profile.html#0">
 							<figure>
 								<img src="./resources/img/menu115.jpg" class="rounded-2"
 									alt="Menu">
@@ -194,7 +197,7 @@
 						</a>
 					</div>
 					<div class="tstbite-search-list">
-						<a href="/profile.html#0">
+						<a href="profile.html#0">
 							<figure>
 								<img src="./resources/img/menu116.jpg" class="rounded-2"
 									alt="Menu">
@@ -205,7 +208,7 @@
 						</a>
 					</div>
 					<div class="text-center py-4">
-						<a href="/profile.html#0"
+						<a href="profile.html#0"
 							class="btn btn-sm btn-outline-dark px-4 py-2">See all 343
 							results</a>
 					</div>
@@ -220,7 +223,7 @@
 						<h5 class="py-2 py-md-3 mb-0">Profile</h5>
 					</div>
 					<div class="col-lg-3 col-4 text-right">
-						<a href="/profile.html#0"
+						<a href="profile.html#0"
 							class="btn btn-lg btn-primary px-4 px-md-5 text-uppercase">Save</a>
 					</div>
 				</div>
@@ -231,9 +234,9 @@
 						<img src="./resources/img/avatar12.png" alt="Avatar">
 					</div>
 					<div>
-						<a href="/profile.html#0"
+						<a href="profile.html#0"
 							class="btn btn-lg btn-primary px-4 px-md-5 ml-2 ml-md-4">Change
-							photo</a> <a href="/profile.html#0"
+							photo</a> <a href="profile.html#0"
 							class="btn btn-lg btn-outline-dark px-4 px-md-5 ml-2 ml-md-4">Delete</a>
 					</div>
 				</div>
@@ -311,7 +314,7 @@
 </svg>
 											</span>
 											<div class="text-right">
-												<a href="/profile.html#0"
+												<a href="profile.html#0"
 													class="text-orange small font-weight-medium">Change</a>
 											</div>
 										</div>
@@ -328,7 +331,7 @@
 											<img src="./resources/img/facebook-logo.svg" alt="Facebook">
 										</figure>
 										<span class="ml-auto mt-2"><a
-											href="/profile.html#0">Disconnect</a></span>
+											href="profile.html#0">Disconnect</a></span>
 									</div>
 									<input type="text" class="form-control pl-0 pb-4 pt-0"
 										value="Suzan Miller">
@@ -339,7 +342,7 @@
 											<img src="./resources/img/google-logo.svg" alt="Google">
 										</figure>
 										<span class="ml-auto mt-2"><a
-											href="/profile.html#0">Disconnect</a></span>
+											href="profile.html#0">Disconnect</a></span>
 									</div>
 									<input type="text" class="form-control pl-0 pb-4 pt-0"
 										value="Suzan@gmail.com">
@@ -352,7 +355,7 @@
 									<p class="mb-3">You are currently sunscribed to our
 										newsletter</p>
 									<div class="ml-auto mb-3">
-										<a href="/profile.html#0"
+										<a href="profile.html#0"
 											class="btn btn-lg btn-outline-dark px-4 px-md-5">Unsubscribe</a>
 									</div>
 								</div>
@@ -360,7 +363,7 @@
 							<hr class="my-4 my-md-5">
 							<div
 								class="d-flex align-items-center flex-wrap tstbite-svg mb-4 mb-md-5">
-								<a href="/profile.html#0">
+								<a href="profile.html#0">
 									<svg data-name="feather-icon/log-out"
 										xmlns="http://www.w3.org/2000/svg" width="24" height="24"
 										viewBox="0 0 24 24">
@@ -370,7 +373,7 @@
 											d="M3,20a3,3,0,0,1-3-3V3A3,3,0,0,1,3,0H7A1,1,0,0,1,7,2H3A1,1,0,0,0,2,3V17a1,1,0,0,0,1,1H7a1,1,0,1,1,0,2Zm10.293-4.293a1,1,0,0,1,0-1.414L16.586,11H7A1,1,0,1,1,7,9h9.586L13.293,5.707a1,1,0,1,1,1.414-1.414l5,5a1,1,0,0,1,0,1.415l-5,5a1,1,0,0,1-1.414,0Z"
 											transform="translate(2 2)"></path>
 </svg> <span>Sign out</span>
-								</a> <a href="/profile.html#0"
+								</a> <a href="profile.html#0"
 									class="text-orange font-weight-medium ml-auto">Delete
 									Account</a>
 							</div>
@@ -385,7 +388,7 @@
 				<div class="row pt-4 pb-0 pb-md-5">
 					<div class="col-md-6">
 						<div class="tastebite-footer-contnet pr-0 pr-lg-5 mr-0 mr-md-5">
-							<a href="/profile.html#0">
+							<a href="profile.html#0">
 								<img src="./resources/img/brand4.svg" alt="Tastebite">
 							</a>
 							<p class="mt-3 text-gray-300 pr-0 pr-lg-5 mr-0 mr-lg-4">"On
@@ -407,15 +410,15 @@
 						</h6>
 						<ul>
 							<li><a
-								href="/profile.html#0">About
+								href="profile.html#0">About
 									us</a></li>
 							<li><a
-								href="/profile.html#0">Careers</a></li>
+								href="profile.html#0">Careers</a></li>
 							<li><a
-								href="/profile.html#0">Contact
+								href="profile.html#0">Contact
 									us</a></li>
 							<li><a
-								href="/profile.html#0">Feedback</a></li>
+								href="profile.html#0">Feedback</a></li>
 						</ul>
 					</div>
 					<div class="col-md-2">
@@ -431,13 +434,13 @@
 						</h6>
 						<ul>
 							<li><a
-								href="/profile.html#0">Terms</a></li>
+								href="profile.html#0">Terms</a></li>
 							<li><a
-								href="/profile.html#0">Conditions</a></li>
+								href="profile.html#0">Conditions</a></li>
 							<li><a
-								href="/profile.html#0">Cookies</a></li>
+								href="profile.html#0">Cookies</a></li>
 							<li><a
-								href="/profile.html#0">Copyright</a></li>
+								href="profile.html#0">Copyright</a></li>
 						</ul>
 					</div>
 					<div class="col-md-2">
@@ -453,13 +456,13 @@
 						</h6>
 						<ul>
 							<li><a
-								href="/profile.html#0">Facebook</a></li>
+								href="profile.html#0">Facebook</a></li>
 							<li><a
-								href="/profile.html#0">Twitter</a></li>
+								href="profile.html#0">Twitter</a></li>
 							<li><a
-								href="/profile.html#0">Instagram</a></li>
+								href="profile.html#0">Instagram</a></li>
 							<li><a
-								href="/profile.html#0">Youtube</a></li>
+								href="profile.html#0">Youtube</a></li>
 						</ul>
 					</div>
 				</div>
@@ -473,7 +476,7 @@
 					</div>
 					<div class="col-md-6">
 						<div class="tstbite-social text-left text-md-right my-4 my-md-0">
-							<a href="/profile.html#0">
+							<a href="profile.html#0">
 								<svg data-name="feather-icon/facebook"
 									xmlns="http://www.w3.org/2000/svg" width="20" height="20"
 									viewBox="0 0 20 20">
@@ -483,7 +486,7 @@
 										d="M6.667,18.333H3.333A.834.834,0,0,1,2.5,17.5V11.667H.833A.835.835,0,0,1,0,10.833V7.5a.834.834,0,0,1,.833-.833H2.5V5a5.006,5.006,0,0,1,5-5H10a.834.834,0,0,1,.833.833V4.167A.834.834,0,0,1,10,5H7.5V6.667H10A.833.833,0,0,1,10.808,7.7l-.833,3.334a.831.831,0,0,1-.809.631H7.5V17.5A.834.834,0,0,1,6.667,18.333Zm-5-10V10H3.333a.835.835,0,0,1,.834.833v5.834H5.833V10.833A.834.834,0,0,1,6.667,10h1.85l.416-1.667H6.667A.834.834,0,0,1,5.833,7.5V5A1.669,1.669,0,0,1,7.5,3.333H9.166V1.666H7.5A3.337,3.337,0,0,0,4.167,5V7.5a.835.835,0,0,1-.834.833Z"
 										transform="translate(5 0.833)" fill="#7f7f7f"></path>
 </svg>
-							</a> <a href="/profile.html#0">
+							</a> <a href="profile.html#0">
 								<svg data-name="feather-icon/instagram"
 									xmlns="http://www.w3.org/2000/svg" width="20" height="20"
 									viewBox="0 0 20 20">
@@ -493,7 +496,7 @@
 										d="M5,18.333a5.005,5.005,0,0,1-5-5V5A5.006,5.006,0,0,1,5,0h8.333a5.005,5.005,0,0,1,5,5v8.333a5,5,0,0,1-5,5ZM1.667,5v8.333A3.337,3.337,0,0,0,5,16.667h8.333a3.337,3.337,0,0,0,3.333-3.333V5a3.337,3.337,0,0,0-3.333-3.334H5A3.338,3.338,0,0,0,1.667,5Zm4.59,7.076A4.164,4.164,0,1,1,9.2,13.3,4.161,4.161,0,0,1,6.256,12.076Zm.713-4.07a2.5,2.5,0,1,0,2.6-1.348A2.527,2.527,0,0,0,9.2,6.631,2.487,2.487,0,0,0,6.97,8.006Zm6.191-2.833a.833.833,0,1,1,.589.244A.834.834,0,0,1,13.161,5.173Z"
 										transform="translate(0.833 0.833)" fill="#7f7f7f"></path>
 </svg>
-							</a> <a href="/profile.html#0">
+							</a> <a href="profile.html#0">
 								<svg xmlns="http://www.w3.org/2000/svg" width="20.004"
 									height="20" viewBox="0 0 20.004 20">
 <g data-name="feather-icon/twitter" transform="translate(0.002)">
@@ -504,7 +507,7 @@
 										transform="translate(-0.002 1.658)" fill="#7f7f7f"></path>
 </g>
 </svg>
-							</a> <a href="/profile.html#0">
+							</a> <a href="profile.html#0">
 								<svg xmlns="http://www.w3.org/2000/svg" width="20.001"
 									height="20" viewBox="0 0 20.001 20">
 <g data-name="feather-icon/youtube" transform="translate(0)">
@@ -523,17 +526,17 @@
 		</footer>
 	</section>
 
-	<script src="./resources/js/bootstrap.bundle.min.js.다운로드"
+	<script src="./resources/js/bootstrap.bundle.min.js"
 		type="text/javascript"></script>
-	<script src="./resources/js/html5.min.js.다운로드" type="text/javascript"></script>
-	<script src="./resources/js/sticky.min.js.다운로드" type="text/javascript"></script>
-	<script src="./resources/js/swiper-bundle.min.js.다운로드"
+	<script src="./resources/js/html5.min.js" type="text/javascript"></script>
+	<script src="./resources/js/sticky.min.js" type="text/javascript"></script>
+	<script src="./resources/js/swiper-bundle.min.js"
 		type="text/javascript"></script>
-	<script src="./resources/js/masonry.min.js.다운로드"
+	<script src="./resources/js/masonry.min.js"
 		type="text/javascript"></script>
-	<script src="./resources/js/tastebite-scripts.js.다운로드"
+	<script src="./resources/js/tastebite-scripts.js"
 		type="text/javascript"></script>
-	<script defer="" src="./resources/js/beacon.min.js.다운로드"
+	<script defer="" src="./resources/js/beacon.min.js"
 		data-cf-beacon="{&quot;rayId&quot;:&quot;6a50d6908fc02079&quot;,&quot;version&quot;:&quot;2021.10.0&quot;,&quot;r&quot;:1,&quot;token&quot;:&quot;9ae02b4a12234f118cf01e6f25c04e9d&quot;,&quot;si&quot;:100}"></script>
 
 </body>

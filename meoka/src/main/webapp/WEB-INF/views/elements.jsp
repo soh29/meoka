@@ -15,7 +15,7 @@
 <link href="assets/images/favicon.ico" rel="shortcut icon"
 	type="image/x-icon">
 
-<link href="./resources/img/swiper-bundle.min.css" rel="stylesheet"
+<link href="./resources/css/swiper-bundle.min.css" rel="stylesheet"
 	type="text/css" media="all">
 <link href="./resources/css/tastebite-styles.css" rel="stylesheet"
 	type="text/css" media="all">
