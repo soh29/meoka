@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <!-- saved from url=(0047)home-v2.html -->
 <html dir="ltr" lang="en-US">
@@ -14,7 +17,7 @@
 	href="https://fabrx.co/preview/tastebite/assets/images/favicon.ico"
 	rel="shortcut icon" type="image/x-icon">
 
-<link href="./css/tastebite-styles.css" rel="stylesheet"
+<link href="./resources/css/tastebite-styles.css" rel="stylesheet"
 	type="text/css" media="all">
 </head>
 <body>
@@ -35,7 +38,7 @@
 					</div>
 					<a class="navbar-brand m-auto text-center px-2"
 						href="index.html"> <img
-						src="./img/brand2.svg" alt="Tastebite" width="255">
+						src="./resources/img/brand2.svg" alt="Tastebite" width="255">
 					</a>
 					<button class="navbar-toggler pr-0 d-inline-block d-md-none"
 						type="button" data-toggle="collapse" data-target="#menu-4"
@@ -148,14 +151,14 @@
 								<input type="text" name="Search" placeholder="Search"
 									class="form-control" id="Search">
 								<button type="button">
-									<img src="./img/close.svg" alt="img">
+									<img src="./resources/img/close.svg" alt="img">
 								</button>
 							</div>
 							<div class="search-results" id="SearchList">
 								<div class="tstbite-search-list">
 									<a href="home-v2.html#0">
 										<figure>
-											<img src="./img/menu111.png" class="rounded-circle"
+											<img src="./resources/img/menu111.png" class="rounded-circle"
 												alt="Menu">
 										</figure>
 										<div class="tstbite-search-name">
@@ -166,7 +169,7 @@
 								<div class="tstbite-search-list">
 									<a href="home-v2.html#0">
 										<figure>
-											<img src="./img/menu112.jpg" class="rounded-2"
+											<img src="./resources/img/menu112.jpg" class="rounded-2"
 												alt="Menu">
 										</figure>
 										<div class="tstbite-search-name">
@@ -177,7 +180,7 @@
 								<div class="tstbite-search-list">
 									<a href="home-v2.html#0">
 										<figure>
-											<img src="./img/menu113.jpg" class="rounded-2"
+											<img src="./resources/img/menu113.jpg" class="rounded-2"
 												alt="Menu">
 										</figure>
 										<div class="tstbite-search-name">
@@ -189,7 +192,7 @@
 								<div class="tstbite-search-list">
 									<a href="home-v2.html#0">
 										<figure>
-											<img src="./img/menu114.jpg" class="rounded-2"
+											<img src="./resources/img/menu114.jpg" class="rounded-2"
 												alt="Menu">
 										</figure>
 										<div class="tstbite-search-name">
@@ -201,7 +204,7 @@
 								<div class="tstbite-search-list">
 									<a href="home-v2.html#0">
 										<figure>
-											<img src="./img/menu115.jpg" class="rounded-2"
+											<img src="./resources/img/menu115.jpg" class="rounded-2"
 												alt="Menu">
 										</figure>
 										<div class="tstbite-search-name">
@@ -212,7 +215,7 @@
 								<div class="tstbite-search-list">
 									<a href="home-v2.html#0">
 										<figure>
-											<img src="./img/menu116.jpg" class="rounded-2"
+											<img src="./resources/img/menu116.jpg" class="rounded-2"
 												alt="Menu">
 										</figure>
 										<div class="tstbite-search-name">
@@ -237,7 +240,7 @@
 						<figure class="my-3 tstbite-card">
 							<a href="home-v2.html#0"
 								class="tstbite-animation rounded-top-6"> <img
-								src="./img/menu66.jpg" class="w-100" alt="Menu">
+								src="./resources/img/menu66.jpg" class="w-100" alt="Menu">
 							</a>
 							<figcaption class="mt-2 px-3 px-lg-4">
 								<div class="w-100 float-left">
@@ -269,7 +272,7 @@
 						<figure class="my-3 tstbite-card">
 							<a href="home-v2.html#0"
 								class="tstbite-animation rounded-top-6"> <img
-								src="./img/menu67.jpg" class="w-100" alt="Menu">
+								src="./resources/img/menu67.jpg" class="w-100" alt="Menu">
 							</a>
 							<figcaption class="mt-2 px-3 px-lg-4">
 								<div class="w-100 float-left">
@@ -301,7 +304,7 @@
 						<figure class="my-3 tstbite-card">
 							<a href="home-v2.html#0"
 								class="tstbite-animation rounded-top-6"> <img
-								src="./img/menu68.jpg" class="w-100" alt="Menu">
+								src="./resources/img/menu68.jpg" class="w-100" alt="Menu">
 							</a>
 							<figcaption class="mt-2 px-3 px-lg-4">
 								<div class="w-100 float-left">
@@ -358,7 +361,7 @@
 					<div class="col-md-8">
 						<h6 class="mt-3 mb-4">Latest Recipes</h6>
 						<figure class="my-3">
-							<img src="./img/menu44.jpg"
+							<img src="./resources/img/menu44.jpg"
 								class="w-100 rounded-top-12" alt="Menu">
 							<figcaption
 								class="bg-white px-4 px-lg-5 pt-4 mb-4 tstbite-collection border-top-0 rounded-bottom-6">
@@ -390,15 +393,15 @@
 									class="d-md-flex justify-content-between align-items-center flex-wrap my-4">
 									<div>
 										<span class="circle"><img
-											src="./img/avatar1.png" class="rounded-circle"
+											src="./resources/img/avatar1.png" class="rounded-circle"
 											alt="Avatar"></span> <small class="pl-1">Tricia Albert</small>
 									</div>
 									<div class="d-flex flex-wrap justify-content-end mt-4 mt-md-0">
 										<div class="text-gray-300">
-											<img src="./img/chat.svg" alt="Avatar"> <small>456</small>
+											<img src="./resources/img/chat.svg" alt="Avatar"> <small>456</small>
 										</div>
 										<div class="ml-4 text-gray-300">
-											<img src="./img/calendar.svg" alt="Avatar"> <small>Yesterday</small>
+											<img src="./resources/img/calendar.svg" alt="Avatar"> <small>Yesterday</small>
 										</div>
 									</div>
 								</div>
@@ -409,7 +412,7 @@
 								<div class="col-md-6">
 									<a href="home-v2.html#0"
 										class="tstbite-animation stretched-link rounded-left-6 rounded-sm-top-6">
-										<img src="./img/menu52.jpg" class="w-100" alt="Menu">
+										<img src="./resources/img/menu52.jpg" class="w-100" alt="Menu">
 									</a>
 								</div>
 								<figcaption class="bg-white col-md-6">
@@ -436,17 +439,17 @@
 												class="text-black">Mighty Cheesy Breakfast Burger</a>
 										</h6>
 										<div>
-											<img src="./img/avatar1.png" class="rounded-circle"
+											<img src="./resources/img/avatar1.png" class="rounded-circle"
 												alt="Avatar"> <small class="pl-1">Tricia
 												Albert</small>
 										</div>
 										<div class="d-flex flex-wrap mt-4">
 											<div class="text-gray-300">
-												<img src="./img/calendar.svg" alt="Avatar">
+												<img src="./resources/img/calendar.svg" alt="Avatar">
 												<small>Yesterday</small>
 											</div>
 											<div class="ml-4 text-gray-300">
-												<img src="./img/chat.svg" alt="Avatar"> <small>456</small>
+												<img src="./resources/img/chat.svg" alt="Avatar"> <small>456</small>
 											</div>
 										</div>
 									</div>
@@ -458,7 +461,7 @@
 								<div class="col-md-6">
 									<a href="home-v2.html#0"
 										class="tstbite-animation stretched-link rounded-left-6 rounded-sm-top-6">
-										<img src="./img/menu53.jpg" class="w-100" alt="Menu">
+										<img src="./resources/img/menu53.jpg" class="w-100" alt="Menu">
 									</a>
 								</div>
 								<figcaption class="bg-white col-md-6">
@@ -485,17 +488,17 @@
 												class="text-black">Chocolate and Berries Healthy Pudding</a>
 										</h6>
 										<div>
-											<img src="./img/avatar1.png" class="rounded-circle"
+											<img src="./resources/img/avatar1.png" class="rounded-circle"
 												alt="Avatar"> <small class="pl-1">Tricia
 												Albert</small>
 										</div>
 										<div class="d-flex flex-wrap mt-4">
 											<div class="text-gray-300">
-												<img src="./img/calendar.svg" alt="Avatar">
+												<img src="./resources/img/calendar.svg" alt="Avatar">
 												<small>Yesterday</small>
 											</div>
 											<div class="ml-4 text-gray-300">
-												<img src="./img/chat.svg" alt="Avatar"> <small>456</small>
+												<img src="./resources/img/chat.svg" alt="Avatar"> <small>456</small>
 											</div>
 										</div>
 									</div>
@@ -507,7 +510,7 @@
 								<div class="col-md-6">
 									<a href="home-v2.html#0"
 										class="tstbite-animation stretched-link rounded-left-6 rounded-sm-top-6">
-										<img src="./img/menu54.jpg" class="w-100" alt="Menu">
+										<img src="./resources/img/menu54.jpg" class="w-100" alt="Menu">
 									</a>
 								</div>
 								<figcaption class="bg-white col-md-6">
@@ -534,17 +537,17 @@
 												class="text-black">Caramel Cream Birthday Pudding</a>
 										</h6>
 										<div>
-											<img src="./img/avatar1.png" class="rounded-circle"
+											<img src="./resources/img/avatar1.png" class="rounded-circle"
 												alt="Avatar"> <small class="pl-1">Tricia
 												Albert</small>
 										</div>
 										<div class="d-flex flex-wrap mt-4">
 											<div class="text-gray-300">
-												<img src="./img/calendar.svg" alt="Avatar">
+												<img src="./resources/img/calendar.svg" alt="Avatar">
 												<small>Yesterday</small>
 											</div>
 											<div class="ml-4 text-gray-300">
-												<img src="./img/chat.svg" alt="Avatar"> <small>456</small>
+												<img src="./resources/img/chat.svg" alt="Avatar"> <small>456</small>
 											</div>
 										</div>
 									</div>
@@ -556,7 +559,7 @@
 								<div class="col-md-6">
 									<a href="home-v2.html#0"
 										class="tstbite-animation stretched-link rounded-left-6 rounded-sm-top-6">
-										<img src="./img/menu59.jpg"
+										<img src="./resources/img/menu59.jpg"
 										class="w-100 rounded-left-6 rounded-sm-top-6" alt="Menu">
 									</a>
 								</div>
@@ -584,17 +587,17 @@
 												class="text-black">Healthy Caramel Strawberry Milkshake</a>
 										</h6>
 										<div>
-											<img src="./img/avatar1.png" class="rounded-circle"
+											<img src="./resources/img/avatar1.png" class="rounded-circle"
 												alt="Avatar"> <small class="pl-1">Tricia
 												Albert</small>
 										</div>
 										<div class="d-flex flex-wrap mt-4">
 											<div class="text-gray-300">
-												<img src="./img/calendar.svg" alt="Avatar">
+												<img src="./resources/img/calendar.svg" alt="Avatar">
 												<small>Yesterday</small>
 											</div>
 											<div class="ml-4 text-gray-300">
-												<img src="./img/chat.svg" alt="Avatar"> <small>456</small>
+												<img src="./resources/img/chat.svg" alt="Avatar"> <small>456</small>
 											</div>
 										</div>
 									</div>
@@ -604,7 +607,7 @@
 					</div>
 					<div class="col-md-4">
 						<figure class="text-center tstbite-profile rounded-6 border">
-							<img src="./img/avatar2.png" class="rounded-circle"
+							<img src="./resources/img/avatar2.png" class="rounded-circle"
 								alt="Menu">
 							<figcaption class="bg-white px-2 py-4 rounded-bottom-6">
 								<h6 class="font-weight-semibold inter-font f-size-24">Hi,
@@ -625,7 +628,7 @@
 									<a
 										href="recipe-sidebar.html"
 										class="tstbite-animation stretched-link"> <img
-										src="./img/menu46.jpg" class="w-100" alt="Menu">
+										src="./resources/img/menu46.jpg" class="w-100" alt="Menu">
 									</a>
 									<figcaption class="bg-white pt-2">
 										<h6 class="font-weight-semibold inter-font small">
@@ -641,7 +644,7 @@
 									<a
 										href="recipe-sidebar.html"
 										class="tstbite-animation stretched-link"> <img
-										src="./img/menu47.jpg" class="w-100" alt="Menu">
+										src="./resources/img/menu47.jpg" class="w-100" alt="Menu">
 									</a>
 									<figcaption class="bg-white pt-2">
 										<h6 class="font-weight-semibold inter-font small">
@@ -657,7 +660,7 @@
 									<a
 										href="recipe-sidebar.html"
 										class="tstbite-animation stretched-link"> <img
-										src="./img/menu48.jpg" class="w-100" alt="Menu">
+										src="./resources/img/menu48.jpg" class="w-100" alt="Menu">
 									</a>
 									<figcaption class="bg-white pt-2">
 										<h6 class="font-weight-semibold inter-font small">
@@ -673,7 +676,7 @@
 									<a
 										href="recipe-sidebar.html"
 										class="tstbite-animation stretched-link"> <img
-										src="./img/menu49.jpg" class="w-100" alt="Menu">
+										src="./resources/img/menu49.jpg" class="w-100" alt="Menu">
 									</a>
 									<figcaption class="bg-white pt-2">
 										<h6 class="font-weight-semibold inter-font small">
@@ -689,7 +692,7 @@
 									<a
 										href="recipe-sidebar.html"
 										class="tstbite-animation stretched-link"> <img
-										src="./img/menu50.jpg" class="w-100" alt="Menu">
+										src="./resources/img/menu50.jpg" class="w-100" alt="Menu">
 									</a>
 									<figcaption class="bg-white pt-2">
 										<h6 class="font-weight-semibold inter-font small">
@@ -705,7 +708,7 @@
 									<a
 										href="recipe-sidebar.html"
 										class="tstbite-animation stretched-link"> <img
-										src="./img/menu51.jpg" class="w-100" alt="Menu">
+										src="./resources/img/menu51.jpg" class="w-100" alt="Menu">
 									</a>
 									<figcaption class="bg-white pt-2">
 										<h6 class="font-weight-semibold inter-font small">
@@ -721,7 +724,7 @@
 									<a
 										href="recipe-sidebar.html"
 										class="tstbite-animation stretched-link"> <img
-										src="./img/menu55.jpg" class="w-100" alt="Menu">
+										src="./resources/img/menu55.jpg" class="w-100" alt="Menu">
 									</a>
 									<figcaption class="bg-white pt-2">
 										<h6 class="font-weight-semibold inter-font small">
@@ -737,7 +740,7 @@
 									<a
 										href="recipe-sidebar.html"
 										class="tstbite-animation stretched-link"> <img
-										src="./img/menu56.jpg" class="w-100" alt="Menu">
+										src="./resources/img/menu56.jpg" class="w-100" alt="Menu">
 									</a>
 									<figcaption class="bg-white pt-2">
 										<h6 class="font-weight-semibold inter-font small">
@@ -753,7 +756,7 @@
 									<a
 										href="recipe-sidebar.html"
 										class="tstbite-animation stretched-link"> <img
-										src="./img/menu57.jpg" class="w-100" alt="Menu">
+										src="./resources/img/menu57.jpg" class="w-100" alt="Menu">
 									</a>
 									<figcaption class="bg-white pt-2">
 										<h6 class="font-weight-semibold inter-font small">
@@ -769,7 +772,7 @@
 									<a
 										href="recipe-sidebar.html"
 										class="tstbite-animation stretched-link"> <img
-										src="./img/menu58.jpg" class="w-100" alt="Menu">
+										src="./resources/img/menu58.jpg" class="w-100" alt="Menu">
 									</a>
 									<figcaption class="bg-white pt-2">
 										<h6 class="font-weight-semibold inter-font small">
@@ -784,7 +787,7 @@
 						<div class="mt-4 mt-lg-5 pt-4 pt-lg-5">
 							<div class="d-flex flex-wrap align-items-center">
 								<div>
-									<img src="./img/brand3.svg" alt="Brands">
+									<img src="./resources/img/brand3.svg" alt="Brands">
 								</div>
 								<div class="ml-auto">
 									<a href="home-v2.html#0"
@@ -807,22 +810,22 @@
 							</div>
 							<div class="d-flex flex-wrap tstbite-instagram-list">
 								<div class="w-50 p-1">
-									<img src="./img/menu60.jpg" class="w-100" alt="Menu">
+									<img src="./resources/img/menu60.jpg" class="w-100" alt="Menu">
 								</div>
 								<div class="w-50 p-1">
-									<img src="./img/menu61.jpg" class="w-100" alt="Menu">
+									<img src="./resources/img/menu61.jpg" class="w-100" alt="Menu">
 								</div>
 								<div class="w-50 p-1">
-									<img src="./img/menu62.jpg" class="w-100" alt="Menu">
+									<img src="./resources/img/menu62.jpg" class="w-100" alt="Menu">
 								</div>
 								<div class="w-50 p-1">
-									<img src="./img/menu63.jpg" class="w-100" alt="Menu">
+									<img src="./resources/img/menu63.jpg" class="w-100" alt="Menu">
 								</div>
 								<div class="w-50 p-1">
-									<img src="./img/menu64.jpg" class="w-100" alt="Menu">
+									<img src="./resources/img/menu64.jpg" class="w-100" alt="Menu">
 								</div>
 								<div class="w-50 p-1">
-									<img src="./img/menu65.jpg" class="w-100" alt="Menu">
+									<img src="./resources/img/menu65.jpg" class="w-100" alt="Menu">
 								</div>
 							</div>
 						</div>
@@ -837,7 +840,7 @@
 						<figure class="my-3 tstbite-card">
 							<a href="home-v2.html#0"
 								class="tstbite-animation stretched-link rounded-top-6"> <img
-								src="./img/menu14.jpg" class="w-100" alt="Menu">
+								src="./resources/img/menu14.jpg" class="w-100" alt="Menu">
 							</a>
 							<figcaption
 								class="tstbite-collection border-top-0 rounded-bottom-6">
@@ -857,7 +860,7 @@
 						<figure class="my-3 tstbite-card">
 							<a href="home-v2.html#0"
 								class="tstbite-animation stretched-link rounded-top-6"> <img
-								src="./img/menu15.jpg" class="w-100" alt="Menu">
+								src="./resources/img/menu15.jpg" class="w-100" alt="Menu">
 							</a>
 							<figcaption
 								class="tstbite-collection border-top-0 rounded-bottom-6">
@@ -876,7 +879,7 @@
 						<figure class="my-3 tstbite-card">
 							<a href="home-v2.html#0"
 								class="tstbite-animation stretched-link rounded-top-6"> <img
-								src="./img/menu16.jpg" class="w-100" alt="Menu">
+								src="./resources/img/menu16.jpg" class="w-100" alt="Menu">
 							</a>
 							<figcaption
 								class="tstbite-collection border-top-0 rounded-bottom-6">
@@ -895,7 +898,7 @@
 						<figure class="my-3 tstbite-card">
 							<a href="home-v2.html#0"
 								class="tstbite-animation stretched-link rounded-top-6"> <img
-								src="./img/menu17.jpg" class="w-100" alt="Menu">
+								src="./resources/img/menu17.jpg" class="w-100" alt="Menu">
 							</a>
 							<figcaption
 								class="tstbite-collection border-top-0 rounded-bottom-6">
@@ -915,7 +918,7 @@
 						<figure class="my-3 tstbite-card">
 							<a href="home-v2.html#0"
 								class="tstbite-animation stretched-link rounded-top-6"> <img
-								src="./img/menu18.jpg" class="w-100" alt="Menu">
+								src="./resources/img/menu18.jpg" class="w-100" alt="Menu">
 							</a>
 							<figcaption
 								class="tstbite-collection border-top-0 rounded-bottom-6">
@@ -935,7 +938,7 @@
 						<figure class="my-3 tstbite-card">
 							<a href="home-v2.html#0"
 								class="tstbite-animation stretched-link rounded-top-6"> <img
-								src="./img/menu19.jpg" class="w-100" alt="Menu">
+								src="./resources/img/menu19.jpg" class="w-100" alt="Menu">
 							</a>
 							<figcaption
 								class="tstbite-collection border-top-0 rounded-bottom-6">
@@ -961,7 +964,7 @@
 						<figure class="my-3 my-md-4 tstbite-card">
 							<a href="recipe-sidebar.html"
 								class="tstbite-animation stretched-link rounded-6"> <img
-								src="./img/menu69.jpg" class="w-100" alt="Menu">
+								src="./resources/img/menu69.jpg" class="w-100" alt="Menu">
 							</a>
 							<figcaption class="mt-3 pb-3">
 								<a href="recipe-sidebar.html"
@@ -974,7 +977,7 @@
 						<figure class="my-3 my-md-4 tstbite-card">
 							<a href="recipe-sidebar.html"
 								class="tstbite-animation stretched-link rounded-6"> <img
-								src="./img/menu70.jpg" class="w-100" alt="Menu">
+								src="./resources/img/menu70.jpg" class="w-100" alt="Menu">
 							</a>
 							<figcaption class="mt-3 pb-3">
 								<a href="recipe-sidebar.html"
@@ -987,7 +990,7 @@
 						<figure class="my-3 my-md-4 tstbite-card">
 							<a href="recipe-sidebar.html"
 								class="tstbite-animation stretched-link rounded-6"> <img
-								src="./img/menu71.jpg" class="w-100" alt="Menu">
+								src="./resources/img/menu71.jpg" class="w-100" alt="Menu">
 							</a>
 							<figcaption class="mt-3 pb-3">
 								<a href="recipe-sidebar.html"
@@ -1000,7 +1003,7 @@
 						<figure class="my-3 my-md-4 tstbite-card">
 							<a href="recipe-sidebar.html"
 								class="tstbite-animation stretched-link rounded-6"> <img
-								src="./img/menu72.jpg" class="w-100" alt="Menu">
+								src="./resources/img/menu72.jpg" class="w-100" alt="Menu">
 							</a>
 							<figcaption class="mt-3 pb-3">
 								<a href="recipe-sidebar.html"
@@ -1013,7 +1016,7 @@
 						<figure class="my-3 my-md-4 tstbite-card">
 							<a href="recipe-sidebar.html"
 								class="tstbite-animation stretched-link rounded-6"> <img
-								src="./img/menu73.jpg" class="w-100" alt="Menu">
+								src="./resources/img/menu73.jpg" class="w-100" alt="Menu">
 							</a>
 							<figcaption class="mt-3 pb-3">
 								<a href="recipe-sidebar.html"
@@ -1026,7 +1029,7 @@
 						<figure class="my-3 my-md-4 tstbite-card">
 							<a href="recipe-sidebar.html"
 								class="tstbite-animation stretched-link rounded-6"> <img
-								src="./img/menu74.jpg" class="w-100" alt="Menu">
+								src="./resources/img/menu74.jpg" class="w-100" alt="Menu">
 							</a>
 							<figcaption class="mt-3 pb-3">
 								<a href="recipe-sidebar.html"
@@ -1039,7 +1042,7 @@
 						<figure class="my-3 my-md-4 tstbite-card">
 							<a href="recipe-sidebar.html"
 								class="tstbite-animation stretched-link rounded-6"> <img
-								src="./img/menu75.jpg" class="w-100" alt="Menu">
+								src="./resources/img/menu75.jpg" class="w-100" alt="Menu">
 							</a>
 							<figcaption class="mt-3 pb-3">
 								<a href="recipe-sidebar.html"
@@ -1052,7 +1055,7 @@
 						<figure class="my-3 my-md-4 tstbite-card">
 							<a href="recipe-sidebar.html"
 								class="tstbite-animation stretched-link rounded-6"> <img
-								src="./img/menu76.jpg" class="w-100" alt="Menu">
+								src="./resources/img/menu76.jpg" class="w-100" alt="Menu">
 							</a>
 							<figcaption class="mt-3 pb-3">
 								<a href="recipe-sidebar.html"
@@ -1065,7 +1068,7 @@
 						<figure class="my-3 my-md-4 tstbite-card">
 							<a href="recipe-sidebar.html"
 								class="tstbite-animation stretched-link rounded-6"> <img
-								src="./img/menu77.jpg" class="w-100" alt="Menu">
+								src="./resources/img/menu77.jpg" class="w-100" alt="Menu">
 							</a>
 							<figcaption class="mt-3 pb-3">
 								<a href="recipe-sidebar.html"
@@ -1078,7 +1081,7 @@
 						<figure class="my-3 my-md-4 tstbite-card">
 							<a href="recipe-sidebar.html"
 								class="tstbite-animation stretched-link rounded-6"> <img
-								src="./img/menu78.jpg" class="w-100" alt="Menu">
+								src="./resources/img/menu78.jpg" class="w-100" alt="Menu">
 							</a>
 							<figcaption class="mt-3 pb-3">
 								<a href="recipe-sidebar.html"
@@ -1091,7 +1094,7 @@
 						<figure class="my-3 my-md-4 tstbite-card">
 							<a href="recipe-sidebar.html"
 								class="tstbite-animation stretched-link rounded-6"> <img
-								src="./img/menu79.jpg" class="w-100" alt="Menu">
+								src="./resources/img/menu79.jpg" class="w-100" alt="Menu">
 							</a>
 							<figcaption class="mt-3 pb-3">
 								<a href="recipe-sidebar.html"
@@ -1104,7 +1107,7 @@
 						<figure class="my-3 my-md-4 tstbite-card">
 							<a href="recipe-sidebar.html"
 								class="tstbite-animation stretched-link rounded-6"> <img
-								src="./img/menu80.jpg" class="w-100" alt="Menu">
+								src="./resources/img/menu80.jpg" class="w-100" alt="Menu">
 							</a>
 							<figcaption class="mt-3 pb-3">
 								<a href="recipe-sidebar.html"
@@ -1117,7 +1120,7 @@
 						<figure class="my-3 my-md-4 tstbite-card">
 							<a href="recipe-sidebar.html"
 								class="tstbite-animation stretched-link rounded-6"> <img
-								src="./img/menu81.jpg" class="w-100" alt="Menu">
+								src="./resources/img/menu81.jpg" class="w-100" alt="Menu">
 							</a>
 							<figcaption class="mt-3 pb-3">
 								<a href="recipe-sidebar.html"
@@ -1130,7 +1133,7 @@
 						<figure class="my-3 my-md-4 tstbite-card">
 							<a href="recipe-sidebar.html"
 								class="tstbite-animation stretched-link rounded-6"> <img
-								src="./img/menu82.jpg" class="w-100" alt="Menu">
+								src="./resources/img/menu82.jpg" class="w-100" alt="Menu">
 							</a>
 							<figcaption class="mt-3 pb-3">
 								<a href="recipe-sidebar.html"
@@ -1143,7 +1146,7 @@
 						<figure class="my-3 my-md-4 tstbite-card">
 							<a href="recipe-sidebar.html"
 								class="tstbite-animation stretched-link rounded-6"> <img
-								src="./img/menu83.jpg" class="w-100" alt="Menu">
+								src="./resources/img/menu83.jpg" class="w-100" alt="Menu">
 							</a>
 							<figcaption class="mt-3 pb-3">
 								<a href="recipe-sidebar.html"
@@ -1166,7 +1169,7 @@
 					<div class="col-md-6">
 						<div class="tastebite-footer-contnet pr-0 pr-lg-5 mr-0 mr-md-5">
 							<a href="index.html"> <img
-								src="./img/brand4.svg" alt="Tastebite">
+								src="./resources/img/brand4.svg" alt="Tastebite">
 							</a>
 							<p class="mt-3 text-gray-300 pr-0 pr-lg-5 mr-0 mr-lg-4">"On
 								the other hand, we denounce with righteous indignation and
@@ -1303,17 +1306,17 @@
 		</footer>
 	</section>
 
-	<script src="./js/bootstrap.bundle.min.js.다운로드"
+	<script src="./resources/js/bootstrap.bundle.min.js.다운로드"
 		type="text/javascript"></script>
-	<script src="./js/html5.min.js.다운로드" type="text/javascript"></script>
-	<script src="./js/sticky.min.js.다운로드" type="text/javascript"></script>
-	<script src="./js/swiper-bundle.min.js.다운로드"
+	<script src="./resources/js/html5.min.js.다운로드" type="text/javascript"></script>
+	<script src="./resources/js/sticky.min.js.다운로드" type="text/javascript"></script>
+	<script src="./resources/js/swiper-bundle.min.js.다운로드"
 		type="text/javascript"></script>
-	<script src="./js/masonry.min.js.다운로드"
+	<script src="./resources/js/masonry.min.js.다운로드"
 		type="text/javascript"></script>
-	<script src="./js/tastebite-scripts.js.다운로드"
+	<script src="./resources/js/tastebite-scripts.js.다운로드"
 		type="text/javascript"></script>
-	<script defer="" src="./js/beacon.min.js.다운로드"
+	<script defer="" src="./resources/js/beacon.min.js.다운로드"
 		data-cf-beacon="{&quot;rayId&quot;:&quot;6a50cadb99da0af4&quot;,&quot;version&quot;:&quot;2021.10.0&quot;,&quot;r&quot;:1,&quot;token&quot;:&quot;9ae02b4a12234f118cf01e6f25c04e9d&quot;,&quot;si&quot;:100}"></script>
 
 </body>
