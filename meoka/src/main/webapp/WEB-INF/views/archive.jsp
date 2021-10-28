@@ -12,7 +12,7 @@
 <meta name="author" content="Tastebite">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, maximum-scale=1">
-<title>Tastebite - Category</title>
+<title> - Category</title>
 <link
 	href="https://fabrx.co/preview/tastebite/assets/images/favicon.ico"
 	rel="shortcut icon" type="image/x-icon">
