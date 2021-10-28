@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <!-- saved from url=(0047)https://fabrx.co/preview/tastebite/archive.html -->
 <html dir="ltr" lang="en-US">
@@ -14,7 +17,7 @@
 	href="https://fabrx.co/preview/tastebite/assets/images/favicon.ico"
 	rel="shortcut icon" type="image/x-icon">
 
-<link href="./archive_files/tastebite-styles.css" rel="stylesheet"
+<link href="./resources/css/resources/img/tastebite-styles.css" rel="stylesheet"
 	type="text/css" media="all">
 </head>
 <body>
@@ -26,7 +29,7 @@
 				<nav class="navbar navbar-expand-lg has-header-inner px-0">
 					<a class="navbar-brand"
 						href="https://fabrx.co/preview/tastebite/index.html"> <img
-						src="./archive_files/brand4.svg" style="max-width: 161px;"
+						src="./resources/img/brand4.svg" style="max-width: 161px;"
 						alt="Tastebite">
 					</a>
 					<div
@@ -39,7 +42,7 @@
 </svg>
 						</a> <a href="https://fabrx.co/preview/tastebite/archive.html#0"
 							class="ml-4 ml-md-4 mr-2 mr-md-0 circle"><img
-							src="./archive_files/avatar1.png" alt="Avatar"></a>
+							src="./resources/img/avatar1.png" alt="Avatar"></a>
 					</div>
 					<button class="navbar-toggler pr-0 ml-2 ml-md-3" type="button"
 						data-toggle="collapse" data-target="#menu-4"
@@ -134,14 +137,14 @@
 					<input type="text" name="Search" placeholder="Search"
 						class="form-control" id="Search">
 					<button type="button">
-						<img src="./archive_files/close.svg" alt="img">
+						<img src="./resources/img/close.svg" alt="img">
 					</button>
 				</div>
 				<div class="search-results" id="SearchList">
 					<div class="tstbite-search-list">
 						<a href="https://fabrx.co/preview/tastebite/archive.html#0">
 							<figure>
-								<img src="./archive_files/menu111.png" class="rounded-circle"
+								<img src="./resources/img/menu111.png" class="rounded-circle"
 									alt="Menu">
 							</figure>
 							<div class="tstbite-search-name">
@@ -152,7 +155,7 @@
 					<div class="tstbite-search-list">
 						<a href="https://fabrx.co/preview/tastebite/archive.html#0">
 							<figure>
-								<img src="./archive_files/menu112.jpg" class="rounded-2"
+								<img src="./resources/img/menu112.jpg" class="rounded-2"
 									alt="Menu">
 							</figure>
 							<div class="tstbite-search-name">
@@ -163,7 +166,7 @@
 					<div class="tstbite-search-list">
 						<a href="https://fabrx.co/preview/tastebite/archive.html#0">
 							<figure>
-								<img src="./archive_files/menu113.jpg" class="rounded-2"
+								<img src="./resources/img/menu113.jpg" class="rounded-2"
 									alt="Menu">
 							</figure>
 							<div class="tstbite-search-name">
@@ -174,7 +177,7 @@
 					<div class="tstbite-search-list">
 						<a href="https://fabrx.co/preview/tastebite/archive.html#0">
 							<figure>
-								<img src="./archive_files/menu114.jpg" class="rounded-2"
+								<img src="./resources/img/menu114.jpg" class="rounded-2"
 									alt="Menu">
 							</figure>
 							<div class="tstbite-search-name">
@@ -185,7 +188,7 @@
 					<div class="tstbite-search-list">
 						<a href="https://fabrx.co/preview/tastebite/archive.html#0">
 							<figure>
-								<img src="./archive_files/menu115.jpg" class="rounded-2"
+								<img src="./resources/img/menu115.jpg" class="rounded-2"
 									alt="Menu">
 							</figure>
 							<div class="tstbite-search-name">
@@ -196,7 +199,7 @@
 					<div class="tstbite-search-list">
 						<a href="https://fabrx.co/preview/tastebite/archive.html#0">
 							<figure>
-								<img src="./archive_files/menu116.jpg" class="rounded-2"
+								<img src="./resources/img/menu116.jpg" class="rounded-2"
 									alt="Menu">
 							</figure>
 							<div class="tstbite-search-name">
@@ -214,7 +217,7 @@
 		</div>
 
 		<section class="tstbite-components py-0 text-center">
-			<img src="./archive_files/banner1.jpg" class="w-100" alt="Banner">
+			<img src="./resources/img/banner1.jpg" class="w-100" alt="Banner">
 		</section>
 		<div class="container">
 
@@ -242,7 +245,7 @@
 						<figure class="my-3 my-md-4 tstbite-card">
 							<a href="https://fabrx.co/preview/tastebite/archive.html#0"
 								class="tstbite-animation stretched-link rounded-6"> <img
-								src="./archive_files/menu117.jpg" class="w-100" alt="Menu">
+								src="./resources/img/menu117.jpg" class="w-100" alt="Menu">
 							</a>
 							<figcaption class="mt-2">
 								<a href="https://fabrx.co/preview/tastebite/archive.html#0"
@@ -255,7 +258,7 @@
 						<figure class="my-3 my-md-4 tstbite-card">
 							<a href="https://fabrx.co/preview/tastebite/archive.html#0"
 								class="tstbite-animation stretched-link rounded-6"> <img
-								src="./archive_files/menu118.jpg" class="w-100" alt="Menu">
+								src="./resources/img/menu118.jpg" class="w-100" alt="Menu">
 							</a>
 							<figcaption class="mt-2">
 								<a href="https://fabrx.co/preview/tastebite/archive.html#0"
@@ -268,7 +271,7 @@
 						<figure class="my-3 my-md-4 tstbite-card">
 							<a href="https://fabrx.co/preview/tastebite/archive.html#0"
 								class="tstbite-animation stretched-link rounded-6"> <img
-								src="./archive_files/menu119.jpg" class="w-100" alt="Menu">
+								src="./resources/img/menu119.jpg" class="w-100" alt="Menu">
 							</a>
 							<figcaption class="mt-2">
 								<a href="https://fabrx.co/preview/tastebite/archive.html#0"
@@ -281,7 +284,7 @@
 						<figure class="my-3 my-md-4 tstbite-card">
 							<a href="https://fabrx.co/preview/tastebite/archive.html#0"
 								class="tstbite-animation stretched-link rounded-6"> <img
-								src="./archive_files/menu120.jpg" class="w-100" alt="Menu">
+								src="./resources/img/menu120.jpg" class="w-100" alt="Menu">
 							</a>
 							<figcaption class="mt-2">
 								<a href="https://fabrx.co/preview/tastebite/archive.html#0"
@@ -294,7 +297,7 @@
 						<figure class="my-3 my-md-4 tstbite-card">
 							<a href="https://fabrx.co/preview/tastebite/archive.html#0"
 								class="tstbite-animation stretched-link rounded-6"> <img
-								src="./archive_files/menu121.jpg" class="w-100" alt="Menu">
+								src="./resources/img/menu121.jpg" class="w-100" alt="Menu">
 							</a>
 							<figcaption class="mt-2">
 								<a href="https://fabrx.co/preview/tastebite/archive.html#0"
@@ -307,7 +310,7 @@
 						<figure class="my-3 my-md-4 tstbite-card">
 							<a href="https://fabrx.co/preview/tastebite/archive.html#0"
 								class="tstbite-animation stretched-link rounded-6"> <img
-								src="./archive_files/menu122.jpg" class="w-100" alt="Menu">
+								src="./resources/img/menu122.jpg" class="w-100" alt="Menu">
 							</a>
 							<figcaption class="mt-2">
 								<a href="https://fabrx.co/preview/tastebite/archive.html#0"
@@ -320,7 +323,7 @@
 						<figure class="my-3 my-md-4 tstbite-card">
 							<a href="https://fabrx.co/preview/tastebite/archive.html#0"
 								class="tstbite-animation stretched-link rounded-6"> <img
-								src="./archive_files/menu123.jpg" class="w-100" alt="Menu">
+								src="./resources/img/menu123.jpg" class="w-100" alt="Menu">
 							</a>
 							<figcaption class="mt-2">
 								<a href="https://fabrx.co/preview/tastebite/archive.html#0"
@@ -333,7 +336,7 @@
 						<figure class="my-3 my-md-4 tstbite-card">
 							<a href="https://fabrx.co/preview/tastebite/archive.html#0"
 								class="tstbite-animation stretched-link rounded-6"> <img
-								src="./archive_files/menu124.jpg" class="w-100" alt="Menu">
+								src="./resources/img/menu124.jpg" class="w-100" alt="Menu">
 							</a>
 							<figcaption class="mt-2">
 								<a href="https://fabrx.co/preview/tastebite/archive.html#0"
@@ -346,7 +349,7 @@
 						<figure class="my-3 my-md-4 tstbite-card">
 							<a href="https://fabrx.co/preview/tastebite/archive.html#0"
 								class="tstbite-animation stretched-link rounded-6"> <img
-								src="./archive_files/menu125.jpg" class="w-100" alt="Menu">
+								src="./resources/img/menu125.jpg" class="w-100" alt="Menu">
 							</a>
 							<figcaption class="mt-2">
 								<a href="https://fabrx.co/preview/tastebite/archive.html#0"
@@ -359,7 +362,7 @@
 						<figure class="my-3 my-md-4 tstbite-card">
 							<a href="https://fabrx.co/preview/tastebite/archive.html#0"
 								class="tstbite-animation stretched-link rounded-6"> <img
-								src="./archive_files/menu126.jpg" class="w-100" alt="Menu">
+								src="./resources/img/menu126.jpg" class="w-100" alt="Menu">
 							</a>
 							<figcaption class="mt-2">
 								<a href="https://fabrx.co/preview/tastebite/archive.html#0"
@@ -372,7 +375,7 @@
 						<figure class="my-3 my-md-4 tstbite-card">
 							<a href="https://fabrx.co/preview/tastebite/archive.html#0"
 								class="tstbite-animation stretched-link rounded-6"> <img
-								src="./archive_files/menu127.jpg" class="w-100" alt="Menu">
+								src="./resources/img/menu127.jpg" class="w-100" alt="Menu">
 							</a>
 							<figcaption class="mt-2">
 								<a href="https://fabrx.co/preview/tastebite/archive.html#0"
@@ -385,7 +388,7 @@
 						<figure class="my-3 my-md-4 tstbite-card">
 							<a href="https://fabrx.co/preview/tastebite/archive.html#0"
 								class="tstbite-animation stretched-link rounded-6"> <img
-								src="./archive_files/menu128.jpg" class="w-100" alt="Menu">
+								src="./resources/img/menu128.jpg" class="w-100" alt="Menu">
 							</a>
 							<figcaption class="mt-2">
 								<a href="https://fabrx.co/preview/tastebite/archive.html#0"
@@ -398,7 +401,7 @@
 						<figure class="my-3 my-md-4 tstbite-card">
 							<a href="https://fabrx.co/preview/tastebite/archive.html#0"
 								class="tstbite-animation stretched-link rounded-6"> <img
-								src="./archive_files/menu129.jpg" class="w-100" alt="Menu">
+								src="./resources/img/menu129.jpg" class="w-100" alt="Menu">
 							</a>
 							<figcaption class="mt-2">
 								<a href="https://fabrx.co/preview/tastebite/archive.html#0"
@@ -411,7 +414,7 @@
 						<figure class="my-3 my-md-4 tstbite-card">
 							<a href="https://fabrx.co/preview/tastebite/archive.html#0"
 								class="tstbite-animation stretched-link rounded-6"> <img
-								src="./archive_files/menu130.jpg" class="w-100" alt="Menu">
+								src="./resources/img/menu130.jpg" class="w-100" alt="Menu">
 							</a>
 							<figcaption class="mt-2">
 								<a href="https://fabrx.co/preview/tastebite/archive.html#0"
@@ -424,7 +427,7 @@
 						<figure class="my-3 my-md-4 tstbite-card">
 							<a href="https://fabrx.co/preview/tastebite/archive.html#0"
 								class="tstbite-animation stretched-link rounded-6"> <img
-								src="./archive_files/menu131.jpg" class="w-100" alt="Menu">
+								src="./resources/img/menu131.jpg" class="w-100" alt="Menu">
 							</a>
 							<figcaption class="mt-2">
 								<a href="https://fabrx.co/preview/tastebite/archive.html#0"
@@ -437,7 +440,7 @@
 						<figure class="my-3 my-md-4 tstbite-card">
 							<a href="https://fabrx.co/preview/tastebite/archive.html#0"
 								class="tstbite-animation stretched-link rounded-6"> <img
-								src="./archive_files/menu132.jpg" class="w-100" alt="Menu">
+								src="./resources/img/menu132.jpg" class="w-100" alt="Menu">
 							</a>
 							<figcaption class="mt-2">
 								<a href="https://fabrx.co/preview/tastebite/archive.html#0"
@@ -450,7 +453,7 @@
 						<figure class="my-3 my-md-4 tstbite-card">
 							<a href="https://fabrx.co/preview/tastebite/archive.html#0"
 								class="tstbite-animation stretched-link rounded-6"> <img
-								src="./archive_files/menu133.jpg" class="w-100" alt="Menu">
+								src="./resources/img/menu133.jpg" class="w-100" alt="Menu">
 							</a>
 							<figcaption class="mt-2">
 								<a href="https://fabrx.co/preview/tastebite/archive.html#0"
@@ -463,7 +466,7 @@
 						<figure class="my-3 my-md-4 tstbite-card">
 							<a href="https://fabrx.co/preview/tastebite/archive.html#0"
 								class="tstbite-animation stretched-link rounded-6"> <img
-								src="./archive_files/menu134.jpg" class="w-100" alt="Menu">
+								src="./resources/img/menu134.jpg" class="w-100" alt="Menu">
 							</a>
 							<figcaption class="mt-2">
 								<a href="https://fabrx.co/preview/tastebite/archive.html#0"
@@ -476,7 +479,7 @@
 						<figure class="my-3 my-md-4 tstbite-card">
 							<a href="https://fabrx.co/preview/tastebite/archive.html#0"
 								class="tstbite-animation stretched-link rounded-6"> <img
-								src="./archive_files/menu135.jpg" class="w-100" alt="Menu">
+								src="./resources/img/menu135.jpg" class="w-100" alt="Menu">
 							</a>
 							<figcaption class="mt-2">
 								<a href="https://fabrx.co/preview/tastebite/archive.html#0"
@@ -489,7 +492,7 @@
 						<figure class="my-3 my-md-4 tstbite-card">
 							<a href="https://fabrx.co/preview/tastebite/archive.html#0"
 								class="tstbite-animation stretched-link rounded-6"> <img
-								src="./archive_files/menu136.jpg" class="w-100" alt="Menu">
+								src="./resources/img/menu136.jpg" class="w-100" alt="Menu">
 							</a>
 							<figcaption class="mt-2">
 								<a href="https://fabrx.co/preview/tastebite/archive.html#0"
@@ -502,7 +505,7 @@
 						<figure class="my-3 my-md-4 tstbite-card">
 							<a href="https://fabrx.co/preview/tastebite/archive.html#0"
 								class="tstbite-animation stretched-link rounded-6"> <img
-								src="./archive_files/menu137.jpg" class="w-100" alt="Menu">
+								src="./resources/img/menu137.jpg" class="w-100" alt="Menu">
 							</a>
 							<figcaption class="mt-2">
 								<a href="https://fabrx.co/preview/tastebite/archive.html#0"
@@ -515,11 +518,11 @@
 						<figure class="my-3 my-md-4 tstbite-card">
 							<a href="https://fabrx.co/preview/tastebite/archive.html#0"
 								class="tstbite-animation stretched-link rounded-6"> <img
-								src="./archive_files/menu138.jpg" class="w-100" alt="Menu">
+								src="./resources/img/menu138.jpg" class="w-100" alt="Menu">
 							</a>
 							<figcaption class="mt-2">
 								<a href="https://fabrx.co/preview/tastebite/archive.html#0"
-									class="text-black d-block mt-1 font-weight-semibold big">M&amp;M’s
+									class="text-black d-block mt-1 font-weight-semibold big">M&amp;Mâs
 									Chocolate Cake</a>
 							</figcaption>
 						</figure>
@@ -528,7 +531,7 @@
 						<figure class="my-3 my-md-4 tstbite-card">
 							<a href="https://fabrx.co/preview/tastebite/archive.html#0"
 								class="tstbite-animation stretched-link rounded-6"> <img
-								src="./archive_files/menu139.jpg" class="w-100" alt="Menu">
+								src="./resources/img/menu139.jpg" class="w-100" alt="Menu">
 							</a>
 							<figcaption class="mt-2">
 								<a href="https://fabrx.co/preview/tastebite/archive.html#0"
@@ -541,7 +544,7 @@
 						<figure class="my-3 my-md-4 tstbite-card">
 							<a href="https://fabrx.co/preview/tastebite/archive.html#0"
 								class="tstbite-animation stretched-link rounded-6"> <img
-								src="./archive_files/menu140.jpg" class="w-100" alt="Menu">
+								src="./resources/img/menu140.jpg" class="w-100" alt="Menu">
 							</a>
 							<figcaption class="mt-2">
 								<a href="https://fabrx.co/preview/tastebite/archive.html#0"
@@ -565,7 +568,7 @@
 					<div class="col-md-6">
 						<div class="tastebite-footer-contnet pr-0 pr-lg-5 mr-0 mr-md-5">
 							<a href="https://fabrx.co/preview/tastebite/index.html"> <img
-								src="./archive_files/brand4.svg" alt="Tastebite">
+								src="./resources/img/brand4.svg" alt="Tastebite">
 							</a>
 							<p class="mt-3 text-gray-300 pr-0 pr-lg-5 mr-0 mr-lg-4">"On
 								the other hand, we denounce with righteous indignation and
@@ -647,7 +650,7 @@
 				<hr>
 				<div class="row pb-4 pt-2 align-items-center">
 					<div class="col-md-6 order-2 order-md-0">
-						<p class="text-gray-300 small text-left mb-0">© 2020 Tastebite
+						<p class="text-gray-300 small text-left mb-0">Â© 2020 Tastebite
 							- All rights reserved</p>
 					</div>
 					<div class="col-md-6">
@@ -702,17 +705,17 @@
 		</footer>
 	</section>
 
-	<script src="./archive_files/bootstrap.bundle.min.js.다운로드"
+	<script src="./resources/js/bootstrap.bundle.min.js"
 		type="text/javascript"></script>
-	<script src="./archive_files/html5.min.js.다운로드" type="text/javascript"></script>
-	<script src="./archive_files/sticky.min.js.다운로드" type="text/javascript"></script>
-	<script src="./archive_files/swiper-bundle.min.js.다운로드"
+	<script src="./resources/js/html5.min.js" type="text/javascript"></script>
+	<script src="./resources/js/sticky.min.js" type="text/javascript"></script>
+	<script src="./resources/js/swiper-bundle.min.js"
 		type="text/javascript"></script>
-	<script src="./archive_files/masonry.min.js.다운로드"
+	<script src="./resources/js/masonry.min.js"
 		type="text/javascript"></script>
-	<script src="./archive_files/tastebite-scripts.js.다운로드"
+	<script src="./resources/js/tastebite-scripts.js"
 		type="text/javascript"></script>
-	<script defer="" src="./archive_files/beacon.min.js.다운로드"
+	<script defer="" src="./resources/js/beacon.min.js"
 		data-cf-beacon="{&quot;rayId&quot;:&quot;6a50cadedefc0af4&quot;,&quot;version&quot;:&quot;2021.10.0&quot;,&quot;r&quot;:1,&quot;token&quot;:&quot;9ae02b4a12234f118cf01e6f25c04e9d&quot;,&quot;si&quot;:100}"></script>
 
 </body>
