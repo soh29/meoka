@@ -7,25 +7,24 @@
 	<!-- id 속성은 DAO 의 메소드와 같아야 한다. 여기의 boardVO 는 mybatis-confg.xml 에 Alias 되어 
 		있습니다. -->
 	<select id="selectBoardList" resultType="org.zerock.domain.BoardVO">
-		SELECT NUM
-		, NAME
-		, TITLE
-		, CONTENT
-		, READCOUNT
-		, WRITEDATE
+		SELECT RECIPENO
+		, MEMEBERID
+		, FOODNO
+		, RECIPENAME
+		, REGDATE
+		, COOKINGTIME
+		,PORTION
+		,RANKNO
 		FROM BOARD
-		ORDER BY NUM DESC
+		ORDER BY RECIPENO DESC
 	</select>
 	
 	<select id="selectBoardList2" resultType="org.zerock.domain.BoardVO">
-		SELECT NUM
-		, NAME
-		, TITLE
-		, CONTENT
-		, READCOUNT
-		, WRITEDATE
+		SELECT RECIPENO
+		, RECIPEDETAILNO
+		, RECIPEDETAIL
+		, PHOTO
 		FROM BOARD
-		WHERE NUM=2
-		ORDER BY NUM DESC
+		ORDER BY RECIPEDETAILNO DESC
 	</select>
 </mapper>
