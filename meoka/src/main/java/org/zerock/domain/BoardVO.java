@@ -1,75 +1,35 @@
 package org.zerock.domain;
 
-import java.util.Arrays;
 import java.util.Date;
 
+import lombok.Data;
+
+@Data
 public class BoardVO {
-	
-	private Integer bno;
-	private String title;
-	private String content;
-	private String writer;
-	private Date regdate;
-	private int viewcnt;
-	private int replycnt;
-	
-	private String[] files;
-	
-		
-	public String[] getFiles() {
-		return files;
-	}
-	public void setFiles(String[] files) {
-		this.files = files;
-	}
-	public int getReplycnt() {
-		return replycnt;
-	}
-	public void setReplycnt(int replycnt) {
-		this.replycnt = replycnt;
-	}
-	public Integer getBno() {
-		return bno;
-	}
-	public void setBno(Integer bno) {
-		this.bno = bno;
-	}
-	public String getTitle() {
-		return title;
-	}
-	public void setTitle(String title) {
-		this.title = title;
-	}
-	public String getContent() {
-		return content;
-	}
-	public void setContent(String content) {
-		this.content = content;
-	}
-	public String getWriter() {
-		return writer;
-	}
-	public void setWriter(String writer) {
-		this.writer = writer;
-	}
-	public Date getRegdate() {
-		return regdate;
-	}
-	public void setRegdate(Date regdate) {
-		this.regdate = regdate;
-	}
-	public int getViewcnt() {
-		return viewcnt;
-	}
-	public void setViewcnt(int viewcnt) {
-		this.viewcnt = viewcnt;
-	}
-	@Override
-	public String toString() {
-		return "BoardVO [bno=" + bno + ", title=" + title + ", content="
-				+ content + ", writer=" + writer + ", regdate=" + regdate
-				+ ", viewcnt=" + viewcnt + ", replycnt=" + replycnt
-				+ ", files=" + Arrays.toString(files) + "]";
-	}
+	private Integer RECIPENO;
+	private String MEMBERID;
+	private Integer FOODNO;
+	private String RECIPENAME;
+	private Date REGDATE;
+	private String COOKINGTIME;
+	private String PORTION;
+	private Integer RANKNO;
+
+	/*
+	 * public Integer getNum() { return num; } public void setNum(Integer num) {
+	 * this.num = num; } public String getName() { return name; } public void
+	 * setName(String name) { this.name = name; } public String getTitle() { return
+	 * title; } public void setTitle(String title) { this.title = title; } public
+	 * String getContent() { return content; } public void setContent(String
+	 * content) { this.content = content; } public Integer getReadCount() { return
+	 * readCount; } public void setReadCount(Integer readCount) { this.readCount =
+	 * readCount; } public Date getWriteDate() { return writeDate; } public void
+	 * setWriteDate(Date writeDate) { this.writeDate = writeDate; }
+	 */
+	/*
+	 * @Override public String toString() { return "BoardVO [num=" + num + ", name="
+	 * + name + ", title=" + title + ", content=" + content + ", readCount=" +
+	 * readCount + ", writeDate=" + writeDate + "]"; }
+	 */
 
 }
