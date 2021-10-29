@@ -13,20 +13,26 @@
 	<thead>
 	<tr>
 		<th>번호</th>
-		<th>이름</th>
-		<th>제목</th>
-		<th>조회</th>
+		<th>아이디</th>
+		<th>음식번호</th>
+		<th>레시피이름</th>
 		<th>작성일</th>
+		<th>요리시간</th>
+		<th>작성일</th>
+		<th>수준</th>
 	</tr>
 	</thead>
 	<tbody>
 		<c:forEach var="item" items="${list}">
 		<tr>
-			<td>${item.num}</td>
-			<td>${item.name}</td>
-			<td>${item.title}</td>
-			<td>${item.readCount}</td>
-			<td>${item.writeDate}</td>
+			<td>${item.RECIPENO}</td>
+			<td>${item.MEMBERID}</td>
+			<td>${item.FOODNO}</td>
+			<td>${item.RECIPENAME}</td>
+			<td>${item.REGDATE}</td>
+			<td>${item.COOKINGTIME}</td>
+			<td>${item.PROTION}</td>
+			<td>${item.RANKNO}</td>
 		</tr>
 		</c:forEach>
 	</tbody>

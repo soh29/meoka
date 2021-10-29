@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <!DOCTYPE html>
 <!-- saved from url=(0057)recipe-full-width.html -->
@@ -17,9 +18,9 @@
 	href="assets/images/favicon.ico"
 	rel="shortcut icon" type="image/x-icon">
 
-<link href="./resources/css/swiper-bundle.min.css"
+<link href="../resources/css/swiper-bundle.min.css"
 	rel="stylesheet" type="text/css" media="all">
-<link href="./resources/css/tastebite-styles.css"
+<link href="../resources/css/tastebite-styles.css"
 	rel="stylesheet" type="text/css" media="all">
 </head>
 <body>
@@ -31,7 +32,7 @@
 				<nav class="navbar navbar-expand-lg has-header-inner px-0">
 					<a class="navbar-brand"
 						href="index.html"> <img
-						src="./resources/img/brand4.svg"
+						src="../resources/img/brand4.svg"
 						style="max-width: 161px;" alt="Tastebite">
 					</a>
 					<div
@@ -45,7 +46,7 @@
 						</a> <a
 							href="recipe-full-width.html#0"
 							class="ml-4 ml-md-4 mr-2 mr-md-0 circle"><img
-							src="./resources/img/avatar1.png" alt="Avatar"></a>
+							src="../resources/img/avatar1.png" alt="Avatar"></a>
 					</div>
 					<button class="navbar-toggler pr-0 ml-2 ml-md-3" type="button"
 						data-toggle="collapse" data-target="#menu-4"
@@ -140,7 +141,7 @@
 					<input type="text" name="Search" placeholder="Search"
 						class="form-control" id="Search">
 					<button type="button">
-						<img src="./resources/img/close.svg" alt="img">
+						<img src="../resources/img/close.svg" alt="img">
 					</button>
 				</div>
 				<div class="search-results" id="SearchList">
@@ -148,7 +149,7 @@
 						<a
 							href="recipe-full-width.html#0">
 							<figure>
-								<img src="./resources/img/menu111.png"
+								<img src="../resources/img/menu111.png"
 									class="rounded-circle" alt="Menu">
 							</figure>
 							<div class="tstbite-search-name">
@@ -160,7 +161,7 @@
 						<a
 							href="recipe-full-width.html#0">
 							<figure>
-								<img src="./resources/img/menu112.jpg"
+								<img src="../resources/img/menu112.jpg"
 									class="rounded-2" alt="Menu">
 							</figure>
 							<div class="tstbite-search-name">
@@ -172,7 +173,7 @@
 						<a
 							href="recipe-full-width.html#0">
 							<figure>
-								<img src="./resources/img/menu113.jpg"
+								<img src="../resources/img/menu113.jpg"
 									class="rounded-2" alt="Menu">
 							</figure>
 							<div class="tstbite-search-name">
@@ -184,7 +185,7 @@
 						<a
 							href="recipe-full-width.html#0">
 							<figure>
-								<img src="./resources/img/menu114.jpg"
+								<img src="../resources/img/menu114.jpg"
 									class="rounded-2" alt="Menu">
 							</figure>
 							<div class="tstbite-search-name">
@@ -196,7 +197,7 @@
 						<a
 							href="recipe-full-width.html#0">
 							<figure>
-								<img src="./resources/img/menu115.jpg"
+								<img src="../resources/img/menu115.jpg"
 									class="rounded-2" alt="Menu">
 							</figure>
 							<div class="tstbite-search-name">
@@ -208,7 +209,7 @@
 						<a
 							href="recipe-full-width.html#0">
 							<figure>
-								<img src="./resources/img/menu116.jpg"
+								<img src="../resources/img/menu116.jpg"
 									class="rounded-2" alt="Menu">
 							</figure>
 							<div class="tstbite-search-name">
@@ -273,7 +274,7 @@
 				</div>
 				<div class="d-flex flex-wrap">
 					<div class="my-2 mr-4">
-						<img src="./resources/img/avatar11.png"
+						<img src="../resources/img/avatar11.png"
 							class="rounded-circle" alt="Avatar"> <small class="pl-1">Tricia
 							Albert</small>
 					</div>
@@ -321,7 +322,7 @@
 					<br>
 					<div
 						class="rounded-12 overflow-hidden position-relative tstbite-svg">
-						<img src="./resources/img/menu144.jpg" class="w-100"
+						<img src="../resources/img/menu144.jpg" class="w-100"
 							alt="Menu">
 						<div class="overlay-box">
 							<a href="javascript:void(0);"> <svg
@@ -509,7 +510,7 @@
 								<a
 									href="recipe-full-width.html#0"
 									class="tstbite-avatar align-self-start mr-3"><img
-									src="./resources/img/avatar4.png" alt="Avatar"></a>
+									src="../resources/img/avatar4.png" alt="Avatar"></a>
 								<div class="media-body">
 									<div class="pt-1 pb-3">
 										<h6 class="big inter-font font-weight-semibold">Jelanee
@@ -562,7 +563,7 @@
 										<a
 											href="recipe-full-width.html#0"
 											class="tstbite-avatar align-self-start mr-3"><img
-											src="./resources/img/avatar5.png" alt="Avatar"></a>
+											src="../resources/img/avatar5.png" alt="Avatar"></a>
 										<div class="media-body">
 											<div class="pt-1 pb-3">
 												<h6 class="big inter-font font-weight-semibold">Qiu Xun</h6>
@@ -614,7 +615,7 @@
 										<a
 											href="recipe-full-width.html#0"
 											class="tstbite-avatar align-self-start mr-3"><img
-											src="./resources/img/avatar6.png" alt="Avatar"></a>
+											src="../resources/img/avatar6.png" alt="Avatar"></a>
 										<div class="media-body">
 											<div class="pt-1 pb-3">
 												<h6 class="big inter-font font-weight-semibold">Noell
@@ -670,7 +671,7 @@
 								<a
 									href="recipe-full-width.html#0"
 									class="tstbite-avatar align-self-start mr-3"><img
-									src="./resources/img/avatar7.png" alt="Avatar"></a>
+									src="../resources/img/avatar7.png" alt="Avatar"></a>
 								<div class="media-body">
 									<div class="pt-1 pb-3">
 										<h6 class="big inter-font font-weight-semibold">Diane
@@ -723,7 +724,7 @@
 								<a
 									href="recipe-full-width.html#0"
 									class="tstbite-avatar align-self-start mr-3"><img
-									src="./resources/img/avatar8.png" alt="Avatar"></a>
+									src="../resources/img/avatar8.png" alt="Avatar"></a>
 								<div class="media-body">
 									<div class="pt-1 pb-3">
 										<h6 class="big inter-font font-weight-semibold">Malin
@@ -776,7 +777,7 @@
 								<a
 									href="recipe-full-width.html#0"
 									class="tstbite-avatar align-self-start mr-3"><img
-									src="./resources/img/avatar9.png" alt="Avatar"></a>
+									src="../resources/img/avatar9.png" alt="Avatar"></a>
 								<div class="media-body">
 									<div class="pt-1 pb-3">
 										<h6 class="big inter-font font-weight-semibold">Nayara
@@ -829,7 +830,7 @@
 								<a
 									href="recipe-full-width.html#0"
 									class="tstbite-avatar align-self-start mr-3"><img
-									src="./resources/img/avatar10.png" alt="Avatar"></a>
+									src="../resources/img/avatar10.png" alt="Avatar"></a>
 								<div class="media-body">
 									<div class="pt-1 pb-3">
 										<h6 class="big inter-font font-weight-semibold">Henk
@@ -909,7 +910,7 @@
 						<figure class="my-3 my-md-4 tstbite-card">
 							<a href="recipe-sidebar.html"
 								class="tstbite-animation stretched-link rounded-6"> <img
-								src="./resources/img/menu126.jpg" class="w-100"
+								src="../resources/img/menu126.jpg" class="w-100"
 								alt="Menu">
 							</a>
 							<figcaption class="mt-2">
@@ -923,7 +924,7 @@
 						<figure class="my-3 my-md-4 tstbite-card">
 							<a href="recipe-sidebar.html"
 								class="tstbite-animation stretched-link rounded-6"> <img
-								src="./resources/img/menu127.jpg" class="w-100"
+								src="../resources/img/menu127.jpg" class="w-100"
 								alt="Menu">
 							</a>
 							<figcaption class="mt-2">
@@ -937,7 +938,7 @@
 						<figure class="my-3 my-md-4 tstbite-card">
 							<a href="recipe-sidebar.html"
 								class="tstbite-animation stretched-link rounded-6"> <img
-								src="./resources/img/menu124.jpg" class="w-100"
+								src="../resources/img/menu124.jpg" class="w-100"
 								alt="Menu">
 							</a>
 							<figcaption class="mt-2">
@@ -951,7 +952,7 @@
 						<figure class="my-3 my-md-4 tstbite-card">
 							<a href="recipe-sidebar.html"
 								class="tstbite-animation stretched-link rounded-6"> <img
-								src="./resources/img/menu133.jpg" class="w-100"
+								src="../resources/img/menu133.jpg" class="w-100"
 								alt="Menu">
 							</a>
 							<figcaption class="mt-2">
@@ -965,7 +966,7 @@
 						<figure class="my-3 my-md-4 tstbite-card">
 							<a href="recipe-sidebar.html"
 								class="tstbite-animation stretched-link rounded-6"> <img
-								src="./resources/img/menu139.jpg" class="w-100"
+								src="../resources/img/menu139.jpg" class="w-100"
 								alt="Menu">
 							</a>
 							<figcaption class="mt-2">
@@ -979,7 +980,7 @@
 						<figure class="my-3 my-md-4 tstbite-card">
 							<a href="recipe-sidebar.html"
 								class="tstbite-animation stretched-link rounded-6"> <img
-								src="./resources/img/menu122.jpg" class="w-100"
+								src="../resources/img/menu122.jpg" class="w-100"
 								alt="Menu">
 							</a>
 							<figcaption class="mt-2">
@@ -993,7 +994,7 @@
 						<figure class="my-3 my-md-4 tstbite-card">
 							<a href="recipe-sidebar.html"
 								class="tstbite-animation stretched-link rounded-6"> <img
-								src="./resources/img/menu138.jpg" class="w-100"
+								src="../resources/img/menu138.jpg" class="w-100"
 								alt="Menu">
 							</a>
 							<figcaption class="mt-2">
@@ -1007,7 +1008,7 @@
 						<figure class="my-3 my-md-4 tstbite-card">
 							<a href="recipe-sidebar.html"
 								class="tstbite-animation stretched-link rounded-6"> <img
-								src="./resources/img/menu128.jpg" class="w-100"
+								src="../resources/img/menu128.jpg" class="w-100"
 								alt="Menu">
 							</a>
 							<figcaption class="mt-2">
@@ -1027,7 +1028,7 @@
 					<div class="col-md-6">
 						<div class="tastebite-footer-contnet pr-0 pr-lg-5 mr-0 mr-md-5">
 							<a href="index.html"> <img
-								src="./resources/img/brand4.svg" alt="Tastebite">
+								src="../resources/img/brand4.svg" alt="Tastebite">
 							</a>
 							<p class="mt-3 text-gray-300 pr-0 pr-lg-5 mr-0 mr-lg-4">"On
 								the other hand, we denounce with righteous indignation and
@@ -1168,19 +1169,19 @@
 		</footer>
 	</section>
 
-	<script src="./resources/js/bootstrap.bundle.min.js"
+	<script src="../resources/js/bootstrap.bundle.min.js"
 		type="text/javascript"></script>
-	<script src="./resources/js/html5.min.js"
+	<script src="../resources/js/html5.min.js"
 		type="text/javascript"></script>
-	<script src="./resources/js/sticky.min.js"
+	<script src="../resources/js/sticky.min.js"
 		type="text/javascript"></script>
-	<script src="./resources/js/swiper-bundle.min.js"
+	<script src="../resources/js/swiper-bundle.min.js"
 		type="text/javascript"></script>
-	<script src="./resources/js/masonry.min.js"
+	<script src="../resources/js/masonry.min.js"
 		type="text/javascript"></script>
-	<script src="./resources/js/tastebite-scripts.js"
+	<script src="../resources/js/tastebite-scripts.js"
 		type="text/javascript"></script>
-	<script defer="" src="./resources/js/beacon.min.js"
+	<script defer="" src="../resources/js/beacon.min.js"
 		data-cf-beacon="{&quot;rayId&quot;:&quot;6a50cd88dd72f8d7&quot;,&quot;version&quot;:&quot;2021.10.0&quot;,&quot;r&quot;:1,&quot;token&quot;:&quot;9ae02b4a12234f118cf01e6f25c04e9d&quot;,&quot;si&quot;:100}"></script>
 
 </body>
