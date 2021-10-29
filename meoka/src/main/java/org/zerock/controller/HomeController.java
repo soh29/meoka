@@ -36,4 +36,10 @@ public class HomeController {
 		return "index";
 	}
 	
+	@RequestMapping(value = "/home-v3", method = RequestMethod.GET)
+	public String homev3(Locale locale, Model model) {
+		logger.info("Welcome home! The client locale is {}.", locale);
+		return "home-v3";
+	}
+	
 }
