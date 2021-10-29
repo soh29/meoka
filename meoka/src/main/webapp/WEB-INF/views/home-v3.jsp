@@ -1478,9 +1478,9 @@
 		</footer>
 	</section>
 
-	<script src="./resources/js/bootstrap.bundle.min.js.다운로드"
+	<script src="./resources/js/bootstrap.bundle.min.js"
 		type="text/javascript"></script>
-	<script src="./resources/js/html5.min.js.다운로드" type="text/javascript"></script>
+	<script src="./resources/js/html5.min.js" type="text/javascript"></script>
 	<script src="./resources/js/sticky.min.js.다운로드" type="text/javascript"></script>
 	<script src="./resources/js/swiper-bundle.min.js.다운로드"
 		type="text/javascript"></script>
