@@ -1,27 +1,38 @@
 package org.zerock.domain;
 
+import java.util.Arrays;
 import java.util.Date;
 
-import org.springframework.stereotype.Component;
-
 public class BoardVO {
-	private Integer num;
-	private String name;
+	
+	private Integer bno;
 	private String title;
 	private String content;
-	private Integer readCount;
-	private Date writeDate;
-	public Integer getNum() {
-		return num;
+	private String writer;
+	private Date regdate;
+	private int viewcnt;
+	private int replycnt;
+	
+	private String[] files;
+	
+		
+	public String[] getFiles() {
+		return files;
 	}
-	public void setNum(Integer num) {
-		this.num = num;
+	public void setFiles(String[] files) {
+		this.files = files;
 	}
-	public String getName() {
-		return name;
+	public int getReplycnt() {
+		return replycnt;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public void setReplycnt(int replycnt) {
+		this.replycnt = replycnt;
+	}
+	public Integer getBno() {
+		return bno;
+	}
+	public void setBno(Integer bno) {
+		this.bno = bno;
 	}
 	public String getTitle() {
 		return title;
@@ -35,22 +46,30 @@ public class BoardVO {
 	public void setContent(String content) {
 		this.content = content;
 	}
-	public Integer getReadCount() {
-		return readCount;
+	public String getWriter() {
+		return writer;
 	}
-	public void setReadCount(Integer readCount) {
-		this.readCount = readCount;
+	public void setWriter(String writer) {
+		this.writer = writer;
 	}
-	public Date getWriteDate() {
-		return writeDate;
+	public Date getRegdate() {
+		return regdate;
 	}
-	public void setWriteDate(Date writeDate) {
-		this.writeDate = writeDate;
+	public void setRegdate(Date regdate) {
+		this.regdate = regdate;
+	}
+	public int getViewcnt() {
+		return viewcnt;
+	}
+	public void setViewcnt(int viewcnt) {
+		this.viewcnt = viewcnt;
 	}
 	@Override
 	public String toString() {
-		return "BoardVO [num=" + num + ", name=" + name + ", title=" + title + ", content=" + content + ", readCount="
-				+ readCount + ", writeDate=" + writeDate + "]";
+		return "BoardVO [bno=" + bno + ", title=" + title + ", content="
+				+ content + ", writer=" + writer + ", regdate=" + regdate
+				+ ", viewcnt=" + viewcnt + ", replycnt=" + replycnt
+				+ ", files=" + Arrays.toString(files) + "]";
 	}
 
 }
