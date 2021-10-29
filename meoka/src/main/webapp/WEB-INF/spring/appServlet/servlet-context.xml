@@ -45,4 +45,25 @@
 		
 	</interceptors>
 
+
+	<!-- lab begin -->
+	<beans:bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<beans:property name="maxUploadSize" value="10485760"></beans:property>
+	</beans:bean>
+
+	<beans:bean id="loginInterceptor"
+		class="org.zerock.interceptor.LoginInterceptor"></beans:bean>
+	
+	<interceptors>
+		<interceptor>
+			<mapping path="/user/loginPost" />
+			<beans:ref bean="loginInterceptor" />
+		</interceptor>
+	</interceptors>
+	<!-- lab end -->
+
+
+>>>>>>> branch 'develop' of https://github.com/soh29/meoka
+
 </beans:beans>

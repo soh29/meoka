@@ -88,7 +88,7 @@
 							</a>
 								<div class="dropdown-menu" aria-labelledby="RecipePage">
 									<a class="dropdown-item"
-										href="recipe-full-width.html">Full
+										href="recipe/recipe-full-width.jsp">Full
 										Width</a> <a class="dropdown-item"
 										href="recipe-sidebar.html">Sidebar</a>
 								</div></li>
