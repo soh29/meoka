@@ -134,7 +134,7 @@
 								<div class="id_wrap">
 									<div class="pw_name"></div>
 									<div class="id_input_box">
-										<input name="password" class="form-control border"
+										<input name="confirmPassword" class="form-control border"
 											placeholder="비밀번호 확인" style="margin: 20px 20px 20px 0;height: 30px;">
 									</div>
 
