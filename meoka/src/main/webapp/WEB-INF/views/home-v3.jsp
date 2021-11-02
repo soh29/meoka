@@ -156,7 +156,7 @@
 							</ul>
 							<div class="text-center login-footer">
 								<p>
-									Don’t have an account? <a href="javascript:void(0)">Sign up</a>
+									Don’t have an account? <a href="user/join">Sign up</a>
 								</p>
 							</div>
 						</div>
