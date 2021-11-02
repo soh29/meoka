@@ -8,7 +8,9 @@ public class UserVO {
   private int upoint;
 
   public String getUid() {
+	  
     return uid;
+    
   }
 
   public void setUid(String uid) {
