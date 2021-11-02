@@ -18,7 +18,7 @@ import org.zerock.service.BoardService;
 @Controller
 @RequestMapping(value = "/board")
 public class BoardController {
-
+/*
 	private static final Logger logger = LoggerFactory.getLogger(BoardController.class);
 
 	@Inject
@@ -34,5 +34,5 @@ public class BoardController {
 
 		model.addAttribute("list", list);
 	}
-
+*/
 }

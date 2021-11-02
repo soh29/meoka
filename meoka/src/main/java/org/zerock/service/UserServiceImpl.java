@@ -1,7 +1,6 @@
 package org.zerock.service;
 
-// import java.util.Date;
-// import javax.inject.Inject;
+import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,8 +10,6 @@ import org.zerock.persistence.UserDAO;
 import org.zerock.domain.UserVO;
 import org.zerock.dto.LoginDTO;
 
-// import org.zerock.dto.LoginDTO;
-// import org.zerock.persistence.UserDAO;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -21,7 +18,7 @@ public class UserServiceImpl implements UserService {
   UserDAO dao;
 
   @Override
-  public void userJoin(UserVO user) throws Exception {
+  public void userJoin(UserVO user) {
 	  dao.userJoin(user);
 	  //dao.
   }
@@ -30,10 +27,8 @@ public class UserServiceImpl implements UserService {
 
     return dao.login(dto);
   }
-}
-
     
-  /*
+  
   @Override
   public void keepLogin(String uid, String sessionId, Date next)
       throws Exception {
@@ -47,5 +42,5 @@ public class UserServiceImpl implements UserService {
     
     return dao.checkUserWithSessionKey(value);
   }
+
 }
-*/

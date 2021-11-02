@@ -47,5 +47,5 @@ public class UserDAOImpl implements UserDAO {
 	public void userJoin(UserVO user) {
 		// TODO Auto-generated method stub
 		session.insert(namespace + ".userJoin", user);
-	}	
+	}		
 }
