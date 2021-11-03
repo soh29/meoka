@@ -18,8 +18,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.util.WebUtils;
 import org.zerock.domain.UserVO;
+import org.zerock.dto.LoginDTO;
 import org.zerock.service.UserService;
-//import org.zerock.dto.LoginDTO;
+
 
 
 @Controller
@@ -56,11 +57,48 @@ public class UserController {
       
    
    // 로그인 페이지 이동
-   @RequestMapping(value="/login", method=RequestMethod.GET)
-   public void joinGET() {
+   @RequestMapping(value="/user/login", method=RequestMethod.GET)
+   public void login() {
       logger.info("로그인 페이지 진입");
    }
-}
+   
+   
+   @Inject
+   private UserService service;
+   
+   
+   @RequestMapping(value = "/loginPost", method = RequestMethod.POST)
+   public void loginPOST(LoginDTO dto, HttpSession session, Model model) throws Exception {
+      System.out.println("*******************************");
+      System.out.println(dto);
+      System.out.println("********************************");
+      
+     UserVO vo = service.login(dto);
+     System.out.println("\n*******************************");
+      System.out.println("vo: " + vo);
+      System.out.println("********************************");
+      
+     if (vo == null) {
+       return;
+     }
+      
+     model.addAttribute("userVO", vo);
+
+     if (dto.isUseCookie()) {
+
+       int amount = 60 * 60 * 24 * 7;
+
+       Date sessionLimit = new Date(System.currentTimeMillis() + (1000 * amount));
+
+       service.keepLogin(vo.getMemberId(), session.getId(), sessionLimit);
+     }
+   }
+     
+     
+   }
+   
+   
+
 
 /*
 @Controller

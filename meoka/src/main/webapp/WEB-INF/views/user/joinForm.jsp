@@ -135,94 +135,29 @@
 									<div class="pw_name"></div>
 									<div class="id_input_box">
 										<input name="confirmPassword" class="form-control border"
-											placeholder="비밀번호 확인" style="margin: 20px 20px 20px 0;height: 30px;">
+											placeholder="비밀번호 확인"
+											style="margin: 20px 20px 20px 0; height: 30px;">
 									</div>
+									<div class="id_wrap">
+										<div class="email_name"></div>
+										<div class="id_input_box">
+											<input name="email" class="form-control border"
+												placeholder="이메일" style="height: 30px;">
+										</div>
 
+									</div>
 								</div>
-							</div>
-							<button type="submit" class="btn btn-primary"
-								style="margin: 20px 0px 20px 20px; float: right">등록</button>
+								<button type="submit" class="btn btn-primary"
+									style="margin: 20px 0px 20px 20px; float: right">등록</button>
 				</form>
 
 
-				<h6 class="pt-5 mt-4 font-weight-regular inter-font">Form
-					Elements/Input Fields</h6>
-				<div class="row mt-3">
-					<div class="col-md-6">
-						<div class="input-group custom-input-group mt-4">
-							<input type="email" class="form-control bg-lightest-gray"
-								placeholder="Email Address">
-							<div class="input-group-append">
-								<button class="btn btn-primary" type="button">JOIN</button>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-6">
-						<div class="recipe-component">
-							<div class="input-group custom-input-group mt-4">
-								<input type="email" class="form-control bg-lightest-gray"
-									placeholder="Email Address">
-							</div>
-						</div>
-					</div>
-					<div class="col-md-6">
-						<div class="form-group mt-5 pb-md-3">
-							<div class="form-control-box">
-								<input type="email" class="form-control" placeholder="Email">
-								<span class="form-icon"> <svg id="Icon"
-										xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-										viewBox="0 0 24 24">
-<rect data-name="Bounding Box" width="24" height="24"
-											fill="rgba(255,255,255,0)"></rect>
-<path
-											d="M3,18a3,3,0,0,1-3-3V3.01C0,3,0,2.99,0,2.98A3,3,0,0,1,3,0H19a3,3,0,0,1,3,2.968c0,.018,0,.036,0,.054V15a3,3,0,0,1-3,3ZM2,15a1,1,0,0,0,1,1H19a1,1,0,0,0,1-1V4.921l-8.427,5.9a1,1,0,0,1-1.147,0L2,4.921ZM11,8.78l8.895-6.226A1,1,0,0,0,19,2H3a1,1,0,0,0-.895.553Z"
-											transform="translate(1 3)" fill="#7f7f7f"></path>
-</svg>
-								</span>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-6">
-						<div class="recipe-component search">
-							<div class="input-group custom-input-group mt-5">
-								<input type="text" class="form-control border"
-									placeholder="Search Recipe">
-							</div>
-						</div>
-					</div>
-				</div>
-				<h6 class="pt-5 mt-4 font-weight-regular inter-font">Form
-					Elements/Comment Box</h6>
-				<div class="row mt-3">
-					<div class="col-md-8">
-						<div class="write-comment">
-							<form
-								class="bg-lightest-gray rounded-6 mt-3 d-flex flex-wrap p-4">
-								<textarea class="form-control">@Jelanee Uwaezuoke Synth polaroid bitters chillwave pickled. Vegan disrupt tousled, Portland keffiyeh aesthetic food truck sriracha cornhole single-origin coffee church-key roof party. ð¥|</textarea>
-								<div class="mt-auto ml-auto">
-									<button type="button" class="btn btn-primary px-5">Post
-										comment</button>
-								</div>
-							</form>
-						</div>
-					</div>
-					<div class="col-md-4">
-						<div class="write-comment">
-							<form
-								class="bg-lightest-gray rounded-6 mt-3 d-flex flex-wrap p-4">
-								<textarea class="form-control w-100">@Jelanee Uwaezuoke Synth polaroid bitters chillwave pickled. Vegan disrupt tousled, Portland keffiyeh aesthetic food truck sriracha cornhole single-origin coffee church-key roof party. ð¥|</textarea>
-								<div class="mt-auto ml-auto">
-									<button type="button" class="btn btn-primary px-5">Post
-										comment</button>
-								</div>
-							</form>
-						</div>
-					</div>
-				</div>
+
 			</div>
 		</div>
 
-		<footer class="tstbite-footer pt-3 pt-md-5 mt-5 bg-lightest-gray">
+		<footer class="tstbite-footer pt-3 pt-md-5 mt-5 bg-lightest-gray"
+			style="clear: both">
 			<div class="container">
 				<div class="row pt-4 pb-0 pb-md-5">
 					<div class="col-md-6">

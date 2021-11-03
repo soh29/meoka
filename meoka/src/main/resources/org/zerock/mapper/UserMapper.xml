@@ -9,5 +9,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
    <insert id="userJoin">
       insert into member values(#{memberId}, #{password}, #{memberType}, #{rankNo})
    </insert>
+   
+   <select id="login" resultType="org.zerock.domain.UserVO">
+		select memberId, password from member where memberId = #{memberId} and password = #{password}
+	</select>
 
 </mapper>
