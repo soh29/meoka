@@ -41,5 +41,11 @@ public class UserDAOImpl implements UserDAO {
   public UserVO checkUserWithSessionKey(String value) {
 
     return session.selectOne(namespace +".checkUserWithSessionKey", value);
-  }	
+  }
+
+	@Override
+	public void userJoin(UserVO user) {
+		// TODO Auto-generated method stub
+		session.insert(namespace + ".userJoin", user);
+	}		
 }

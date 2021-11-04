@@ -1,9 +1,13 @@
 package org.zerock.service;
 
-import java.util.Date;
+
 
 import org.zerock.domain.UserVO;
+// import org.zerock.dto.LoginDTO;
 import org.zerock.dto.LoginDTO;
+
+import java.util.Date;
+
 
 public interface UserService {
 
@@ -11,5 +15,7 @@ public interface UserService {
 
   public void keepLogin(String uid, String sessionId, Date next)throws Exception;
   
-  public UserVO checkLoginBefore(String value);  
+  public UserVO checkLoginBefore(String value);
+
+public void userJoin(UserVO user);  
 }
