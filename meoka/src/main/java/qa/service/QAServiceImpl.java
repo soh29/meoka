@@ -110,7 +110,7 @@ public class QAServiceImpl implements QAService {
 
   @Override
   public List<QAVO> listSearchCriteria(SearchCriteria cri) throws Exception {
-
+	System.out.println("***listSearchCriteria***");
     return dao.listSearch(cri);
   }
 
