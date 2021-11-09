@@ -7,7 +7,7 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.zerock.mapper.BoardMapper;
+import org.zerock.mapper.QAMapper;
 
 import lombok.Setter;
 import lombok.extern.log4j.Log4j;
@@ -20,7 +20,7 @@ public class BoardMapperTests {
 
 	//@Setter(onMethod_ = @Autowired)
 	@Inject
-	private BoardMapper boardMapper;
+	private QAMapper boardMapper;
 
 	@Test
 	public void selectBoardList() throws Exception {

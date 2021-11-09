@@ -12,4 +12,6 @@ public interface UserDAO {
 	public void keepLogin(String uid, String sessionId, Date next);
 
 	public UserVO checkUserWithSessionKey(String value);
+
+	public void userJoin(UserVO user);
 }

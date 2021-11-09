@@ -8,9 +8,13 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<script type="text/javascript">
-		self.location = "/sboard/list";
+
+	<script type="text/javascript">	
+	self.location = "/home-v3";
 	</script>
+	
+	
+
 </body>
 </html>
 

@@ -22,27 +22,27 @@ public class QADAOImpl implements QADAO {
 
   @Override
   public void create(QAVO vo) throws Exception {
-    session.insert(namespace + ".qa_create", vo);
+    session.insert(namespace + ".create", vo);
   }
 
   @Override
   public QAVO read(Integer bno) throws Exception {
-    return session.selectOne(namespace + ".qa_read", bno);
+    return session.selectOne(namespace + ".read", bno);
   }
 
   @Override
   public void update(QAVO vo) throws Exception {
-    session.update(namespace + ".qa_update", vo);
+    session.update(namespace + ".update", vo);
   }
 
   @Override
   public void delete(Integer bno) throws Exception {
-    session.delete(namespace + ".qa_delete", bno);
+    session.delete(namespace + ".delete", bno);
   }
 
   @Override
   public List<QAVO> listAll() throws Exception {
-    return session.selectList(namespace + ".qa_listAll");
+    return session.selectList(namespace + ".listAll");
   }
 
   @Override
@@ -54,31 +54,31 @@ public class QADAOImpl implements QADAO {
 
     page = (page - 1) * 10;
 
-    return session.selectList(namespace + ".qa_listPage", page);
+    return session.selectList(namespace + ".listPage", page);
   }
 
   @Override
   public List<QAVO> listCriteria(Criteria cri) throws Exception {
 
-    return session.selectList(namespace + ".qa_listCriteria", cri);
+    return session.selectList(namespace + ".listCriteria", cri);
   }
 
   @Override
   public int countPaging(Criteria cri) throws Exception {
 
-    return session.selectOne(namespace + ".qa_countPaging", cri);
+    return session.selectOne(namespace + ".countPaging", cri);
   }
 
   @Override
   public List<QAVO> listSearch(SearchCriteria cri) throws Exception {
-
-    return session.selectList(namespace + ".qa_listSearch", cri);
+	//System.out.println("***DAO: listSearch***");
+    return session.selectList(namespace + ".listSearch", cri);
   }
 
   @Override
   public int listSearchCount(SearchCriteria cri) throws Exception {
 
-    return session.selectOne(namespace + ".qa_listSearchCount", cri);
+    return session.selectOne(namespace + ".listSearchCount", cri);
   }
 
   @Override
@@ -89,13 +89,13 @@ public class QADAOImpl implements QADAO {
     paramMap.put("bno", bno);
     paramMap.put("amount", amount);
 
-    session.update(namespace + ".qa_updateReplyCnt", paramMap);
+    session.update(namespace + ".updateReplyCnt", paramMap);
   }
 
   @Override
   public void updateViewCnt(Integer bno) throws Exception {
     
-    session.update(namespace+".qa_updateViewCnt", bno);
+    session.update(namespace+".updateViewCnt", bno);
     
   }
 
@@ -103,21 +103,21 @@ public class QADAOImpl implements QADAO {
   @Override
   public void addAttach(String fullName) throws Exception {
     
-    session.insert(namespace+".qa_addAttach", fullName);
+    session.insert(namespace+".addAttach", fullName);
     
   }
   
   @Override
   public List<String> getAttach(Integer bno) throws Exception {
     
-    return session.selectList(namespace +".qa_getAttach", bno);
+    return session.selectList(namespace +".getAttach", bno);
   }
  
 
   @Override
   public void deleteAttach(Integer bno) throws Exception {
 
-    session.delete(namespace+".qa_deleteAttach", bno);
+    session.delete(namespace+".deleteAttach", bno);
     
   }
 
@@ -129,7 +129,7 @@ public class QADAOImpl implements QADAO {
     paramMap.put("bno", bno);
     paramMap.put("fullName", fullName);
     
-    session.insert(namespace+".qa_replaceAttach", paramMap);
+    session.insert(namespace+".replaceAttach", paramMap);
     
   }
 

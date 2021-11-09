@@ -8,8 +8,8 @@ import javax.inject.Inject;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
-import org.zerock.domain.Criteria;
-import org.zerock.domain.ReplyVO;
+import qa.domain.Criteria;
+import qa.domain.QAReplyVO;
 
 @Repository
 public class QAReplyDAOImpl implements QAReplyDAO {
@@ -17,22 +17,22 @@ public class QAReplyDAOImpl implements QAReplyDAO {
   @Inject
   private SqlSession session;
 
-  private static String namespace = "org.zerock.mapper.ReplyMapper";
+  private static String namespace = "qa.mapper.QAReplyMapper";
 
   @Override
-  public List<ReplyVO> list(Integer bno) throws Exception {
+  public List<QAReplyVO> list(Integer bno) throws Exception {
 
     return session.selectList(namespace + ".list", bno);
   }
 
   @Override
-  public void create(ReplyVO vo) throws Exception {
+  public void create(QAReplyVO vo) throws Exception {
 
     session.insert(namespace + ".create", vo);
   }
 
   @Override
-  public void update(ReplyVO vo) throws Exception {
+  public void update(QAReplyVO vo) throws Exception {
 
     session.update(namespace + ".update", vo);
   }
@@ -44,7 +44,7 @@ public class QAReplyDAOImpl implements QAReplyDAO {
   }
 
   @Override
-  public List<ReplyVO> listPage(Integer bno, Criteria cri) throws Exception {
+  public List<QAReplyVO> listPage(Integer bno, Criteria cri) throws Exception {
 
     Map<String, Object> paramMap = new HashMap<>();
 

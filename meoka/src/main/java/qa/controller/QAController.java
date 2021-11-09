@@ -3,6 +3,8 @@ package qa.controller;
 import java.util.List;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -35,10 +37,10 @@ public class QAController {
     logger.info(cri.toString());
 
     
-    /*
+    
     // model.addAttribute("list", service.listCriteria(cri));
     model.addAttribute("list", service.listSearchCriteria(cri));
-
+    System.out.println("****" + service.listSearchCriteria(cri));
     PageMaker pageMaker = new PageMaker();
     pageMaker.setCri(cri);
 
@@ -46,29 +48,19 @@ public class QAController {
     pageMaker.setTotalCount(service.listSearchCount(cri));
 
     model.addAttribute("pageMaker", pageMaker);
-    */
+    
     
   }
+  
   @RequestMapping(value = "/readPage", method = RequestMethod.GET)
-  public void readPage(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
-
-    logger.info(cri.toString());
-  }
-  @RequestMapping(value = "/register", method = RequestMethod.GET)
-  public void register(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
-
-    logger.info(cri.toString());
-  }
-  @RequestMapping(value = "/modifyPage", method = RequestMethod.GET)
-  public void modifyPage(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
-
-    logger.info(cri.toString());
-  }
-/*
-  @RequestMapping(value = "/readPage", method = RequestMethod.GET)
-  public void read(@RequestParam("bno") int bno, @ModelAttribute("cri") SearchCriteria cri, Model model)
+  public void read(@RequestParam("bno") int bno, @ModelAttribute("cri") SearchCriteria cri, Model model, HttpServletRequest request)
       throws Exception {
-
+	///////////////////////////////////////////////////////////
+	  org.zerock.dto.LoginDTO login = new org.zerock.dto.LoginDTO();
+	login.setUid("오승준");
+	HttpSession session = request.getSession();
+	session.setAttribute("login", login);
+	///////////////////////////////////////////////////////////
     model.addAttribute(service.read(bno));
    
 	  
@@ -124,14 +116,16 @@ public class QAController {
 
     logger.info("regist post ...........");
     logger.info(qa.toString());
-
+////////////////////
+    qa.setMemberid("오승준");
+///////////////////
     service.regist(qa);
 
     rttr.addFlashAttribute("msg", "SUCCESS");
 
     return "redirect:/qa/list";
   }
-  */
+
   
   @RequestMapping("/getAttach/{bno}")
   @ResponseBody

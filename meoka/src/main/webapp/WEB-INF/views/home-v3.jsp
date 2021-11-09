@@ -106,10 +106,10 @@
 						</button>
 						<div class="modal-body">
 							<h6 class="text-uppercase mb-4 pb-2">Login</h6>
-							<form>
+							<form action="home-v3" type="post">
 								<div class="form-group mt-md-3 pb-md-3">
 									<div class="form-control-box">
-										<input type="text" class="form-control" placeholder="Email">
+										<input type="text" class="form-control" placeholder="Email" name="memberId">
 										<span class="form-icon"> <svg id="Icon"
 												xmlns="http://www.w3.org/2000/svg" width="24" height="24"
 												viewBox="0 0 24 24">
@@ -125,7 +125,7 @@
 								<div class="form-group mt-md-3 pb-md-3">
 									<div class="form-control-box">
 										<input type="password" class="form-control"
-											placeholder="Password"> <span class="form-icon">
+											placeholder="Password" name="password"> <span class="form-icon">
 											<svg xmlns="http://www.w3.org/2000/svg" width="24"
 												height="24" viewBox="0 0 24 24">
 <rect data-name="Bounding Box" width="24" height="24"
@@ -142,7 +142,7 @@
 										</div>
 									</div>
 								</div>
-								<button type="button" class="btn btn-lg btn-block btn-primary">Login</button>
+								<button type="submit" class="btn btn-lg btn-block btn-primary">Login</button>
 							</form>
 							<p class="text-center font-weight-light mt-4 pt-2">Or login
 								with</p>
@@ -156,7 +156,7 @@
 							</ul>
 							<div class="text-center login-footer">
 								<p>
-									Don’t have an account? <a href="javascript:void(0)">Sign up</a>
+									Don’t have an account? <a href="user/join">Sign up</a>
 								</p>
 							</div>
 						</div>
