@@ -77,11 +77,11 @@
 							</a>
 								<div class="dropdown-menu" aria-labelledby="HomePage">
 									<a class="dropdown-item"
-										href="index.html">Home
+										href="">Home
 										V1</a> <a class="dropdown-item"
-										href="home-v2.html">Home
+										href="home-v2">Home
 										V2</a> <a class="dropdown-item"
-										href="home-v3.html">Home
+										href="home-v3">Home
 										V3</a>
 								</div></li>
 							<li class="nav-item dropdown"><a class="nav-link"

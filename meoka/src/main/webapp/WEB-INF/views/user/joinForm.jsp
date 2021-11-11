@@ -1,9 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+
 <!DOCTYPE html>
 <!-- saved from url=(0048)elements.html -->
 <html dir="ltr" lang="en-US">
 <head>
+
+<script src='https://code.jquery.com/jquery-3.3.1.min.js'></script>
+
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="description" content="Tastebite">
@@ -20,6 +27,28 @@
 <link href="../resources/css/tastebite-styles.css" rel="stylesheet"
 	type="text/css" media="all">
 </head>
+
+
+<script type="text/javascript">
+function fn_idChk(){
+	$.ajax({
+		url : "/user/idChk",
+		type : "post",
+		dataType : "json",
+		data : {"memberId" : $("#memberId").val()},
+		success : function(data){
+			if(data == 0){
+				$("#idChk").attr("value", "Y");
+				alert("사용가능한 아이디입니다.");
+			}else{
+				alert("중복된 아이디입니다.");
+			}
+		}
+	})
+}
+</script>
+
+
 <body>
 
 	<section class="tstbite-section p-0">
@@ -120,35 +149,51 @@
 					<div class="warp" style="width: 500px; margin: auto">
 						<div class="subject"></div>
 						<div class="id_wrap">
-							<div class="id_name"></div>
-							<div class="id_input_box">
-								<input name="memberId" class="form-control border"
-									placeholder="아이디" style="margin: 20px 20px 20px 0">
-							</div>
-							<div class="id_wrap">
-								<div class="pw_name"></div>
-								<div class="id_input_box">
-									<input name="password" class="form-control border"
-										placeholder="비밀번호" style="height: 30px;">
-								</div>
+							<div class="name">이름</div>
+							<div class="name_input_box">
+								<input class="name_input" name="name" maxlength="20">
+
 								<div class="id_wrap">
-									<div class="pw_name"></div>
+									<div class="id_name">아이디</div>
 									<div class="id_input_box">
-										<input name="confirmPassword" class="form-control border"
-											placeholder="비밀번호 확인"
-											style="margin: 20px 20px 20px 0; height: 30px;">
+										<input class="id_input" id="memberId" name="memberId" maxlength="20">
+										<button class="idChk" type="button" id="idChk" onclick="fn_idChk();" value="N">중복확인</button>
 									</div>
+
 									<div class="id_wrap">
-										<div class="email_name"></div>
+										<div class="pw_name">비밀번호</div>
 										<div class="id_input_box">
-											<input name="email" class="form-control border"
-												placeholder="이메일" style="height: 30px;">
+											<input type="password" class="id_input" name="password"
+												maxlength="15">
 										</div>
 
-									</div>
-								</div>
-								<button type="submit" class="btn btn-primary"
-									style="margin: 20px 0px 20px 20px; float: right">등록</button>
+										<div class="id_wrap">
+											<div class="pw_name">비밀번호 확인</div>
+											<div class="id_input_box">
+												<input type="password" class="id_input"
+													name="confirmPassword" maxlength="15">
+											</div>
+
+											<div class="id_wrap">
+												<div class="email_name">이메일</div>
+												<div class="id_input_box">
+													<input class="id_input" name="email" maxlength="30">@
+													<select name="email2">
+														<option>naver.com</option>
+														<option>daum.net</option>
+														<option>gmail.com</option>
+													</select>
+												</div>
+
+												<div class="id_wrap">
+													<div class="phoneNo">핸드폰번호</div>
+													<div class="id_input_box">
+														<input type="text" class="id_input" name="phoneNo" />
+													</div>
+
+												</div>
+												<button type="submit" class="btn btn-primary"
+													style="margin: 20px 0px 20px 20px; float: right">등록</button>
 				</form>
 
 
@@ -286,19 +331,20 @@
 		</footer>
 	</section>
 	<script src="../resources/js/bootstrap.bundle.min.js
-		type="text/javascript"></script>
+      type="text/javascript"></script>
 	<script src="../resources/js/html5.min.js
-		type="text/javascript"></script>
+      type="text/javascript"></script>
 	<script src="../resources/js/sticky.min.js.
-		type="text/javascript"></script>
+      type="text/javascript"></script>
 	<script src="../resources/js/swiper-bundle.min.js
-		type="text/javascript"></script>
+      type="text/javascript"></script>
 	<script src="../resources/js/masonry.min.js
-		type="text/javascript"></script>
+      type="text/javascript"></script>
 	<script src="../resources/js/tastebite-scripts.js
-		type="text/javascript"></script>
-	<script defer="" src="../resources/js/beacon.min.js
-		data-cf-beacon="{&quot;rayId&quot;:&quot;6a50d7166ea62079&quot;,&quot;version&quot;:&quot;2021.10.0&quot;,&quot;r&quot;:1,&quot;token&quot;:&quot;9ae02b4a12234f118cf01e6f25c04e9d&quot;,&quot;si&quot;:100}"></script>
+      type="text/javascript"></script>
+	<script defer=""
+		src="../resources/js/beacon.min.js
+      data-cf-beacon="{&quot;rayId&quot;:&quot;6a50d7166ea62079&quot;,&quot;version&quot;:&quot;2021.10.0&quot;,&quot;r&quot;:1,&quot;token&quot;:&quot;9ae02b4a12234f118cf01e6f25c04e9d&quot;,&quot;si&quot;:100}"></script>
 
 </body>
 </html>

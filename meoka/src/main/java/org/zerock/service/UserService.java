@@ -2,11 +2,15 @@ package org.zerock.service;
 
 
 
+import org.zerock.domain.MailVO;
 import org.zerock.domain.UserVO;
 // import org.zerock.dto.LoginDTO;
 import org.zerock.dto.LoginDTO;
 
+import java.util.ArrayList;
 import java.util.Date;
+
+import javax.servlet.http.HttpServletResponse;
 
 
 public interface UserService {
@@ -17,5 +21,22 @@ public interface UserService {
   
   public UserVO checkLoginBefore(String value);
 
-public void userJoin(UserVO user);  
+  // 회원가입
+  public void userJoin(UserVO user);  
+  
+  // 아이디 중복 체크
+  public int idChk(UserVO user) throws Exception;
+  
+  // 회원정보 수정
+  public void userUpdate(UserVO vo) throws Exception;
+
+  // 회원탈퇴
+  public void userDelete(UserVO vo) throws Exception;
+  
+  // 아이디 찾기
+  public UserVO findId(UserVO vo);
+  
+  // 임시비밀번호 설정
+  public UserVO updateRandomPw(UserVO vo);
+
 }

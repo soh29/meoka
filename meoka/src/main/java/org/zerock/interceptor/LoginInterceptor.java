@@ -26,6 +26,7 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
     ModelMap modelMap = modelAndView.getModelMap();
     Object userVO = modelMap.get("userVO");
 
+    System.out.println("userVO:" + userVO);
     if (userVO != null) {
 
       logger.info("new login success");
@@ -45,9 +46,14 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
       System.out.println("*************************************************");
       System.out.println("*************************************************");
       System.out.println("*************************************************");
+      System.out.println("userVO:" + userVO);
+      System.out.println("*************************************************");
+      System.out.println("*************************************************");
+      System.out.println("*************************************************");
+      System.out.println("*************************************************");
       System.out.println((String)dest);
       //response.sendRedirect(dest != null ? (String) dest : "/");
-      response.sendRedirect(dest != null ? (String) dest : "login");
+      response.sendRedirect(dest != null ? (String) dest : "home-v3");
     }
   }
 
@@ -80,7 +86,7 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
     
     if (session.getAttribute(LOGIN) != null) {
       logger.info("clear login data before");
-      session.removeAttribute(LOGIN);
+      //session.removeAttribute(LOGIN);
     }
     System.out.println("*************************************************");
     System.out.println(request.getParameter("uid"));

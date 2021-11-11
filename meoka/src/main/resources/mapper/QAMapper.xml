@@ -5,90 +5,72 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace="qa.mapper.QAMapper">
 
-	<insert id="create">
-		insert into qa (bno, title, content, memberid, regDate, viewcnt, replycnt)
-		values(QA_BNO_SEQ.NEXTVAL, #{title},#{content}, #{memberid}, sysdate, 0, 0)
+	<insert id="qa_create">
+		insert into QA (title, content, memberid)
+		values(#{title},#{content}, #{memberid})
 	</insert>
 
-	<select id="read" resultType="qa.domain.QAVO">
+	<select id="qa_read" resultType="qa.domain.QAVO">
 		select
 		bno, title, content, memberid, regdate, viewcnt , replycnt
 		from
-		qa
+		QA
 		where bno = #{bno}
 	</select>
 
-	<select id="listAll" resultType="qa.domain.QAVO">
+	<select id="qa_listAll" resultType="qa.domain.QAVO">
  <![CDATA[
  select 
    bno, title, content, memberid, regdate, viewcnt 
  from 
-   qa 
+   QA 
  where bno > 0 
  order by bno desc, regdate desc
  ]]>
 	</select>
 
-	<select id="listPage" resultType="qa.domain.QAVO">
+	<select id="qa_listPage" resultType="QAVO">
  <![CDATA[
-select *
-from(
-	select A.*, rownum as rnum
-	from(
-
-		select 
-			bno, title, content, memberid, regdate, viewcnt , replycnt
-		from 
-			qa 
-		where bno > 0 
-		order by bno desc, regdate desc
-
-		) A
-		where rownum <= #{page} + 10
-	)
-where rnum > #{page}
-]]>
+ select 
+   bno, title, content, memberid, regdate, viewcnt , replycnt
+ from 
+   QA 
+ where bno > 0 
+ order by bno desc, regdate desc
+ limit #{page}, 10
+ ]]>
 	</select>
 
-	<select id="listCriteria" resultType="qa.domain.QAVO">
+	<select id="qa_listCriteria" resultType="QAVO">
  <![CDATA[
-select *
-from(
-	select A.*, rownum as rnum
-	from(
- 
-		select 
-			bno, title, content, memberid, regdate, viewcnt , replycnt
-		from 
-			qa 
-		where bno > 0 
-		order by bno desc, regdate desc
-
-		) A
-		where rownum <= #{pageStart} + #{perPageNum}
-	)
-where rnum > #{pageStart}
+ select 
+   bno, title, content, memberid, regdate, viewcnt , replycnt
+ from 
+   QA 
+ where bno > 0 
+ order by bno desc, regdate desc
+ limit #{pageStart}, #{perPageNum}
  ]]>
 	</select>
 
 
-	<update id="update">
-		update qa set title =#{title}, content =#{content}
+	<update id="qa_update">
+		update QA set title =#{title}, content =#{content}
 		where bno = #{bno}
 	</update>
 
-	<delete id="delete">
-		delete from qa where bno = #{bno}
+	<delete id="qa_delete">
+		delete from QA where bno = #{bno}
 	</delete>
 
 
 
-	<select id="countPaging" resultType="int">
+	<select id="qa_countPaging" resultType="int">
  <![CDATA[
  select 
    count(bno) 
  from 
-   qa 
+   QA 
  where 
    bno > 0 
  ]]>
@@ -96,98 +78,89 @@ where rnum > #{pageStart}
 
 
 
-	<sql id="search">
+	<sql id="qa_search">
 		<if test="searchType != null">
 			<if test="searchType == 't'.toString()">
-				and title like '%'||#{keyword}||'%'
+				and title like CONCAT('%', #{keyword}, '%')
 			</if>
 			<if test="searchType == 'c'.toString()">
-				and content like '%'||#{keyword}||'%'
+				and content like CONCAT('%', #{keyword}, '%')
 			</if>
 			<if test="searchType == 'w'.toString()">
-				and memberid like '%'||#{keyword}||'%'
+				and memberid like CONCAT('%', #{keyword}, '%')
 			</if>
 			<if test="searchType == 'tc'.toString()">
-				and ( title like '%'||#{keyword}||'%' OR content like
-				'%'||#{keyword}||'%')
+				and ( title like CONCAT('%', #{keyword}, '%') OR content like
+				CONCAT('%', #{keyword}, '%'))
 			</if>
 			<if test="searchType == 'cw'.toString()">
-				and ( content like '%'||#{keyword}||'%' OR memberid like
-				'%'||#{keyword}||'%')
+				and ( content like CONCAT('%', #{keyword}, '%') OR memberid like
+				CONCAT('%', #{keyword}, '%'))
 			</if>
 			<if test="searchType == 'tcw'.toString()">
-				and ( title like '%'||#{keyword}||'%'
+				and ( title like CONCAT('%', #{keyword}, '%')
 				OR
-				content like '%'||#{keyword}||'%'
+				content like CONCAT('%', #{keyword}, '%')
 				OR
-				memberid like '%'||#{keyword}||'%')
+				memberid like CONCAT('%', #{keyword}, '%'))
 			</if>
 		</if>
 	</sql>
 
-	<select id="listSearch" resultType="qa.domain.QAVO">
-<![CDATA[
-select *
-from(
-	select A.*, rownum as rnum
-	from(
-
-		select
-			bno, memberid, title, content, regdate, viewcnt, replycnt
-		from qa 
-		where bno > 0 
-]]>
-
-		<include refid="search"></include>
-  
-<![CDATA[    
-		order by bno desc
-		) A
-		where rownum <= #{pageStart} + #{perPageNum}
-	)
-where rnum > #{pageStart}
-]]>
-	</select>
-
-	<select id="listSearchCount" resultType="int">
+	<select id="qa_listSearch" resultType="QAVO">
 <![CDATA[  
-  select count(bno) 
-  from qa 
+  select * 
+  from QA 
   where bno > 0 
 ]]>
-		<include refid="search"></include>
+
+		<include refid="qa_search"></include>
+  
+<![CDATA[    
+  order by bno desc
+  limit #{pageStart}, #{perPageNum}
+]]>
+	</select>
+
+	<select id="qa_listSearchCount" resultType="int">
+<![CDATA[  
+  select count(bno) 
+  from QA 
+  where bno > 0 
+]]>
+		<include refid="qa_search"></include>
 
 	</select>
 
 
  
-<update id="updateReplyCnt">
-  update qa set replycnt = replycnt + #{amount} where bno = #{bno}
+<update id="qa_updateReplyCnt">
+  update QA set replycnt = replycnt + #{amount} where bno = #{bno}
 </update>
 
 
-<update id="updateViewCnt">
-  update qa set viewcnt = viewcnt +1 where bno = #{bno}
+<update id="qa_updateViewCnt">
+  update QA set viewcnt = viewcnt +1 where bno = #{bno}
 </update>
 
 
  
-<insert id="addAttach">
-insert into qa_attach(fullname, bno) values (#{fullName}, LAST_INSERT_ID())
+<insert id="qa_addAttach">
+insert into QA_attach(fullname, bno) values (#{fullName}, LAST_INSERT_ID())
 </insert> 
 
 
-<select id="getAttach" resultType="string">
-select fullname from qa_attach where bno = #{bno} order by regdate
+<select id="qa_getAttach" resultType="string">
+select fullname from QA_attach where bno = #{bno} order by regdate
 </select> 
 
  
-<delete id="deleteAttach">
-delete from qa_attach where bno = #{bno}
+<delete id="qa_deleteAttach">
+delete from QA_attach where bno = #{bno}
 </delete>
 
-<insert id="replaceAttach">
-insert into qa_attach(fullname, bno) values (#{fullName}, #{bno})
+<insert id="qa_replaceAttach">
+insert into QA_attach(fullname, bno) values (#{fullName}, #{bno})
 </insert>
   
  
