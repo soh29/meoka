@@ -26,6 +26,7 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
     ModelMap modelMap = modelAndView.getModelMap();
     Object userVO = modelMap.get("userVO");
 
+    System.out.println("userVO:" + userVO);
     if (userVO != null) {
 
       logger.info("new login success");
@@ -41,9 +42,18 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
       }
       // response.sendRedirect("/");
       Object dest = session.getAttribute("dest");
-
+      System.out.println("*************************************************");
+      System.out.println("*************************************************");
+      System.out.println("*************************************************");
+      System.out.println("*************************************************");
+      System.out.println("userVO:" + userVO);
+      System.out.println("*************************************************");
+      System.out.println("*************************************************");
+      System.out.println("*************************************************");
+      System.out.println("*************************************************");
+      System.out.println((String)dest);
       //response.sendRedirect(dest != null ? (String) dest : "/");
-      response.sendRedirect(dest != null ? (String) dest : "/sboard/list");
+      response.sendRedirect(dest != null ? (String) dest : "home-v3");
     }
   }
 
@@ -73,12 +83,14 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
   public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
 
     HttpSession session = request.getSession();
-
+    
     if (session.getAttribute(LOGIN) != null) {
       logger.info("clear login data before");
-      session.removeAttribute(LOGIN);
+      //session.removeAttribute(LOGIN);
     }
-
+    System.out.println("*************************************************");
+    System.out.println(request.getParameter("uid"));
+    System.out.println("*************************************************");
     return true;
   }
 }

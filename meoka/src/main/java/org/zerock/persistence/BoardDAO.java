@@ -1,47 +1,37 @@
 package org.zerock.persistence;
 
 import java.util.List;
-
 import org.zerock.domain.BoardVO;
-import org.zerock.domain.Criteria;
-import org.zerock.domain.SearchCriteria;
+import org.zerock.domain.PagingVO;
 
 public interface BoardDAO {
 
-  public void create(BoardVO vo) throws Exception;
+	public List<BoardVO> selectBoardList() throws Exception;
+	void register(BoardVO vo) throws Exception;
+	BoardVO read(int bno) throws Exception;
+	void updateViewCnt(int bno) throws Exception;
+	void modify(BoardVO vo) throws Exception;
+	void delete(int bno) throws Exception;
 
-  public BoardVO read(Integer bno) throws Exception;
+	public List<BoardVO> listAll(String searchOption, String keyword) throws Exception;
+	public int countArticle(String searchOption, String keyword) throws Exception;
+	
+	public int countBoard() throws Exception;
+	public List<BoardVO> selectBoard(PagingVO vo) throws Exception;
+	public List<BoardVO> listAll(String searchOption, String keyword, int start, int end);
+	
+	public void reply(BoardVO vo);
+	public int getGroupOrderPosition(BoardVO vo);
+	public int getMaxGroupOrder(BoardVO vo);
+	public void updateGroupOrder(BoardVO vo);
+	
+	public void updateCommentCnt(Integer bno, int amount);
+	
+	
 
-  public void update(BoardVO vo) throws Exception;
+	void addAttach(String fullName) throws Exception;
+	List<String> getAttach(Integer bno) throws Exception;
+	void deleteAttach(Integer bno) throws Exception;
+	void replaceAttach(String fullName, Integer bno) throws Exception;
 
-  public void delete(Integer bno) throws Exception;
-
-  public List<BoardVO> listAll() throws Exception;
-
-  public List<BoardVO> listPage(int page) throws Exception;
-
-  public List<BoardVO> listCriteria(Criteria cri) throws Exception;
-
-  public int countPaging(Criteria cri) throws Exception;
-  
-  //use for dynamic sql
-  
-  public List<BoardVO> listSearch(SearchCriteria cri)throws Exception;
-  
-  public int listSearchCount(SearchCriteria cri)throws Exception;
-  
-  
-  public void updateReplyCnt(Integer bno, int amount)throws Exception;
-  
-  
-  public void updateViewCnt(Integer bno)throws Exception;
-  
-  public void addAttach(String fullName)throws Exception;
-  
-  public List<String> getAttach(Integer bno)throws Exception;  
-   
-  public void deleteAttach(Integer bno)throws Exception;
-  
-  public void replaceAttach(String fullName, Integer bno)throws Exception;
-  
 }

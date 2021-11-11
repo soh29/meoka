@@ -1,130 +1,120 @@
 package org.zerock.service;
 
 import java.util.List;
-
-import javax.inject.Inject;
-
+import org.mybatis.spring.annotation.MapperScan;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Transactional;
 import org.zerock.domain.BoardVO;
-import org.zerock.domain.Criteria;
-import org.zerock.domain.SearchCriteria;
+import org.zerock.domain.PagingVO;
 import org.zerock.persistence.BoardDAO;
 
 @Service
+//@Configuration
+//@MapperScan("org.zerock.mapper")
 public class BoardServiceImpl implements BoardService {
+	@Autowired
+	private BoardDAO boardDAO;
 
-  @Inject
-  private BoardDAO dao;
+	@Override
+	@Transactional
+	public List<BoardVO> selectBoardList() throws Exception {
+		return boardDAO.selectBoardList();
+	}
 
-  
-  @Transactional
-  @Override
-  public void regist(BoardVO board) throws Exception {
-  
-    dao.create(board);
-    
-    String[] files = board.getFiles();
-    
-    if(files == null) { return; } 
-    
-    for (String fileName : files) {
-      dao.addAttach(fileName);
-    }   
-  }
-  
-  //
-//  @Override
-//  public void regist(BoardVO board) throws Exception {
-//    dao.create(board);
-//  }
+	@Override
+	public void register(BoardVO vo) throws Exception {
+		// TODO Auto-generated method stub
+		boardDAO.register(vo);
+	    String[] files = vo.getFiles();
+	    
+	    if(files == null) { return; } 
+	    
+	    for (String fileName : files) {
+	      boardDAO.addAttach(fileName);
+	    }  
+	}
 
-//  @Override
-//  public BoardVO read(Integer bno) throws Exception {
-//    return dao.read(bno);
-//  }
+	@Override
+	public BoardVO read(int bno) throws Exception {
+		// TODO Auto-generated method stub
+		boardDAO.updateViewCnt(bno);
+		return boardDAO.read(bno);
+	}
 
+	@Override
+	public void modify(BoardVO vo) throws Exception {
+		// TODO Auto-generated method stub
+		boardDAO.modify(vo);
+		
+	    Integer bno = vo.getBno();
+	    
+	    boardDAO.deleteAttach(bno);
+	    
+	    String[] files = vo.getFiles();
+	    
+	    if(files == null) { return; } 
+	    
+	    for (String fileName : files) {
+	      boardDAO.replaceAttach(fileName, bno);
+	    }
+	}
 
-  @Transactional(isolation=Isolation.READ_COMMITTED)
-  @Override
-  public BoardVO read(Integer bno) throws Exception {
-    dao.updateViewCnt(bno);
-    return dao.read(bno);
-  }
+	@Override
+	public void delete(int bno) throws Exception {
+		// TODO Auto-generated method stub
+		boardDAO.delete(bno);
+	}
 
-  
-//  @Override
-//  public void modify(BoardVO board) throws Exception {
-//    dao.update(board);
-//  }
-  
-  @Transactional
-  @Override
-  public void modify(BoardVO board) throws Exception {
-    dao.update(board);
-    
-    Integer bno = board.getBno();
-    
-    dao.deleteAttach(bno);
-    
-    String[] files = board.getFiles();
-    
-    if(files == null) { return; } 
-    
-    for (String fileName : files) {
-      dao.replaceAttach(fileName, bno);
-    }
-  }
-  
+	@Override
+	public List<BoardVO> listAll(String searchOption, String keyword) throws Exception {
+		// TODO Auto-generated method stub
+		return boardDAO.listAll(searchOption, keyword);
+	}
 
-//  @Override
-//  public void remove(Integer bno) throws Exception {
-//    dao.delete(bno);
-//  }
-  
-  
-  @Transactional
-  @Override
-  public void remove(Integer bno) throws Exception {
-    dao.deleteAttach(bno);
-    dao.delete(bno);
-  } 
+	@Override
+	public int countArticle(String searchOption, String keyword) throws Exception {
+		// TODO Auto-generated method stub
+		return boardDAO.countArticle(searchOption, keyword);
+	}
 
-  @Override
-  public List<BoardVO> listAll() throws Exception {
-    return dao.listAll();
-  }
+	@Override
+	public int countBoard() throws Exception {
+		// TODO Auto-generated method stub
+		return boardDAO.countBoard();
+	}
 
-  @Override
-  public List<BoardVO> listCriteria(Criteria cri) throws Exception {
+	@Override
+	public List<BoardVO> selectBoard(PagingVO vo) throws Exception {
+		// TODO Auto-generated method stub
+		return boardDAO.selectBoard(vo);
+	}
 
-    return dao.listCriteria(cri);
-  }
+	@Override
+	public List<BoardVO> listAll(String searchOption, String keyword, int start, int end) {
+		// TODO Auto-generated method stub
+		return boardDAO.listAll(searchOption, keyword, start, end);
+	}
 
-  @Override
-  public int listCountCriteria(Criteria cri) throws Exception {
+	@Override
+	public void reply(BoardVO vo) throws Exception {
+		// TODO Auto-generated method stub
+		int groupOrderPosition = boardDAO.getGroupOrderPosition(vo);
+		if(groupOrderPosition == 0) {
+			int maxGroupOrder = boardDAO.getMaxGroupOrder(vo);
+			vo.setGrouporder(maxGroupOrder);
+		} else {
+			vo.setGrouporder(groupOrderPosition);
+			boardDAO.updateGroupOrder(vo);
+		}
+		boardDAO.reply(vo);
+	}
 
-    return dao.countPaging(cri);
-  }
-
-  @Override
-  public List<BoardVO> listSearchCriteria(SearchCriteria cri) throws Exception {
-
-    return dao.listSearch(cri);
-  }
-
-  @Override
-  public int listSearchCount(SearchCriteria cri) throws Exception {
-
-    return dao.listSearchCount(cri);
-  }
-  
-
-  @Override
-  public List<String> getAttach(Integer bno) throws Exception {
-    
-    return dao.getAttach(bno);
-  }   
+	@Override
+	public List<String> getAttach(Integer bno) throws Exception {
+		// TODO Auto-generated method stub
+		return boardDAO.getAttach(bno);
+	}
 
 }

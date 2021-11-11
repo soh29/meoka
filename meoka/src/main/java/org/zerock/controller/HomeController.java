@@ -36,10 +36,37 @@ public class HomeController {
 		return "index";
 	}
 	
+	@RequestMapping(value = "/home-v2", method = RequestMethod.GET)
+	public String homev2(Locale locale, Model model) {
+		logger.info("Welcome home! The client locale is {}.", locale);
+		return "home-v2";
+	}
+	
 	@RequestMapping(value = "/home-v3", method = RequestMethod.GET)
 	public String homev3(Locale locale, Model model) {
 		logger.info("Welcome home! The client locale is {}.", locale);
 		return "home-v3";
 	}
+	
+	// lab begin
+	@RequestMapping(value = "/doA", method = RequestMethod.GET)
+	 public String doA(Locale locale, Model model) {
+
+	 System.out.println("doA....................");
+
+	 return "home";
+	 }
+
+	 @RequestMapping(value = "/doB", method = RequestMethod.GET)
+	
+	 public String doB(Locale locale, Model model) {
+
+	 System.out.println("doB....................");
+
+	 model.addAttribute("result", "DOB RESULT");
+
+	 return "home";
+	 } 
+	 // lab end
 	
 }

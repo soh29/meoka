@@ -1,56 +1,76 @@
-<%@ page contentType="text/html; charset=euc-kr" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page session="false" %>
+<%@ page contentType="text/html; charset=UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>   
+
+<%@ page session="false"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=euc-kr"/>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr" />
 <title>Home</title>
 </head>
 <body>
 	<h1>Board List</h1>
 	<table border="1">
-	<thead>
-	<tr>
-<<<<<<< HEAD
-		<th>¹øÈ£</th>
-		<th>¾ÆÀÌµğ</th>
-		<th>À½½Ä¹øÈ£</th>
-		<th>·¹½ÃÇÇÀÌ¸§</th>
-=======
-		<th>·¹½ÃÇÇ¹øÈ£</th>
-		<th>ID</th>
-		<th>À½½Ä¹øÈ£</th>
-		<th>ÀÌ¸§</th>
->>>>>>> branch 'develop' of https://github.com/soh29/meoka
-		<th>ÀÛ¼ºÀÏ</th>
-		<th>¿ä¸®½Ã°£</th>
-<<<<<<< HEAD
-		<th>ÀÛ¼ºÀÏ</th>
-=======
-		<th>¾ç</th>
->>>>>>> branch 'develop' of https://github.com/soh29/meoka
-		<th>¼öÁØ</th>
-	</tr>
-	</thead>
-	<tbody>
-		<c:forEach var="item" items="${list}">
-		<tr>
-			<td>${item.RECIPENO}</td>
-			<td>${item.MEMBERID}</td>
-			<td>${item.FOODNO}</td>
-			<td>${item.RECIPENAME}</td>
-			<td>${item.REGDATE}</td>
-			<td>${item.COOKINGTIME}</td>
-<<<<<<< HEAD
-			<td>${item.PROTION}</td>
-=======
-			<td>${item.PORTION}</td>
->>>>>>> branch 'develop' of https://github.com/soh29/meoka
-			<td>${item.RANKNO}</td>
-		</tr>
-		</c:forEach>
-	</tbody>
+		<thead>
+			<tr>
+				<th>ë²ˆí˜¸</th>
+				<th>ì´ë¦„</th>
+				<th>ì œëª©</th>
+				<th>ì¡°íšŒ</th>
+				<th>ì‘ì„±ì¼</th>
+			</tr>
+		</thead>
+		<tbody>
+			<c:forEach var="item" items="${map.list}">
+				<tr>
+					<td>${item.bno}</td>
+					<td>${item.writer}</td>
+					<td style=>
+					<c:if test="${item.depth > 0}">
+						<span style="padding-left:${item.depth * 15}px">â”–</span>
+					</c:if>
+					
+					<a href="/board/readPage?bno=${item.bno}" style="text-decoration: none;color:black;">
+							${item.title} [${item.commentcnt }]</a></td>
+					<td>${item.viewcnt}</td>
+					<td><fmt:formatDate pattern="yyyy-MM-dd HH:mm"
+										value="${item.regdate}" /></td>
+				</tr>
+			</c:forEach>
+		</tbody>
 	</table>
+	<br>
+	<form role="form" method="get">
+		<select name="searchOption">
+			<option value="title" <c:out value="${map.searchOption == 'title'?'selected':'' }"/>>Title</option>
+			<option value="writer" <c:out value="${map.searchOption == 'writer'?'selected':'' }"/>>Writer</option>
+			<option value="content" <c:out value="${map.searchOption == 'content'?'selected':'' }"/>>Content</option>
+			<option value="all" <c:out value="${map.searchOption == 'all'?'selected':'' }"/>>All</option>
+		</select>
+		<input name="keyword" value="${map.keyword }">
+		<button type="submit">ê²€ìƒ‰</button>
+		<button type="button" onclick="location.href='/board/register'">ê¸€ ì‘ì„±</button>
+		
+		<div style="display: block; text-align: center;">		
+		<c:if test="${paging.startPage != 1 }">
+			<a href="/board/list?nowPage=${paging.startPage - 1 }&cntPerPage=${paging.cntPerPage}&searchOption=${map.searchOption}&keyword=${map.keyword}">&lt;</a>
+		</c:if>
+		<c:forEach begin="${paging.startPage }" end="${paging.endPage }" var="p">
+			<c:choose>
+				<c:when test="${p == paging.nowPage }">
+					<b>${p }</b>
+				</c:when>
+				<c:when test="${p != paging.nowPage }">
+					<a href="/board/list?nowPage=${p }&cntPerPage=${paging.cntPerPage}&searchOption=${map.searchOption}&keyword=${map.keyword}">${p }</a>
+				</c:when>
+			</c:choose>
+		</c:forEach>
+		<c:if test="${paging.endPage != paging.lastPage}">
+			<a href="/board/list?nowPage=${paging.endPage+1 }&cntPerPage=${paging.cntPerPage}&searchOption=${map.searchOption}&keyword=${map.keyword}">&gt;</a>
+		</c:if>
+	</div>
+		
+	</form>
 </body>
 </html>
