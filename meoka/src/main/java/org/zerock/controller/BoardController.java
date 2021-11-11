@@ -84,11 +84,7 @@ public class BoardController {
 
 	@RequestMapping(value = "/readPage", method = RequestMethod.GET)
 	public void read(@RequestParam("bno") int bno, Model model, HttpServletRequest req) throws Exception {
-		HttpSession session = req.getSession();
-		UserVO login = new UserVO();
-		login.setUid("오승준");
-		login.setUname("오승준");
-		session.setAttribute("login", login);
+		logger.info("// /board/readPage");
 		model.addAttribute(boardService.read(bno));
 	}
 
