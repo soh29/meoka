@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="qa.mapper.QAReplyMapper">
+
+	<select id="list" resultType="qa.domain.QAReplyVO">
+		select
+		*
+		from
+		qa_reply
+		where bno =
+		#{bno}
+		order by rno desc
+	</select>
+
+	<insert id="create">
+		insert into qa_reply (rno, bno, replytext, memberid, regdate, updatedate)
+		values (QA_RNO_SEQ.NEXTVAL, #{bno},#{replytext},#{memberid}, sysdate, sysdate)
+	</insert>
+
+	<update id="update">
+		update qa_reply set replytext = #{replytext},
+		updatedate = sysdate
+		where rno = #{rno}
+	</update>
+
+	<delete id="delete">
+		delete from qa_reply where rno =#{rno}
+	</delete>
+
+
+	<select id="listPage" resultType="qa.domain.QAReplyVO">
+<![CDATA[
+select *
+from(
+	select A.*, rownum as rnum
+	from(
+		select
+			*
+		from
+			qa_reply
+		where
+			bno =#{bno}
+		order by rno desc
+		) A
+		where rownum <= #{cri.pageStart} + #{cri.perPageNum}
+	)
+where rnum > #{cri.pageStart}		
+]]>
+	</select>
+
+	<select id="count" resultType="int">
+		select count(bno) from qa_reply
+		where bno =#{bno}
+	</select>
+
+
+	<select id="getBno" resultType="int">
+		select bno from qa_reply where rno = #{rno}
+	</select>
+
+</mapper>
+
