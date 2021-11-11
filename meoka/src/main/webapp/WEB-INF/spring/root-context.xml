@@ -65,7 +65,7 @@
 		class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="dataSource" />
 		<!-- <property name="configLocation" value="classpath:/mybatis-config.xml"></property> -->
-		<!-- <property name="mapperLocations" value="classpath:mappers/**/*Mapper.xml"></property> -->
+		<property name="mapperLocations" value="classpath:mappers/**/*Mapper.xml"></property>
 	</bean>
 
 	<bean id="sqlSession"
@@ -93,23 +93,14 @@
 		</property>
 	</bean>	
 
+	<!--
 	<mybatis-spring:scan
-		base-package="org.zerock.mapper" />
-	<mybatis-spring:scan base-package="qa.mapper" />
+		base-package="org.zerock.mapper" /> -->
 
 	<context:component-scan
 		base-package="org.zerock.persistence"></context:component-scan>
-	<context:component-scan
-		base-package="org.zerock.sample"></context:component-scan>
 	<context:component-scan
 		base-package="org.zerock.service"></context:component-scan>
-	<context:component-scan
-		base-package="org.zerock.persistence"></context:component-scan>
-
-	<context:component-scan
-		base-package="qa.persistence"></context:component-scan>
-	<context:component-scan
-		base-package="qa.service"></context:component-scan>
 
 
 </beans>

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.zerock.mapper.CommentMapper">
+
+	<select id="list" resultType="org.zerock.domain.CommentVO">
+		select
+		*
+		from
+		tbl_comment
+		where bno =
+		#{bno}
+		order by groupno asc, grouporder asc
+	</select>
+
+	<insert id="create">
+		insert into tbl_comment (cno, bno, content, writer, regdate, updatedate, ipaddress, groupno, grouporder, depth)
+		values (TBL_COMMENT_CNO_SEQ.NEXTVAL, #{bno},#{content},#{writer}, sysdate, sysdate, #{ipaddress}, TBL_COMMENT_CNO_SEQ.CURRVAL, 0, 0)
+	</insert>
+
+	<update id="update">
+		update tbl_comment set content = #{content},
+		updatedate = sysdate
+		where cno = #{cno}
+	</update>
+
+	<delete id="delete">
+		delete from tbl_comment where cno =#{cno}
+	</delete>
+
+
+	<select id="listPage" resultType="org.zerock.domain.CommentVO">
+	SELECT *
+	FROM (
+		SELECT ROWNUM RN, A.*
+		FROM (
+			SELECT *
+			FROM tbl_comment
+			WHERE bno = #{bno}
+			ORDER BY groupno asc, grouporder asc
+		) A
+	)
+	WHERE RN BETWEEN #{pagingVO.start} AND #{pagingVO.end}
+	</select>
+
+	<select id="count" resultType="int">
+		select count(bno) from tbl_comment
+		where bno =#{bno}
+	</select>
+
+
+	<select id="getBno" resultType="int">
+		select bno from tbl_comment where cno = #{cno}
+	</select>
+
+
+
+<select id="getGroupOrderPosition" resultType="int">
+	<![CDATA[
+		SELECT NVL(MIN(grouporder), 0)
+		FROM tbl_comment
+		WHERE bno = #{bno}
+		AND groupno = #{groupno}
+		AND grouporder > #{grouporder}
+		AND depth <= #{depth} 
+	]]>
+	</select>
+	<select id="getMaxGroupOrder" resultType="int">
+	SELECT NVL(MAX(grouporder), 0) + 1
+	FROM tbl_comment
+	WHERE bno = #{bno}
+	AND groupno = #{groupno}
+	
+	</select>
+	<update id="updateGroupOrder">
+	UPDATE tbl_comment
+	SET grouporder = grouporder + 1
+	WHERE bno = #{bno}
+	AND groupno = #{groupno}
+	AND grouporder >= #{grouporder}
+	</update>
+	
+	<insert id="reply">
+	INSERT INTO tbl_comment(cno,
+					bno,
+					content,
+					writer,
+					regdate,
+					updatedate,
+					ipaddress,
+					groupno,
+					grouporder,
+					depth)
+		values(TBL_COMMENT_CNO_SEQ.NEXTVAL,
+				#{bno},
+				#{content},
+				#{writer},
+				sysdate,
+				sysdate,
+				#{ipaddress},
+				#{groupno},
+				#{grouporder},
+				#{depth} + 1)
+
+	</insert>
+
+
+</mapper>
+
