@@ -9,5 +9,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
    <insert id="userJoin">
       insert into member values(#{memberId}, #{password}, #{memberType}, #{rankNo})
    </insert>
+ 
 
 </mapper>

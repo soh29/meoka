@@ -29,7 +29,7 @@
 
 			<header class="tstbite-header bg-white">
 				<nav class="navbar navbar-expand-lg has-header-inner px-0">
-					<a class="navbar-brand" href="index.html"> <img
+					<a class="navbar-brand" href="/"> <img
 						src="./resources/img/brand4.svg" style="max-width: 161px;"
 						alt="Tastebite">
 					</a>
@@ -1246,12 +1246,9 @@
 							<button class="btn btn-primary" type="submit">회원정보수정</button>
 							<!-- lab end -->
 
-							<!-- lab begin -->
-							<c:if test="${not empty login}">
-								</a>
+							
 								<a href="/user/logout" class="btn btn-primary">로그아웃</a>
-							</c:if>
-							<!-- lab end -->
+					
 
 
 						</div>
