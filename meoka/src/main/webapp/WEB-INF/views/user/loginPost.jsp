@@ -27,7 +27,7 @@
 	</c:if>
 
 	<script type="text/javascript">
-		self.location = "/home-v3";
+		self.location = "/";
 	</script>
 
 </body>

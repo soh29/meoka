@@ -30,7 +30,7 @@ public class UserController {
    private UserService userservice;
    
    @Inject
-     BCryptPasswordEncoder pwdEncoder;
+   BCryptPasswordEncoder pwdEncoder;
 
    // 회원가입 페이지 이름
    @RequestMapping(value = "/join", method = RequestMethod.GET)
@@ -54,10 +54,10 @@ public class UserController {
             + user.getPhoneNo());
       
       String inputPass = user.getPassword();
-        String pwd = pwdEncoder.encode(inputPass);
-        user.setPassword(pwd);
+      String pwd = pwdEncoder.encode(inputPass);
+      user.setPassword(pwd);
         
-        System.out.println("pwd:"+pwd);
+      System.out.println("pwd:"+pwd);
         
       
       user.setMemberType("사용자");
@@ -80,15 +80,13 @@ public class UserController {
       }   
 
    // 로그인 페이지 이동
-   @RequestMapping(value = "/user/login", method = RequestMethod.GET)
+   @RequestMapping(value = "/login", method = RequestMethod.GET)
    public void login() {
       logger.info("로그인 페이지 진입");
    }
 
    @Inject
    private UserService service;
-   
-
 
    @RequestMapping(value = "/loginPost", method = RequestMethod.POST)
    public void loginPOST(LoginDTO dto, HttpSession session, Model model) throws Exception {
@@ -114,14 +112,15 @@ public class UserController {
       
       
 
-      if (dto.isUseCookie()) {
+      /* if (dto.isUseCookie()) {
 
          int amount = 60 * 60 * 24 * 7;
 
          Date sessionLimit = new Date(System.currentTimeMillis() + (1000 * amount));
 
          service.keepLogin(vo.getMemberId(), session.getId(), sessionLimit);
-      }
+      } */
+      
    }
 
    @RequestMapping(value = "/logout", method = RequestMethod.GET)
@@ -197,12 +196,13 @@ public class UserController {
       if (!(pwdEncoder.matches(voPass, sessionPass))) {
          rttr.addFlashAttribute("msg", false);
          return "redirect:/user/delete";
-      }
-
+      } 
+      
       service.userDelete(vo);
       session.invalidate();
 
       return "redirect:/";
+      
    }
    
    // 아이디 찾기 페이지 이동

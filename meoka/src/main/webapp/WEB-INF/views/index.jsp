@@ -30,8 +30,7 @@
 			<header class="tstbite-header bg-white">
 				<nav class="navbar navbar-expand-lg has-header-inner px-0">
 					<a class="navbar-brand" href="/"> <img
-						src="./resources/img/brand4.svg" style="max-width: 161px;"
-						alt="Tastebite">
+						src="resources/img/meokalogo.png" style="max-width: 161px; opacity: 8.0;">
 					</a>
 					<div
 						class="tstbite-header-links d-flex align-items-center ml-auto order-0 order-lg-2">
@@ -42,8 +41,6 @@
 									d="M24.39,26.276l-4.9-4.9a12.012,12.012,0,1,1,1.885-1.885l4.9,4.9a1.334,1.334,0,0,1-1.886,1.886ZM2.666,12a9.329,9.329,0,0,0,15.827,6.7,1.338,1.338,0,0,1,.206-.206A9.332,9.332,0,1,0,2.666,12Z"></path>
 </svg>
 						</a>
-
-
 
 						<!-- lab begin -->
 						<c:if test="${not empty login}">
@@ -59,9 +56,6 @@
 								style="width:90px; height:28px; padding:3px 20px 2px 20px;">로그인</a>
 						</c:if>
 						<!-- lab end -->
-
-
-
 
 						<!-- modal lab begin -->
 						<div class="modal fade" id="exampleModalCenter" tabindex="-1"
@@ -222,8 +216,8 @@
 							<li class="nav-item"><a class="nav-link"
 								href="elements.html">Elements</a></li>
 							<li class="nav-item"><a class="nav-link"
-								href="https://fabrx.co/tastebite-food-recipes-website-template/"
-								target="_blank">Buy</a></li>
+								href="/board/list"
+								>Q&A</a></li>
 						</ul>
 					</div>
 				</nav>
@@ -1344,7 +1338,7 @@
 		<!-- lab end -->
 
 
-		<!--  
+		 
 		<div class="modal fade" id="moaModal" tabindex="-1" role="dialog"
 			aria-labelledby="exampleModalLabel" aria-hidden="true">
 			<div class="modal-dialog" role="document">
@@ -1359,7 +1353,7 @@
 				</div>
 			</div>
 		</div>
-		-->
+	
 
 	</c:if>
 

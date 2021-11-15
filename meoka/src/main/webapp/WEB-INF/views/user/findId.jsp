@@ -2,12 +2,19 @@
 	pageEncoding="UTF-8"%>
 	
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@include file="../include/header.jsp"%>
 
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>Find ID</title>
+<link href="/resources/css/swiper-bundle.min.css" rel="stylesheet"
+	type="text/css" media="all">
+<link href="/resources/css/tastebite-styles.css" rel="stylesheet"
+	type="text/css" media="all">
+
+	
 <style>
 :root { -
 	-input-padding-x: 1.5rem; -
@@ -145,12 +152,11 @@ body {
 			<label>일치하는 정보가 존재하지 않습니다.</label>
 		</c:if>
 
-		<!-- 이름과 비밀번호가 일치하지 않을 때 -->
+		<!-- 이름과 비밀번호가 일치할 때 -->
 		<c:if test="${check == 0 }">
 			<label>찾으시는 아이디는 '${id}' 입니다.</label>
 			<div class="form-label-group">
-				<input class="btn btn-lg btn-secondary btn-block text-uppercase"
-					type="button" value="OK" onclick="closethewindow()">
+				<a href="/" class="btn btn-sm btn-outline-dark ml-0 ml-md-4">확인</a>
 			</div>
 		</c:if>
 
@@ -163,4 +169,7 @@ body {
 	</script>
 	
 </body>
+
+<%@include file="../include/footer.jsp"%>
+
 </html>
