@@ -1,9 +1,9 @@
-<footer class="tstbite-footer pt-3 pt-md-5 mt-5 bg-lightest-gray">
+<footer class="tstbite-footer pt-3 pt-md-5 mt-5 bg-lightest-gray" >
 		<div class="container">
 			<div class="row pt-4 pb-0 pb-md-5">
 				<div class="col-md-6">
 					<div class="tastebite-footer-contnet pr-0 pr-lg-5 mr-0 mr-md-5">
-						<a href="index.html"> <img src="/resources/img/brand4.svg"
+						<a href="index.html"> <img src="/resources/img/meokalogo.png"
 							alt="Tastebite">
 						</a>
 						<p class="mt-3 text-gray-300 pr-0 pr-lg-5 mr-0 mr-lg-4">"On
@@ -14,7 +14,7 @@
 				</div>
 				<div class="col-md-2">
 					<h6 class="caption font-weight-medium mb-2 inter-font">
-						<span>Tastebite</span> <span
+						<span>Meoka</span> <span
 							class="d-inline-block d-md-none float-right"> <svg
 								xmlns="http://www.w3.org/2000/svg" width="14" height="8"
 								viewBox="0 0 9.333 5.333">
@@ -72,7 +72,7 @@
 			<hr>
 			<div class="row pb-4 pt-2 align-items-center">
 				<div class="col-md-6 order-2 order-md-0">
-					<p class="text-gray-300 small text-left mb-0">© 2020 Tastebite
+					<p class="text-gray-300 small text-left mb-0">© 2021 Meoka
 						- All rights reserved</p>
 				</div>
 				<div class="col-md-6">

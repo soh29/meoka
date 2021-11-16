@@ -1,16 +1,29 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<html>
-   <head>
-      <!-- 합쳐지고 최소화된 최신 CSS -->
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-      <!-- 부가적인 테마 -->
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
-       
-       <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-      <title>회원가입</title>
-   </head>
+
+<%@include file="../include/header.jsp"%>
+
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Modify PAGE</title>
+<link href="/resources/css/swiper-bundle.min.css" rel="stylesheet"
+   type="text/css" media="all">
+<link href="/resources/css/tastebite-styles.css" rel="stylesheet"
+   type="text/css" media="all">
+
+<script
+   src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<style>
+body {
+   margin: auto;
+}
+</style>
+</head>
+
    <script type="text/javascript">
       $(document).ready(function(){
          // 취소
@@ -26,74 +39,86 @@
                $("#password").focus();
                return false;
             }
-            // if($("#memberId").val()==""){
-               // alert("성명을 입력해주세요.");
-               // $("#memberId").focus();
-               // return false;
-            // }
+
          });
          
             
          
       })
    </script>
+   
    <body>
+   <div class="tstbite-components mb-5 pb-4">
+   <h5
+      class="border-bottom pt-md-5 pb-4 mb-5 font-weight-semibold inter-font">회원정보수정</h5>
       <section id="container">
          <form action="/user/modifyComplete" method="post">
-            <div class="form-group has-feedback">
-               <label class="control-label" for="name">이름</label>
-               <input class="form-control" type="text" id="name" name="name" value="${login.name}" readonly="readonly"/>
-            </div>
-         
-            <div class="form-group has-feedback">
-               <label class="control-label" for="memberId">아이디</label>
-               <input class="form-control" type="text" id="memberId" name="memberId" value="${login.memberId}" readonly="readonly"/>
-            </div>
+             
+            <div class="name">
+            <label for="name" style="width: 120px; margin: auto">이름
+               </label> <input type="text" class="name_input"
+               style="margin-bottom: 10px; width: 400px" id="name"
+               name="name" value="${login.name}" readonly="readonly"/>
+        	</div>
+        	
+        	<div class="name">
+            <label for="memberId" style="width: 120px; margin: auto">아이디
+               </label> <input type="text" class="name_input"
+               style="margin-bottom: 10px; width: 400px" id="memberId"
+               name="memberId" value="${login.memberId}" readonly="readonly"/>
+        	</div>
+        	
+        	<div class="name">
+            <label for="password" style="width: 120px; margin: auto">새 비밀번호
+               </label> <input type="password" class="name_input"
+               style="margin-bottom: 10px; width: 400px" id="password"
+               name="password" />
+        	</div>
+        	
+        	<div class="name">
+            <label for="passwordCheck" style="width: 120px; margin: auto">새 비밀번호
+               </label> <input type="password" class="name_input"
+               style="margin-bottom: 10px; width: 400px" id="passwordCheck"
+               name="passwordCheck" />
+        	</div>
+        	
+        	<div class="name">
+            <label for="email" style="width: 120px; margin: auto">이메일
+               </label> <input type="text" class="name_input"
+               style="margin-bottom: 10px; width: 400px" id="email"
+               name="email" value="${login.email}"/>
+        	</div>
+        	
+        	<div class="name">
+            <label for="phoneNo" style="width: 120px; margin: auto">핸드폰번호
+               </label> <input type="text" class="name_input"
+               style="margin-bottom: 10px; width: 400px" id="phoneNo"
+               name="phoneNo" value="${login.email}"/>
+        	</div>
+        	
+        	<div class="name">
+            <label for="memberType" style="width: 120px; margin: auto">타입
+               </label> <input type="text" class="name_input"
+               style="margin-bottom: 10px; width: 400px" id="memberType"
+               name="memberType" value="${login.memberType}"/>
+        	</div>
+        	
+        	<div class="name">
+            <label for="rankNo" style="width: 120px; margin: auto">수준
+               </label> <input type="text" class="name_input"
+               style="margin-bottom: 10px; width: 400px" id="rankNo"
+               name="rankNo" value="${login.rankNo}"/>
+        	</div>
+             
+            <button type="submit" id="submit" class="btn btn-secondary"
+            style="border-color:#ff642b; background-color:#ff642b; width: 525px; float:none; margin:15px auto; color:#fff!important">회원정보수정</button>
             
-            <!-- <div class="form-group has-feedback">
-               <label class="control-label" for="password">기존 비밀번호</label>
-               <input class="form-control" type="password" id="password" name="password" />
-            </div> -->
-            
-            <div class="form-group has-feedback">
-               <label class="control-label" for="password">새 비밀번호</label>
-               <input class="form-control" type="password" id="password" name="password" />
-            </div>
-            
-            <div class="form-group has-feedback">
-               <label class="control-label" for="password">새 비밀번호 확인</label>
-               <input class="form-control" type="password" id="passwordCheck" name="passwordCheck" />
-            </div>
-            
-            <div class="form-group has-feedback">
-               <label class="control-label" for="rankNo">이메일</label>
-               <input class="form-control" type="text" id="email" name="email" value="${login.email}"/>
-            </div>
-            
-            <div class="form-group has-feedback">
-               <label class="control-label" for="rankNo">번호</label>
-               <input class="form-control" type="text" id="phoneNo" name="phoneNo" value="${login.phoneNo}"/>
-            </div>
-            
-            <div class="form-group has-feedback">
-               <label class="control-label" for="memberType">타입</label>
-               <input class="form-control" type="text" id="memberType" name="memberType" value="${login.memberType}"/>
-            </div>
-            
-            <div class="form-group has-feedback">
-               <label class="control-label" for="memberType">수준</label>
-               <input class="form-control" type="text" id="rankNo" name="rankNo" value="${login.rankNo}"/>
-            </div>
-            
-            <div class="form-group has-feedback">
-               <button class="btn btn-success" type="submit" id="submit">회원정보수정</button>
-
-               <a href="/user/info" class="btn btn-primary">취소</a>
-            </div>
          </form>
       </section>
       
    </body>
-   
+
+<%@include file="../include/footer.jsp"%>
+
 </html>
  

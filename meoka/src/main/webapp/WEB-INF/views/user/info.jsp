@@ -12,17 +12,16 @@
 	type="text/css" media="all">
 <link href="/resources/css/tastebite-styles.css" rel="stylesheet"
 	type="text/css" media="all">
+
+<style>
+body {
+	margin: auto;
+}
+</style>	
+
 </head>
 <body>
 
-
-   
-
-         <!--  
-         <form action=/user/modify method="get">
-            <button class="btn btn-primary" type="submit">회원정보수정</button>
-         -->
-         
             <a href="/user/logout" class="btn btn-primary">로그아웃</a>
 
             <!-- lab begin -->
@@ -44,8 +43,7 @@
                         <a href="#0"
                            class="f-size-20 text-black d-block mt-1 font-weight-semibold">[정보관리]</a>
                      </figcaption>
-                        <li><a href="/user/modify" method="get">기본 회원정보</a></li>
-                        <li><a href="#" method="get">추가 회원정보</a></li>
+                        <li><a href="/user/modify" method="get">회원정보 수정</a></li>
                         <li><a href="/user/delete" method="get">회원탈퇴</a></li>
 
                   </figure>

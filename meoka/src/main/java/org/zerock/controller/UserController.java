@@ -77,7 +77,7 @@ public class UserController {
          System.out.println("/* idChk 실행중...");
          int result = service.idChk(user);
          return result;
-      }   
+      }  
 
    // 로그인 페이지 이동
    @RequestMapping(value = "/login", method = RequestMethod.GET)

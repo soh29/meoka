@@ -17,7 +17,7 @@ public interface UserDAO {
 	
 	// 아이디 중복 체크
 	public int idChk(UserVO user) throws Exception;
-	
+
 	// 회원정보 수정
 	public void userUpdate(UserVO vo) throws Exception;
 	

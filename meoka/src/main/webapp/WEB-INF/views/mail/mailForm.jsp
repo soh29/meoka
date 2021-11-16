@@ -37,27 +37,30 @@ function fn_idChk(){
 
 <body>
 
-	<div class="container">
-		<h2 style="font-family:inter,sans-serif!important; width:500px; font-size:36px; font-weight:600px;" class="border-bottom pt-md-5 pb-4 mb-5 font-weight-semibold inter-font">비밀번호 찾기</h2>
-		<form role="form" method="post" class="was-validated">
-			<div class="form-group">
-				<label for="email">메일</label> <input type="text"
-					class="form-control" id="toMail" name="email"
-					placeholder="메일주소를 입력하세요" required />
-			</div>
+	<h5
+      class="border-bottom pt-md-5 pb-4 mb-5 font-weight-semibold inter-font">비밀번호 찾기</h5>
+      
+   <form role="form" method="post" class="was-validated">
+   
+      <div class="warp" style="width: 500px; margin: auto">
+      
+      <div class="name">
+         <label for="memberId" style="width: 70px; margin: auto">아이디</label> 
+         <input type="text" class="name_input" style="margin-bottom:10px; width:400px"
+            id="memberId" name="memberId" placeholder="아이디를 입력하세요" />
+      </div>
+      
+      <div class="name">
+         <label for="email" style="width: 70px; margin: auto">이메일</label> 
+         <input type="text" class="name_input" style="margin-bottom:10px; width:400px"
+            id="toMail" name="email" placeholder="이메일주소를 입력하세요" />
+      </div>
+      
+      <button type="submit" id="idChk" class="btn btn-secondary;" onclick="fn_idChk()" value="N"
+            style="border-color:#ff642b; background-color:#ff642b; width: 475px; float:none; margin:15px auto; color:#fff!important">비밀번호 찾기</button>
 
-			<div class="form-group">
-				<label for="memberId">아이디</label> <input type="text"
-					class="form-control" id="memberId" name="memberId"
-					placeholder="아이디를 입력하세요" required />
-			</div>						
-
-			<button type="submit" id="idChk" style="border-color:#e4f1ff; background-color:#e4f1ff;" class="btn btn-secondary" "onclick="fn_idChk()" value="N">메일보내기</button>
-			<button type="reset" class="btn btn-secondary">다시쓰기</button>
-			<button type="button" class="btn btn-secondary"
-				onclick="location.href='${contextPath}/'">돌아가기</button>
-		</form>
-	</div>
+   </div>
+   </form>
 
 </body>
 

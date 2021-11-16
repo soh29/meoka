@@ -25,6 +25,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
       member where memberId = #{memberId} 
       <!--  and   password = #{password} -->
    </select>
+   
+   <!-- 로그인 상태 유지 -->
+   <update id="keepLogin">
+		update member set sessionKey = #{sessionId}, sessionLimit = #{next} where
+		memberId = #{memberId}
+	</update>
 
    <!-- 회원정보수정 -->
    <update id="userUpdate">

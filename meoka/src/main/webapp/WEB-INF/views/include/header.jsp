@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <!DOCTYPE html>
 <html dir="ltr" lang="en-US">
@@ -24,7 +26,12 @@
 	
 <link href="/resources/css/tastebite-styles.css" rel="stylesheet"
 	type="text/css" media="all">
-	
+
+<style>
+body {
+	margin: auto;
+}
+</style>
 	
 <style>
 img.rounded-circle {

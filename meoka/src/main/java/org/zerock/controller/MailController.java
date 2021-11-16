@@ -2,12 +2,14 @@ package org.zerock.controller;
 
 import java.util.Random;
 
+import javax.inject.Inject;
 import javax.mail.MessagingException;
 import javax.mail.internet.MimeMessage;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -25,6 +27,9 @@ public class MailController {
 	
 	@Autowired
 	private UserService service;
+	
+	 @Inject
+	 BCryptPasswordEncoder pwdEncoder;
 	
 	@RequestMapping(value = "/mailForm", method = RequestMethod.GET)
 	public String mailFormGet() {
@@ -61,17 +66,16 @@ public class MailController {
 				}
 			}
 			
-			System.out.println("임시번호:"+temp.toString());
-			
 			String randomPw = temp.toString();
 			vo.setPassword(randomPw);
 			String content = vo.getMemberId() + "님 임시비밀번호 : " + vo.getPassword();
 			System.out.println(content);
 			
-			service.updateRandomPw(vo);
+			String inputPass = vo.getPassword();
+			String pwd = pwdEncoder.encode(inputPass);
+			vo.setPassword(pwd);
 			
-			//UserVO user = new UserVO();
-			//System.out.println("***USERVO***: " + vo);
+			service.updateRandomPw(vo);
 			
 			MimeMessage message = mailSender.createMimeMessage();
 			MimeMessageHelper messageHelper = new MimeMessageHelper(message, true, "UTF-8");
@@ -82,24 +86,6 @@ public class MailController {
 			messageHelper.setSubject(title);
 			messageHelper.setText(content);
 
-			// 메세지 내용과 함께 사진을 전송한다
-			/*
-			 * content = content.replace("\n", "<br/>"); content +=
-			 * "<br><hr><h3>CJ GREEN입니다.<h3><hr><br>"; content += "<p>....</p>"; content +=
-			 * "<p>오늘도 행복한 시간되세요!! </p>"; content += "<p><a href=''>CJ Green</a></p>";
-			 * 
-			 * messageHelper.setText(content, true); FileSystemResource file = new
-			 * FileSystemResource(new File("경로/파일명.jpg"));
-			 * messageHelper.addInline("파일명.jpg", file);
-			 */
-
-			// 메일과 함께 첨부파일 전송하기
-			/*
-			 * FileSystemResource mfile = new FileSystemResource(new File("경로/파일명.jpg"));
-			 * messageHelper.addAttachment("파일명.jpg", mfile);
-			 */
-
-			// 메세지 내용과 함께 사진을 전송한다
 			mailSender.send(message); // 실제 메일 전송
 		} catch (MessagingException e) {
 			e.printStackTrace();

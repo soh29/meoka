@@ -8,7 +8,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
    <!-- 회원가입 -->
    <insert id="userJoin">
-      insert into member(name, memberId, password, email, phoneNo, memberType, rankNo)
+      insert into member(name,memberId,password,email,phoneNo,memberType,rankNo)
       values(#{name}, #{memberId}, #{password}, #{email}, #{phoneNo}, #{memberType}, #{rankNo})
    </insert>
    
