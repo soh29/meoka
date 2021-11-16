@@ -57,6 +57,7 @@ public class UserController {
       String pwd = pwdEncoder.encode(inputPass);
       user.setPassword(pwd);
         
+
       System.out.println("pwd:"+pwd);
         
       

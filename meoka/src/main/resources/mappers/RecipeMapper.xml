@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.zerock.mapper.RecipeMapper">
+
+   <!-- REcipeno -->
+   <select id="recipeno" resultType="int">
+      SELECT
+      RECIPE_RECIPENO_SEQ.CURRVAL
+      FROM DUAL
+   </select>
+
+   <!-- 게시물 목록 -->
+   <select id="list" resultType="org.zerock.domain.RecipeVO">
+      SELECT R.*, photo
+        FROM
+        (
+            SELECT rd.recipeno, rd.photo
+            FROM recipedetail rd, (
+            select recipeno, max(recipedetailno) as MAXIMUM
+                from recipedetail
+                group by recipeno) rdm
+            WHERE rd.recipeno = rdm.recipeno
+            AND rd.recipedetailno = rdm.MAXIMUM
+        ) P, RECIPE R
+        WHERE P.RECIPENO = R.RECIPENO
+        ORDER BY R.RECIPENO asc
+   </select>
+   <select id="listWithPhoto" resultType="org.zerock.domain.RecipeVO">
+      SELECT R.*, photo
+        FROM
+        (
+            SELECT rd.recipeno, rd.photo
+            FROM recipedetail rd, (
+            select recipeno, max(recipedetailno) as MAXIMUM
+                from recipedetail
+                group by recipeno) rdm
+            WHERE rd.recipeno = rdm.recipeno
+            AND rd.recipedetailno = rdm.MAXIMUM
+        ) P, RECIPE R
+        WHERE P.RECIPENO = R.RECIPENO
+        ORDER BY R.RECIPENO
+   </select>
+   <!-- 게시물 작성 -->
+   <insert id="write" parameterType="org.zerock.domain.RecipeVO">
+      insert into
+      book_ex.RECIPE(RECIPENO,MEMBERID,RECIPENAME,COOKINGTIME,REGDATE,PORTION,RANKNO)
+      values(RECIPE_RECIPENO_SEQ.NEXTVAL,#{MEMBERID},
+      #{RECIPENAME},#{COOKINGTIME},SYSDATE,#{PORTION},#{RANKNO})
+   </insert>
+   <!-- 레시피디테일 작성 -->
+   <insert id="writeRecipeDetail"
+      parameterType="org.zerock.domain.RecipeDetailVO">
+      insert into
+      book_ex.RECIPEDETAIL(RECIPENO,RECIPEDETAILNO,RECIPEDETAIL,PHOTO)
+      values(#{RECIPENO},#{RECIPEDETAILNO},#{RECIPEDETAIL},#{PHOTO})
+   </insert>
+   <!-- 게시물 조회 -->
+   <select id="view" parameterType="int"
+      resultType="org.zerock.domain.RecipeVO">
+      select
+      RECIPENO, MEMBERID, FOODNO, RECIPENAME, REGDATE,
+      COOKINGTIME, PORTION, RANKNO
+      from
+      book_ex.RECIPE
+      where
+      RECIPENO =
+      #{RECIPENO}
+   </select>
+   <!-- 레시피 디테일 조회 -->
+   <select id="getRecipeDetailList" parameterType="int"
+      resultType="org.zerock.domain.RecipeDetailVO">
+      select
+      RECIPENO, RECIPEDETAILNO, RECIPEDETAIL, PHOTO
+      from
+      book_ex.RECIPEDETAIL
+      where
+      RECIPENO = #{RECIPENO}
+   </select>
+   
+   <!-- 썸네일 -->
+   <select id="show" parameterType="int" resultType="String">
+      select photo from recipedetail
+      where recipeno=#{recipeno} 
+      and recipedetailno =
+      (select max(recipedetailno) 
+      from recipedetail where recipeno=#{recipeno})
+   </select>
+
+
+   <!-- 게시물 수정 -->
+   <update id="modify" parameterType="org.zerock.domain.RecipeVO">
+      update book_ex.RECIPE
+      set
+      RECIPENAME = #{RECIPENAME},
+      COOKINGTIME = #{COOKINGTIME},
+      PORTION =
+      #{PORTION},
+      RANKNO = #{RANKNO}
+      where RECIPENO = #{RECIPENO}
+   </update>
+   
+      <!-- 레시피 디테일 수정 -->
+   <update id="modifyRecipeDetail" parameterType="org.zerock.domain.RecipeDetailVO">
+      update book_ex.RECIPEDETAIL
+      set
+      RECIPENAME = #{RECIPENAME},
+      COOKINGTIME = #{COOKINGTIME},
+      PORTION =
+      #{PORTION},
+      RANKNO = #{RANKNO}
+      where RECIPENO = #{RECIPENO}
+   </update>
+
+   <!-- 게시물 삭제 -->
+   <delete id="delete" parameterType="int">
+      delete
+      from book_ex.RECIPE
+      where RECIPENO = #{RECIPENO}
+   </delete>
+   
+   <!-- 레시피 세부내용 삭제 -->
+   <delete id="deleteRecipeDetail" parameterType="int">
+      delete
+      from
+      book_ex.recipedetail
+      where RECIPENO = #{RECIPENO}
+   </delete>
+   
+
+
+   <!-- 게시물 총 갯수 -->
+   <select id="listCount" resultType="int">
+   <![CDATA[ 
+      select count(*) from
+      RECIPE
+      where recipeno>0
+   ]]>
+   </select>
+
+   <!-- 게시물 목록 + 페이징 -->
+   <select id="listPage" parameterType="org.zerock.domain.Criteria"
+      resultType="org.zerock.domain.RecipeVO">
+<![CDATA[ 
+SELECT * FROM (
+        SELECT a.*, ROWNUM as rnum FROM (
+         SELECT R.*, photo
+              FROM
+              ( SELECT rd.recipeno, rd.photo
+                  FROM recipedetail rd, (
+                  select recipeno, max(recipedetailno) as MAXIMUM
+                      from recipedetail
+                      group by recipeno) rdm
+                  WHERE rd.recipeno = rdm.recipeno
+                  AND rd.recipedetailno = rdm.MAXIMUM
+              ) P, RECIPE R
+              WHERE P.RECIPENO = R.RECIPENO
+              ORDER BY R.RECIPENO asc
+        
+      ) a
+   )  WHERE rnum >=#{rowStart} and rnum <=#{rowEnd}
+]]>
+   </select>
+
+   <!-- 검색 -->
+    <select id="listSearch" resultType="org.zerock.domain.RecipeVO"
+      parameterType="org.zerock.domain.SearchCriteria">
+   <![CDATA[
+   SELECT * FROM (
+        SELECT a.*, ROWNUM as rnum FROM (
+         SELECT R.*, photo
+              FROM
+              ( SELECT rd.recipeno, rd.photo
+                  FROM recipedetail rd, (
+                  select recipeno, max(recipedetailno) as MAXIMUM
+                      from recipedetail
+                      group by recipeno) rdm
+                  WHERE rd.recipeno = rdm.recipeno
+                AND rd.recipedetailno = rdm.MAXIMUM
+              ) P, RECIPE R]]>
+              <if test="scri.searchType == 'i'.toString()">
+<![CDATA[
+              , (
+              
+                 SELECT RECIPENO, COUNT(*) as cnt
+               FROM (SELECT RI.RECIPENO, I.INGREDIENTNAME
+                   FROM RECIPEINGRE RI, INGREDIENT I
+                   WHERE I.INGREDIENTNO=RI.INGREDIENTNO
+]]>
+                   <include refid="searchByIngredient"></include>)
+                <![CDATA[
+                GROUP BY RECIPENO
+               ORDER BY cnt desc
+            ) I
+            ]]>
+            </if>
+
+              WHERE P.RECIPENO = R.RECIPENO
+              
+              <if test="scri.searchType == 'i'.toString()">
+              AND R.RECIPENO = I.RECIPENO
+            </if>
+          <include refid="search"></include>
+          <if test="scri.searchType != 'i'.toString()">
+           <![CDATA[
+              ORDER BY R.RECIPENO asc]]>
+              </if>
+              <if test="scri.searchType == 'i'.toString()">
+           <![CDATA[
+              ORDER BY cnt desc]]>
+              </if>
+           <![CDATA[
+           ) a      
+   )  WHERE rnum >=#{scri.rowStart} and rnum <=#{scri.rowEnd}
+   ]]>
+   </select>
+
+
+   <select id="countSearch" resultType="int">
+   <![CDATA[
+      select count(*)
+      from recipe
+     where recipeno > 0
+        ]]>
+      <include refid="search"></include>
+   </select>
+
+   <sql id="search">
+      <if test="scri.searchType != null">
+         <if test="scri.searchType == 't'.toString()"> and recipename like '%' || #{scri.keyword} || '%'</if>
+         <if test="scri.searchType == 'w'.toString()">and memberid like '%' || #{scri.keyword} || '%'</if>
+         <if test="scri.searchType == 'tr'.toString()">and (recipename like '%' || #{scri.keyword} || '%') or
+            (rankno
+            like '%' || #{scri.keyword} || '%')</if>
+      </if>
+   </sql>
+   <sql id="searchByIngredient">
+   
+      <if test="scri.searchType == 'i'.toString()">and ingredientname in
+
+         <foreach collection="keywords" item="keyword" index="index" separator="," open="(" close=")">
+              #{keyword}
+           </foreach>
+ 
+      </if>
+   </sql>
+
+</mapper>

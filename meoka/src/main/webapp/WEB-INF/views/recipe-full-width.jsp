@@ -771,10 +771,11 @@
 								</div>
 							</div>
 						</li>
+						
+						
 						<li class="comment-item">
 							<div class="media">
-								<a
-									href="recipe-full-width.html#0"
+								<a href="recipe-full-width.html#0"
 									class="tstbite-avatar align-self-start mr-3"><img
 									src="./resources/img/avatar9.png" alt="Avatar"></a>
 								<div class="media-body">
@@ -786,44 +787,14 @@
 									<p>Synth polaroid bitters chillwave pickled. Vegan disrupt
 										tousled, Portland keffiyeh aesthetic food truck sriracha
 										cornhole single-origin coffee church-key roof party.</p>
-									<ul class="tstbite-media-links list-unstyled d-flex mt-4">
-										<li><a
-											href="recipe-full-width.html#0">
-												<svg data-name="feather-icon/calendar"
-													xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-													viewBox="0 0 16 16">
-<rect data-name="Bounding Box" width="16" height="16"
-														fill="rgba(255,255,255,0)"></rect>
-<path
-														d="M.672,13.335a.687.687,0,0,1-.464-.183A.655.655,0,0,1,0,12.667V2A2,2,0,0,1,2,0h9.334a2,2,0,0,1,2,2V8.666a2,2,0,0,1-2,2H3.61L1.138,13.138A.657.657,0,0,1,.672,13.335ZM2,1.333A.667.667,0,0,0,1.333,2v9.058L2.862,9.529a.671.671,0,0,1,.472-.195h8A.668.668,0,0,0,12,8.666V2a.667.667,0,0,0-.667-.667Z"
-														transform="translate(1.333 1.333)" fill="#7f7f7f"></path>
-</svg> Reply (2)
-										</a></li>
-										<li><a
-											href="recipe-full-width.html#0">
-												<svg data-name="feather-icon/calendar"
-													xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-													viewBox="0 0 16 16">
-<rect data-name="Bounding Box" width="16" height="16"
-														fill="rgba(255,255,255,0)"></rect>
-<path
-														d="M7.634,13.488a.662.662,0,0,1-.471-.2L1.269,7.4A4.334,4.334,0,0,1,7.4,1.27l.235.235.235-.235a4.334,4.334,0,0,1,7.4,3.064A4.3,4.3,0,0,1,14,7.4L8.105,13.292A.662.662,0,0,1,7.634,13.488ZM4.334,1.334A3,3,0,0,0,2.212,6.457l5.422,5.422,5.422-5.422A3,3,0,1,0,8.812,2.213l-.707.706a.666.666,0,0,1-.943,0l-.707-.706A2.981,2.981,0,0,0,4.334,1.334Z"
-														transform="translate(0.366 1.332)" fill="#7f7f7f"></path>
-</svg> 48
-										</a></li>
-										<li><a
-											href="recipe-full-width.html#0">
-												<svg xmlns="http://www.w3.org/2000/svg" width="12"
-													height="2.666" viewBox="0 0 12 2.666">
-<path
-														d="M9.334,1.333a1.333,1.333,0,1,1,1.333,1.333A1.333,1.333,0,0,1,9.334,1.333Zm-4.667,0A1.333,1.333,0,1,1,6,2.666,1.333,1.333,0,0,1,4.667,1.333ZM0,1.333A1.333,1.333,0,1,1,1.333,2.666,1.333,1.333,0,0,1,0,1.333Z"
-														fill="#7f7f7f"></path>
-</svg> More
-										</a></li>
-									</ul>
 								</div>
 							</div>
 						</li>
+						
+						
+						
+						
+						
 						<li class="comment-item">
 							<div class="media">
 								<a

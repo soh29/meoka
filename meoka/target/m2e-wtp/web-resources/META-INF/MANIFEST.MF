@@ -1,5 +1,10 @@
 Manifest-Version: 1.0
+<<<<<<< HEAD
 Built-By: yeahj
 Build-Jdk: 11
+=======
+Built-By: Kosmo
+Build-Jdk: 16.0.2
+>>>>>>> branch 'develop' of https://github.com/soh29/meoka
 Created-By: Maven Integration for Eclipse
 
