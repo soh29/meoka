@@ -26,6 +26,7 @@ import org.zerock.util.MediaUtils;
 import org.zerock.util.UploadFileUtils;
 
 @Controller
+@RequestMapping("/upload/*")
 public class UploadController {
 
   private static final Logger logger = LoggerFactory.getLogger(UploadController.class);
