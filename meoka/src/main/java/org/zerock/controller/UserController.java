@@ -63,7 +63,7 @@ public class UserController {
         System.out.println("pwd:"+pwd);        
 		
 		user.setMemberType("사용자");
-		user.setRankNo(1);
+		user.setRankNo(21);
 		userservice.userJoin(user);
 
 		logger.info("join Service 성공");
