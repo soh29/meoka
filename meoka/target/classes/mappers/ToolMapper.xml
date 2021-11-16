@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.zerock.mapper.ToolMapper">
+
+	<!-- 도구시작 -->
+	
+	<!-- 도구 존재비교 -->
+	<select id="utensilExist" resultType="org.zerock.domain.UtensilVO">
+	select utensilName from utensil where utensilname = #{utensilName}
+	</select>
+	
+	<!--도구랑 레시피 같이 조회 -->
+	<select id="listUtensil" resultType="org.zerock.domain.UtensilVO">
+		select
+		utensilname
+		from recipe r, recipeutensil ru , utensil u
+		where
+		r.recipeno= ru.recipeno and ru.utensilno= u.utensilno
+		and r.recipeno=#{recipeNo}
+	</select>
+	
+	<!-- 도구 작성 -->
+	<insert id="writeUtensil" parameterType="org.zerock.domain.UtensilVO">
+	 	insert into
+      recipeutensil(recipeno, utensilno)
+      values(#{recipeNO},(select utensilno from utensil where utensilname=#{utensilName}))
+	</insert>
+	
+		<!-- 도구 없을 때 새로 작성 -->
+	<insert id="writeFirstUtensil" parameterType="org.zerock.domain.UtensilVO">
+	  insert into utensil(utensilno, utensilname) 
+    values(utensil_utensilno_SEQ.nextval, #{utensilName})
+	</insert>
+	
+	
+	<!-- 도구 삭제 -->
+	<delete id="deleteUtensil" parameterType="int">
+		delete
+		from
+		recipeutensil
+		where RECIPENO = #{RECIPENO}
+	</delete>
+	
+			<!-- 도구 수정 -->
+	<update id="modifyUtensil" parameterType="org.zerock.domain.UtensilVO">
+	update recipeutensil ru
+	set ru.utensilno =(select u.utensilno from utensil u where u.utensilname
+	=#{utensilName})
+	where ru.recipeno=#{recipeNO} and ru.utensilno=#{utensilNO}
+	</update>
+	
+	
+	<!-- 재료 시작 -->
+	
+	<!-- 도구 존재비교 -->
+	<select id="ingredientExist" resultType="org.zerock.domain.IngredientVO">
+	select IngredientName from ingredient where ingredientname = #{ingredientName}
+	</select>
+	
+	<!--재료랑 레시피 같이 조회 -->
+	<select id="listIngredient" resultType="org.zerock.domain.IngredientVO">
+		select
+		ri.amount, ri.required ,i.ingredienttype, i.ingredientname, i.bestbefore, i.efficacy, i.price
+		from recipe r, ingredient i, recipeingre ri
+		where
+		r.recipeno=ri.recipeno and ri.ingredientno= i.ingredientno
+		and r.recipeno=#{recipeno}
+	</select>
+	
+	<!-- 재료 작성 -->
+	<insert id="writeIngredient" parameterType="org.zerock.domain.IngredientVO">
+	  insert into
+      recipeingre(recipeno, ingredientno, amount, required)
+      values(#{recipeNo},
+      (select ingredientno from ingredient where ingredientname=#{ingredientName}),
+      #{amount}, #{required})
+	</insert>
+	
+	
+			<!-- 재료 없을 때 새로 작성 -->
+	<insert id="writeFirstIngredient" parameterType="org.zerock.domain.IngredientVO">
+	  insert into ingredient(ingredientno, ingredientname) 
+    values(ingredient_ingredientno_SEQ.nextval, #{ingredientName})
+	</insert>
+	
+	
+	
+	
+	<!-- 재료 삭제 -->
+	<delete id="deleteIngredient" parameterType="int">
+		delete
+		from
+		recipeingre
+		where RECIPENO = #{RECIPENO}
+	</delete>
+	
+	<!-- 재료 삭제 -->
+	<update id="modifyIngredient" parameterType="org.zerock.domain.IngredientVO">
+	update recipeingre ri
+	set ri.ingredientno =(select i.ingredientno from ingredient i WHERE
+	i.ingredientname = #{ingredientName})
+	where ri.recipeno=#{recipeNo} and ri.ingredientno=#{ingredientNo};
+	</update>
+
+
+</mapper>
