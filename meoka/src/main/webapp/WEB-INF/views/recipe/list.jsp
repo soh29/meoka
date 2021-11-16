@@ -276,7 +276,7 @@
 						<figure class="my-3 my-md-4 tstbite-card">
 						 <a href="/recipe/view?RECIPENO=${list.RECIPENO}"
 								class="tstbite-animation stretched-link rounded-6">
-								<img src="${list.PHOTO}" class="w-100" alt="Menu">
+								<img src="${list.PHOTO}" class="w-100" alt="Menu" style="width:200px!important;height:200px!important">
 							</a>
 							<figcaption class="mt-2">
 								<a href="/recipe/view?RECIPENO=${list.RECIPENO}"><strong>${list.RECIPENAME}</strong></a><br><small>${list.MEMBERID}</small>
