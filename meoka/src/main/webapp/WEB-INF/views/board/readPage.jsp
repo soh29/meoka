@@ -13,7 +13,7 @@
 <style type="text/css">
 .modal {
 display:none;
-  background: rgba(0, 0, 0, 0);;
+  background: rgba(0, 0, 0, 0);
   position: fixed;
   float: left;
   left: 50%;
@@ -37,6 +37,7 @@ display:none;
 	display: inline-block;
     vertical-align: top;
 }
+
 </style>
 
 
@@ -439,7 +440,7 @@ display:none;
 
 
 			<!-- The time line -->
-			<ul class="timeline">
+			<ul class="timeline" style="list-style-type: none;">
 				<!-- timeline time label -->
 				<li class="time-label border-bottom" id="commentsDiv">
 					<h2 style="display:inline">Comments</h2>
@@ -470,7 +471,7 @@ display:none;
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal">&times;</button>
-					<h4 class="modal-title"></h4>
+					<h4 class="modal-title" style="display:none"></h4>
 				</div>
 				<div class="modal-body" data-cno>
 					<p>
@@ -478,8 +479,8 @@ display:none;
 					</p>
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-info" id="contentModBtn">Modify</button>
-					<button type="button" class="btn btn-danger" id="contentDelBtn">DELETE</button>
+					<button type="button" class="btn btn-info" data-dismiss="modal" id="contentModBtn">Modify</button>
+					<button type="button" class="btn btn-danger" data-dismiss="modal" id="contentDelBtn">DELETE</button>
 					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 				</div>
 			</div>
@@ -505,17 +506,13 @@ display:none;
 </li>                
 </script>
 
-<script>
-Handlebars.registerHelper('multiply30', function(num) {
-	return num * 30;
-});
-</script>
+
 
 <script id="template" type="text/x-handlebars-template">
 				{{#each .}}
 
 <li class="contentLi comment-item" data-cno={{cno}} data-bno={{bno}} data-groupno={{groupno}} data-grouporder={{grouporder}} data-depth={{depth}}
-				style="margin-left:{{multiply30 depth}}px;">
+				style="margin-left:{{multiply40 depth}}px;">
 									<div class=""><!--
 										<a
 											href="recipe-full-width.html#0"
@@ -526,7 +523,7 @@ Handlebars.registerHelper('multiply30', function(num) {
 												<h6 class="big inter-font font-weight-semibold">{{writer}}</h6>
 												<div class="text-gray-300">{{prettifyDate regdate}}</div>
 											</div>
-											<p>{{content}}</p>
+											<p class="timeline-body">{{content}}</p>
 											
 							{{#eqWriter writer }}
                   <a class="btn btn-primary btn-xs" 
@@ -555,13 +552,20 @@ Handlebars.registerHelper('multiply30', function(num) {
 	});
 
 	Handlebars.registerHelper("prettifyDate", function(timeValue) {
+		
 		var dateObj = new Date(timeValue);
+		/*
 		var year = dateObj.getFullYear();
 		var month = dateObj.getMonth() + 1;
 		var date = dateObj.getDate();
 		return year + "/" + month + "/" + date;
+		*/
+		return dateObj.toISOString().slice(0, 19).replace(/-/g, "/").replace("T", " ");
 	});
-
+	Handlebars.registerHelper('multiply40', function(num) {
+		return num * 40;
+	});
+	
 	var printData = function(contentArr, target, templateObject) {
 
 		var template = Handlebars.compile(templateObject.html());
@@ -583,8 +587,11 @@ Handlebars.registerHelper('multiply30', function(num) {
 			printPaging(data.pagingVO, $(".pagination"));
 			//alert(data);
 			$("#modifyModal").modal('hide');
-			$("#contentcntSmall").html(data.pagingVO.total);
+			//$(".modal-backdrop").css('display', 'none');
+			//$('body').removeClass('modal-open')
+			//$(".modal-backdrop").remove();
 			
+			$("#contentcntSmall").html(data.pagingVO.total);
 			
 			$(".replyComment").on("click", function() {
 				var li = $(this).parent().parent().parent();
@@ -648,7 +655,7 @@ Handlebars.registerHelper('multiply30', function(num) {
 							if (result == 'SUCCESS') {
 								alert("등록 되었습니다.");
 								contentPage = 1;
-								getPage("/comment/lastPage/" + bno);
+								getPage("/comment/" + bno + "/" + contentPage);
 								//writerObj.val("");
 								contentObj.val("");
 							}
@@ -662,6 +669,8 @@ Handlebars.registerHelper('multiply30', function(num) {
 
 	var printPaging = function(pagingVO, target) {
 
+		contentPage = pagingVO.nowPage;
+			
 		var str = "";
 		var prev = pagingVO.startPage != 1;
 		var next = pagingVO.endPage * pagingVO.cntPerPage < pagingVO.total;
@@ -730,6 +739,17 @@ Handlebars.registerHelper('multiply30', function(num) {
 					getPage("/comment/lastPage/" + bno);
 					//writerObj.val("");
 					contentObj.val("");
+					
+					
+					//scroll
+					
+					var lastComment = $(".timeline").children(".contentLi").last();
+					
+					$('html, body').animate({
+						scrollTop:lastComment.position().top
+					});
+						
+				
 				}
 			}
 		});
@@ -738,9 +758,10 @@ Handlebars.registerHelper('multiply30', function(num) {
 	$(".timeline").on("click", ".contentLi", function(event) {
 
 		var content = $(this);
-
+		var cno = content.attr("data-cno");
+		
 		$("#content").val(content.find('.timeline-body').text());
-		$(".modal-title").html(content.attr("data-cno"));
+		$(".modal-title").html(cno);
 
 	});
 
