@@ -387,7 +387,7 @@ display:none;
 <c:if test="${not empty login }">
 
 <button class="btn btn-primary" type="button" onclick="location.href='modifyPage?bno=${boardVO.bno}'">글 수정</button>
-<button class="btn btn-primary" type="button" onclick="location.href='deletePage?bno=${boardVO.bno}'" id="removeBtn">글 삭제</button>
+<button class="btn btn-primary" type="button" onclick="location.href='deletePage?bno=${boardVO.bno}'">글 삭제</button>
 <button class="btn btn-primary" type="button" onclick="location.href='replyPage?bno=${boardVO.bno}'">답글 작성</button>
 
 </c:if>
@@ -854,7 +854,7 @@ display:none;
 					});
 
 					if (arr.length > 0) {
-						$.post("/deleteAllFiles", {
+						$.post("/upload/deleteAllFiles", {
 							files : arr
 						}, function() {
 
