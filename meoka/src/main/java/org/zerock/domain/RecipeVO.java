@@ -15,6 +15,7 @@ public class RecipeVO {
 	private String COOKINGTIME;
 	private String PORTION;
 	private int RANKNO;
+	private String RANK;
 	private String PHOTO;
 	
 }

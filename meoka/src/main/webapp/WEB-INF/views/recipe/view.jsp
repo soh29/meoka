@@ -400,8 +400,8 @@
 						<h6>요리정보</h6>
 							<ul class="list-unstyled component-list tstbite-svg">
 								<li><small>조리시간</small>  <span>${view.COOKINGTIME}</span></li>
-								<li><small>수준</small> <span>${view.RANKNO } </span></li>
-								<li><small>양</small> <span>${view.PORTION } </span></li>
+								<li><small>수준</small> <span>${view.RANK} </span></li>
+								<li><small>양</small> <span>${view.PORTION} </span></li>
 								<li><a
 									href="recipe-full-width.html">
 										<svg data-name="feather-icon/printer"
@@ -446,7 +446,7 @@
 												<strong> 유통기한 </strong>: ${IngredientVO.bestBefore}   
 												<strong> 효능 </strong>: ${IngredientVO.efficacy}   
 												<strong> 가격 </strong>: ${IngredientVO.price}
-												</li>
+												</li> 
 												</ul>
 												<br>
 											</c:forEach>

@@ -60,13 +60,13 @@
    <select id="view" parameterType="int"
       resultType="org.zerock.domain.RecipeVO">
       select
-      RECIPENO, MEMBERID, FOODNO, RECIPENAME, REGDATE,
-      COOKINGTIME, PORTION, RANKNO
+      r.*, ra.rank
       from
-      book_ex.RECIPE
+      recipe r, rank ra
       where
-      RECIPENO =
-      #{RECIPENO}
+      r.RECIPENO = #{RECIPENO}
+      and
+      r.rankno = ra.rankno
    </select>
    <!-- 레시피 디테일 조회 -->
    <select id="getRecipeDetailList" parameterType="int"
