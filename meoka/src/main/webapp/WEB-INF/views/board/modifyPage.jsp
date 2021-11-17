@@ -452,7 +452,7 @@ $(".uploadedList").on("click", ".delbtn", function(event){
 	var that = $(this);
 	 
 	$.ajax({
-	   url:"/deleteFile",
+	   url:"/upload/deleteFile",
 	   type:"post",
 	   data: {fileName:$(this).attr("href")},
 	   dataType:"text",
