@@ -427,7 +427,7 @@ $(".fileDrop").on("drop", function(event){
 	formData.append("file", file);	
 	
 	$.ajax({
-		  url: '/uploadAjax',
+		  url: '/upload/uploadAjax',
 		  data: formData,
 		  dataType:'text',
 		  processData: false,
