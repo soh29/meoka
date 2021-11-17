@@ -105,7 +105,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 				#{depth} + 1)
 
 	</insert>
-
+	<delete id="deleteCommentByBno">
+	delete
+	from tbl_comment
+	where bno = #{bno}
+	</delete>
 
 </mapper>
 

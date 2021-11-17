@@ -9,6 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.zerock.domain.BoardVO;
 import org.zerock.domain.PagingVO;
 import org.zerock.persistence.BoardDAO;
+import org.zerock.persistence.CommentDAO;
 
 @Service
 //@Configuration
@@ -16,6 +17,8 @@ import org.zerock.persistence.BoardDAO;
 public class BoardServiceImpl implements BoardService {
 	@Autowired
 	private BoardDAO boardDAO;
+	@Autowired
+	CommentDAO commentDAO;
 
 	@Override
 	@Transactional
@@ -64,7 +67,8 @@ public class BoardServiceImpl implements BoardService {
 	@Override
 	public void delete(int bno) throws Exception {
 		// TODO Auto-generated method stub
-		boardDAO.deleteAttach( bno );
+		commentDAO.deleteComment(bno);
+		boardDAO.deleteAttach(bno);
 		boardDAO.delete(bno);
 	}
 

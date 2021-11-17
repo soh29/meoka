@@ -91,6 +91,12 @@ public void reply(CommentVO vo) {
 	// TODO Auto-generated method stub
 	session.insert(namespace + ".reply", vo);
 }
+
+@Override
+public void deleteComment(int bno) {
+	// TODO Auto-generated method stub
+	session.delete(namespace + ".deleteCommentByBno", bno);
+}
   
   
 }

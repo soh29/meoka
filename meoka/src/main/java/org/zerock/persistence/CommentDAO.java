@@ -29,4 +29,6 @@ public void updateGroupOrder(CommentVO vo);
 
 public void reply(CommentVO vo);
 
+public void deleteComment(int bno);
+
 }
