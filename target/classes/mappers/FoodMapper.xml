@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.zerock.mapper.FoodMapper">
+
+   <!-- foodno -->
+   <select id="foodNo" resultType="int">
+      SELECT
+      FOOD_FOODNO_SEQ.CURRVAL
+      FROM DUAL
+   </select>
+
+   <!-- 게시물 목록 -->
+   <select id="list" resultType="org.zerock.domain.FoodVO">
+   <![CDATA[ 
+     select f.*,re.count1,ft.count2, ROWNUM as rnum
+    FROM FOOD f LEFT OUTER JOIN (
+                                select foodNo, count(*) as count1
+                                from RECIPE group by foodNo
+                            ) re
+	on f.foodNo = re.foodNo
+    LEFT OUTER JOIN (
+                     select foodNo, count(*) as count2
+                     from FOODTHEME group by foodNo
+                     ) ft
+	on f.foodNo = ft.foodNo
+	]]>
+   </select>
+
+   <!-- 게시물 작성 -->
+   <insert id="write" parameterType="org.zerock.domain.FoodVO">
+      insert into
+      book_ex.FOOD(FOODNO,FOODNAME,FOODTYPE)
+      values(FOOD_FOODNO_SEQ.NEXTVAL,#{foodName},
+      #{foodType})
+   </insert>
+
+   <!-- 게시물 조회 -->
+   <select id="view" parameterType="int"
+      resultType="org.zerock.domain.FoodVO">
+      select
+      *
+      from
+      FOOD
+      where
+      FOODNO = #{foodNo}
+   </select>
+  
+   <!-- 게시물 삭제 -->
+   <delete id="delete" parameterType="int">
+      delete
+      from book_ex.FOOD
+      where FOODNO = #{foodNo}
+   </delete>
+
+  <!-- 게시물 목록 + 페이징 -->
+   <select id="listPage" parameterType="org.zerock.domain.Criteria"
+      resultType="org.zerock.domain.FoodVO">
+<![CDATA[ 
+select * from (
+    select f.*, ROWNUM as rnum
+
+    FROM FOOD f LEFT OUTER JOIN (
+                                select foodNo, count(*) as count1
+                                from RECIPE group by foodNo
+                            ) re
+	on f.foodNo = re.foodNo
+    LEFT OUTER JOIN (
+                     select foodNo, count(*) as count2
+                     from FOODTHEME group by foodNo
+                     ) ft
+	on f.foodNo = ft.foodNo
+) where rnum <= #{rowEnd} and rnum >= #{rowStart}
+order by foodno asc;
+]]>
+   </select>
+
+   <!-- 검색 -->
+    <select id="listSearch" resultType="org.zerock.domain.FoodVO"
+      parameterType="org.zerock.domain.SearchCriteria">
+ <![CDATA[
+select * from 
+    (select f.*,re.count1,ft.count2, ROWNUM as rnum
+    FROM FOOD f LEFT OUTER JOIN (
+                                select foodNo, count(*) as count1
+                                from RECIPE group by foodNo
+                            ) re
+   on f.foodNo = re.foodNo
+    LEFT OUTER JOIN (
+                     select foodNo, count(*) as count2
+                     from FOODTHEME group by foodNo
+                     ) ft
+   on f.foodNo = ft.foodNo)
+   where foodno>0 and rnum>=#{scri.rowStart} and rnum<=#{scri.rowEnd}
+   
+                       ]]> 
+                       <include refid="search"></include>
+   order by foodno asc
+                    
+</select>
+
+ <select id="countSearch" resultType="int">
+   <![CDATA[
+      select count(*)
+      from food
+     where foodno > 0
+        ]]>
+      <include refid="search"></include>
+   </select>
+
+
+
+    <sql id="search">
+      <if test="scri.searchType != null">
+         <if test="scri.searchType == 't'.toString()"> and foodname like '%' || #{scri.keyword} || '%'</if>
+         <if test="scri.searchType == 'w'.toString()">and foodtype like '%' || #{scri.keyword} || '%'</if>
+         <if test="scri.searchType == 'tr'.toString()">and (foodname like '%' || #{scri.keyword} || '%') or
+            (foodtype like '%' || #{scri.keyword} || '%')
+         </if>
+      </if>
+   </sql>
+
+
+</mapper>

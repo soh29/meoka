@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.zerock.mapper.UserMapper">
+
+   <!-- 회원가입 -->
+   <insert id="userJoin">
+      insert into member(name,memberId,password,email,phoneNo,memberType,rankNo)
+      values(#{name}, #{memberId}, #{password}, #{email}, #{phoneNo}, #{memberType}, #{rankNo})
+   </insert>
+   
+   <!-- 아이디 중복 체크 -->
+   <select id="idChk" resultType="int">
+      select count (*) from member
+      where
+      memberId = #{memberId}
+   </select>
+
+   <!-- 로그인 -->
+   <select id="login" resultType="org.zerock.domain.UserVO">
+      select * from 
+      member where memberId = #{memberId} 
+      <!--  and   password = #{password} -->
+   </select>
+   
+   <!-- 로그인 상태 유지 -->
+   <update id="keepLogin">
+		update member set sessionKey = #{sessionId}, sessionLimit = #{next} where
+		memberId = #{memberId}
+	</update>
+
+   <!-- 회원정보수정 -->
+   <update id="userUpdate">
+      update member set password = #{password},
+      email = #{email},
+      phoneNo = #{phoneNo},
+      memberType = #{memberType},
+      rankNo = #{rankNo}
+      where memberId = #{memberId}
+   </update>
+
+   <!-- 회원탈퇴 -->
+   <delete id="userDelete">
+      delete from member
+      where memberId = #{memberId}
+      <!-- and password = #{password} -->
+   </delete>
+   
+   <!-- 아이디 찾기 -->
+   <select id="findId" resultType="org.zerock.domain.UserVO">
+      select * from member where
+      name=#{name} and email=#{email}
+   </select>
+   
+   <!-- 임시 비밀번호 변경 -->
+   <update id="updateRandomPw">
+      update member set password = #{password} 
+      where memberId = #{memberId}
+   </update>
+
+</mapper>
