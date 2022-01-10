@@ -1,27 +1,34 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<html>
+
+<%@include file="../include/header.jsp"%>
+
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
 <head>
-<!-- 합쳐지고 최소화된 최신 CSS -->
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-<!-- 부가적인 테마 -->
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Modify PAGE</title>
+<link href="/resources/css/swiper-bundle.min.css" rel="stylesheet"
+   type="text/css" media="all">
+<link href="/resources/css/tastebite-styles.css" rel="stylesheet"
+   type="text/css" media="all">
 
 <script
-	src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<title>회원탈퇴</title>
+   src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<style>
+body {
+   margin: auto;
+}
+h5 {text-align:center;}
+</style>
 </head>
 <script type="text/javascript">
 	$(document).ready(function() {
 		// 취소
 		$(".cencle").on("click", function() {
-
-			location.href = "/";
-			
+			location.href = "/";			
 		})
 
 		$("#submit").on("click", function() {
@@ -34,35 +41,51 @@
 
 	})
 </script>
+
 <body>
-	<section id="container">
-		<form action="/user/deleteComplete" method="post">
-			<div class="form-group has-feedback">
-				<label class="control-label" for="name">성명</label> <input
-					class="form-control" type="text" id="name" name="name"
-					value="${login.name}" readonly="readonly" />
-			</div>
-			<div class="form-group has-feedback">
-				<label class="control-label" for="memberId">아이디</label> <input
-					class="form-control" type="text" id="memberId" name="memberId"
-					value="${login.memberId}" readonly="readonly" />
-			</div>
-			<div class="form-group has-feedback">
-				<label class="control-label" for="password">패스워드</label> <input
-					class="form-control" type="password" id="password" name="password" />
-			</div>
-			<div class="form-group has-feedback">
+   <div class="warp" style="width: 600px; margin: auto">
+   <h5
+      class="border-bottom pt-md-5 pb-4 mb-5 font-weight-semibold inter-font">회원탈퇴</h5>
+      <section id="container">
+         <form action="/user/deleteComplete" method="post">
+             
+            <div class="name">
+            <label for="name" style="width: 120px; margin: auto">이름
+               </label> <input type="text" class="name_input"
+               style="margin-bottom: 10px; width: 400px" id="name"
+               name="name" value="${login.name}" readonly="readonly"/>
+        	</div>
+        	
+        	<div class="name">
+            <label for="memberId" style="width: 120px; margin: auto">아이디
+               </label> <input type="text" class="name_input"
+               style="margin-bottom: 10px; width: 400px" id="memberId"
+               name="memberId" value="${login.memberId}" readonly="readonly"/>
+        	</div>
+        	
+        	<div class="name">
+            <label for="password" style="width: 120px; margin: auto">비밀번호
+               </label> <input type="password" class="name_input"
+               style="margin-bottom: 10px; width: 400px" id="password"
+               name="password" />
+                            
+            <div class="form-group has-feedback">
 				<button class="btn btn-success" type="submit" id="submit">회원탈퇴</button>
 				<a href="/user/info" class="btn btn-primary">취소</a>
 			</div>
-		</form>
-		<div>
+			
 			<c:if test="${msg == false}">
-					비밀번호가 맞지 않습니다.
-				</c:if>
-		</div>
-	</section>
+					<script type="text/javascript">
+						alert('비밀번호가 맞지 않습니다.');
+					</script>
+			</c:if>
+			</div>
+			
+         </form>
+      </section>
+      
+   </body>
 
-</body>
+
 
 </html>

@@ -3,6 +3,7 @@ package org.zerock.service;
 import org.zerock.domain.UserVO;
 import org.zerock.dto.LoginDTO;
 import java.util.Date;
+import java.util.List;
 
 
 public interface UserService {
@@ -29,5 +30,13 @@ public interface UserService {
   
   // 임시비밀번호 설정
   public UserVO updateRandomPw(UserVO vo);
+  
+  // 관리자용 회원정보 확인
+  public List<UserVO> getUserList() throws Exception;
+  public UserVO getUserDetail(String memberId) throws Exception;
+  
+  // 관리자용 수정 및 탈퇴
+  public void adminUserUpdate(UserVO vo) throws Exception;
+  public void adminUserDelete(UserVO vo) throws Exception;
 
 }

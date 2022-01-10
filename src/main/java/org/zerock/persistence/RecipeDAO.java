@@ -7,6 +7,7 @@ import org.zerock.domain.RecipeDetailVO;
 import org.zerock.domain.RecipeRequest;
 import org.zerock.domain.RecipeVO;
 import org.zerock.domain.SearchCriteria;
+import org.zerock.domain.UserVO;
 
 public interface RecipeDAO {
 
@@ -52,6 +53,10 @@ public String show(int recipeno) throws Exception;
 	// 게시물 검색
 	public int countSearch(SearchCriteria scri) throws Exception;
 
+	// 레시피 리스트
+	public List<RecipeVO> getRecipeList() throws Exception;
+	
+	public List<RecipeVO> getRecipeList2(String memberid) throws Exception;
 
 
 }

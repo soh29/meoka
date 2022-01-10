@@ -3,6 +3,7 @@ package org.zerock.service;
 import java.util.List;
 
 import org.zerock.domain.Criteria;
+import org.zerock.domain.UserVO;
 import org.zerock.domain.ValuationVO;
 
 public interface ValuationService {
@@ -17,5 +18,8 @@ public interface ValuationService {
 	public void deleteRecipeValuation(Integer recipeno) throws Exception;
 	//후기평균
 	public int avg(Integer recipeno) throws Exception;
-	
+	public List<ValuationVO> getValuationList() throws Exception;
+	public ValuationVO getValuationDetail(String comments) throws Exception;
+	public List<ValuationVO> getValuationList2(String memberid) throws Exception;
+	public void valuationRestrict(ValuationVO vo) throws Exception;
 }

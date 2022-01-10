@@ -1,6 +1,8 @@
 package org.zerock.persistence;
 
 import java.util.Date;
+import java.util.List;
+
 import org.zerock.domain.UserVO;
 import org.zerock.dto.LoginDTO;
 
@@ -29,5 +31,12 @@ public interface UserDAO {
 	
 	// 임시비밀번호 설정
 	public UserVO updateRandomPw(UserVO vo);
+	
+	// 회원리스트 확인
+	public List<UserVO> getUserList() throws Exception;
+	public UserVO getUserDetail(String memberId) throws Exception;
 
+	// 관리자용 수정 및 탈퇴
+	public void adminUserUpdate(UserVO vo) throws Exception;
+	public void adminUserDelete(UserVO vo) throws Exception;
 }

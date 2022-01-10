@@ -50,4 +50,9 @@ public interface RecipeService {
 
 	// 게시물 검색
 	public int countSearch(SearchCriteria scri) throws Exception;
+	
+	// 관리자용 레시피 리스트
+	public List<RecipeVO> getRecipeList() throws Exception;
+	
+	public List<RecipeVO> getRecipeList2(String memberid) throws Exception;
 }

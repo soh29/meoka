@@ -35,6 +35,7 @@ public class UtensilDAOImpl implements UtensilDAO {
 		sql.delete(namespace+".deleteUtensil", recipeno);
 	}
 	
+	
 	// 도구 수정
 	public void modifyUtensil(UtensilVO vo) throws Exception{
 		sql.update(namespace+".modifyUtensil");

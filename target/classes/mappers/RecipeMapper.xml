@@ -245,5 +245,17 @@ SELECT * FROM (
  
       </if>
    </sql>
+   
+   <!-- 관리자 레시피목록 확인 --> 
+   <select id="getRecipeList" resultType="org.zerock.domain.RecipeVO">
+      select recipeno, recipename, memberId from recipe
+   </select>
+   
+   <select id="getRecipeList2" resultType="org.zerock.domain.RecipeVO">
+      select recipeno, recipename, memberId from recipe
+      where memberId = #{memberId}
+   </select>
+
+   
 
 </mapper>

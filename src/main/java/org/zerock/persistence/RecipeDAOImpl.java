@@ -14,6 +14,7 @@ import org.zerock.domain.RecipeDetailVO;
 import org.zerock.domain.RecipeRequest;
 import org.zerock.domain.RecipeVO;
 import org.zerock.domain.SearchCriteria;
+import org.zerock.domain.UserVO;
 
 @Repository
 public class RecipeDAOImpl implements RecipeDAO {
@@ -58,7 +59,6 @@ public class RecipeDAOImpl implements RecipeDAO {
 	public String show(int recipeno) throws Exception{
 		return sql.selectOne(namespace + ".show", recipeno);
 	}
-
 	
 
 	// 게시물 수정
@@ -127,6 +127,20 @@ public class RecipeDAOImpl implements RecipeDAO {
 	public List<RecipeDetailVO> getRecipeDetailList(int recipeno) throws Exception {
 		return sql.selectList(namespace + ".getRecipeDetailList", recipeno);
 
+	}
+	
+	@Override
+	public List<RecipeVO> getRecipeList() throws Exception{
+		List<RecipeVO> recipeList = sql.selectList(namespace+".getRecipeList");
+			
+		return recipeList;
+	}
+	
+	@Override
+	public List<RecipeVO> getRecipeList2(String memberid) throws Exception{
+		List<RecipeVO> recipeList = sql.selectList(namespace+".getRecipeList2", memberid);
+			
+		return recipeList;
 	}
 
 }

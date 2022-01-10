@@ -10,6 +10,7 @@ import org.zerock.domain.RecipeDetailVO;
 import org.zerock.domain.RecipeRequest;
 import org.zerock.domain.RecipeVO;
 import org.zerock.domain.SearchCriteria;
+import org.zerock.domain.UserVO;
 import org.zerock.persistence.RecipeDAO;
 
 @Service
@@ -105,5 +106,16 @@ public String show(int recipeno) throws Exception {
 	
 	return dao.show(recipeno);
 }
+
+	@Override	
+	public List<RecipeVO> getRecipeList() throws Exception {
+		return dao.getRecipeList();
+	}
+	
+	@Override	
+	public List<RecipeVO> getRecipeList2(String memberid) throws Exception {
+		return dao.getRecipeList2(memberid);
+	}
+	
 
 }

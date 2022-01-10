@@ -1,10 +1,12 @@
 package org.zerock.service;
 import java.util.Date;
-
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.zerock.persistence.RecipeDAO;
 import org.zerock.persistence.UserDAO;
+import org.zerock.persistence.ValuationDAO;
 import org.zerock.domain.UserVO;
 import org.zerock.dto.LoginDTO;
 
@@ -13,6 +15,11 @@ public class UserServiceImpl implements UserService {
 
 	@Autowired
 	UserDAO dao;
+	@Autowired
+	RecipeDAO recipedao;
+	@Autowired
+	ValuationDAO valuationdao;
+	
   @Override
   public void userJoin(UserVO user) {
 	  dao.userJoin(user);
@@ -51,7 +58,7 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public void userDelete(UserVO vo) throws Exception {
+	public void userDelete(UserVO vo) throws Exception {		
 		dao.userDelete(vo);
 	}
 
@@ -63,6 +70,26 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public UserVO updateRandomPw(UserVO vo) {
 		return dao.updateRandomPw(vo);
+	}
+	
+	@Override	
+	public List<UserVO> getUserList() throws Exception {
+	    return dao.getUserList();
+	}
+	
+	@Override
+	public UserVO getUserDetail(String memberId) throws Exception {
+	    return dao.getUserDetail(memberId);
+	}
+	
+	@Override
+	public void adminUserUpdate(UserVO vo) throws Exception {
+		dao.adminUserUpdate(vo);
+	}
+	
+	@Override
+	public void adminUserDelete(UserVO vo) throws Exception {
+		dao.adminUserDelete(vo);
 	}
 
 }

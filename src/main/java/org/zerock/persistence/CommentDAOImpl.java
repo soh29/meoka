@@ -10,6 +10,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 import org.zerock.domain.CommentVO;
 import org.zerock.domain.PagingVO;
+import org.zerock.domain.UserVO;
 
 @Repository
 public class CommentDAOImpl implements CommentDAO {
@@ -25,6 +26,12 @@ public class CommentDAOImpl implements CommentDAO {
     return session.selectList(namespace + ".list", bno);
   }
 
+  @Override
+  public List<CommentVO> list2(String memberid) throws Exception {
+
+    return session.selectList(namespace + ".list2", memberid);
+  }
+  
   @Override
   public void create(CommentVO vo) throws Exception {
 
@@ -97,6 +104,6 @@ public void deleteComment(int bno) {
 	// TODO Auto-generated method stub
 	session.delete(namespace + ".deleteCommentByBno", bno);
 }
-  
+
   
 }

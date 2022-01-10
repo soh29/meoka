@@ -60,5 +60,31 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
       update member set password = #{password} 
       where memberId = #{memberId}
    </update>
+   
+   <!-- 관리자 회원목록 확인 --> 
+   <select id="getUserList" resultType="org.zerock.domain.UserVO">
+      select name, memberId, email from member
+      order by name asc
+   </select>
+   
+   <select id="getUserDetail" resultType="org.zerock.domain.UserVO">
+ 		select * from member 
+ 		where memberId = #{memberId}
+   </select>
+   
+   <!-- 관리자용 수정 및 탈퇴 -->
+   <update id="adminUserUpdate">
+      update member set name = #{name},
+      memberId = #{memberId},
+      email = #{email},
+      phoneNo = #{phoneNo},
+      memberType = #{memberType},
+      rankNo = #{rankNo}
+      where memberId = #{memberId}
+   </update>
+   <delete id="adminUserDelete">
+      delete from member
+      where memberId = #{memberId}
+   </delete>
 
 </mapper>

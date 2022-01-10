@@ -14,6 +14,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		#{bno}
 		order by groupno asc, grouporder asc
 	</select>
+	
+	<select id="list2" resultType="org.zerock.domain.CommentVO">
+		select *
+		from tbl_comment
+		where writer=#{writer}
+	</select>
 
 	<insert id="create">
 		insert into tbl_comment (cno, bno, content, writer, regdate, updatedate, ipaddress, groupno, grouporder, depth)

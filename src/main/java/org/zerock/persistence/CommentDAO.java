@@ -31,4 +31,6 @@ public void reply(CommentVO vo);
 
 public void deleteComment(int bno);
 
+public List<CommentVO> list2(String memberid) throws Exception;
+
 }

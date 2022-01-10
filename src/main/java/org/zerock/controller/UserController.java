@@ -1,6 +1,8 @@
 package org.zerock.controller;
 
 import java.util.Date;
+import java.util.List;
+
 import javax.inject.Inject;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
@@ -14,20 +16,37 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.web.util.WebUtils;
+import org.zerock.domain.CommentVO;
+import org.zerock.domain.RecipeVO;
 import org.zerock.domain.UserVO;
+import org.zerock.domain.ValuationVO;
 import org.zerock.dto.LoginDTO;
+import org.zerock.service.CommentService;
+import org.zerock.service.IngredientService;
+import org.zerock.service.RecipeService;
 import org.zerock.service.UserService;
+import org.zerock.service.UtensilService;
+import org.zerock.service.ValuationService;
 
 @Controller
 @RequestMapping("/user")
 public class UserController {
    private static final Logger logger = LoggerFactory.getLogger(UserController.class);
 
-   @Autowired
-   private UserService userservice;
+    @Autowired
+    private UserService userservice;
+    @Inject
+    ValuationService valuationservice;
+	@Inject
+	UtensilService utensilservice;
+	@Inject
+	IngredientService ingredientservice;
+	@Inject
+    RecipeService recipeservice;
    
    @Inject
    BCryptPasswordEncoder pwdEncoder;
@@ -88,6 +107,8 @@ public class UserController {
 
    @Inject
    private UserService service;
+   @Inject
+   CommentService commentservice;
 
    @RequestMapping(value = "/loginPost", method = RequestMethod.POST)
    public void loginPOST(LoginDTO dto, HttpSession session, Model model) throws Exception {
@@ -171,9 +192,7 @@ public class UserController {
        
       service.userUpdate(vo);
 
-      session.invalidate();
-
-      return "redirect:/";
+      return "user/info";
       
    }
 
@@ -197,7 +216,41 @@ public class UserController {
       if (!(pwdEncoder.matches(voPass, sessionPass))) {
          rttr.addFlashAttribute("msg", false);
          return "redirect:/user/delete";
-      } 
+      } else {
+    	  rttr.addFlashAttribute("msg", true);
+      }
+      
+      // Q&A 삭제
+	   List<CommentVO> commentlist = commentService.listComment2(vo.getMemberId());
+	   for(int i=0;i<commentlist.size();i++) {
+		  CommentVO comment = commentlist.get(i);
+		  commentService.removeComment(comment.getCno());		   
+	   }
+      
+       // 댓글 삭제
+	   List<ValuationVO> valuationlist = valuationservice.getValuationList2(vo.getMemberId());
+	   for(int i=0;i<valuationlist.size();i++) {
+		   ValuationVO valuation = valuationlist.get(i);
+		   valuationservice.delete(valuation);		   
+	   }
+      
+      List<RecipeVO> list = recipeservice.getRecipeList2(vo.getMemberId());
+      
+      for(int i=0;i<list.size();i++) {
+    	  RecipeVO recipe = list.get(i);
+    	  Integer recipeno = recipe.getRECIPENO();
+    	  
+    	  System.out.println("*********레시피후기삭제완료*********");  
+          valuationservice.deleteRecipeValuation(recipeno);
+          System.out.println("*********도구삭제완료*********");      
+          utensilservice.deleteUtensil(recipeno);
+          System.out.println("*********재료삭제완료*********");
+          ingredientservice.deleteIngredient(recipeno);   
+          System.out.println("*********세부내용삭제완료*********");
+          recipeservice.deleteRecipeDetail(recipeno);
+          System.out.println("*********레시피삭제완료*********");
+          recipeservice.delete(recipeno);
+      }
       
       service.userDelete(vo);
       session.invalidate();

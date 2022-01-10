@@ -16,5 +16,8 @@ public interface ValuationDAO {
 	public void deleteRecipeValuation(Integer recipeno) throws Exception;
 	//후기평균
 	public int avg(Integer recipeno) throws Exception;
-	
+	public List<ValuationVO> getValuationList() throws Exception;
+	public ValuationVO getValuationDetail(String comments) throws Exception;
+	public List<ValuationVO> getValuationList2(String memberid) throws Exception;
+	public void valuationRestrict(ValuationVO vo) throws Exception;
 }

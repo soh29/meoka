@@ -20,4 +20,6 @@ public interface CommentService {
 
   public int count(Integer bno) throws Exception;
   public void replyComment(CommentVO vo);
+  
+  public List<CommentVO> listComment2(String memberid) throws Exception;
 }

@@ -21,6 +21,7 @@
 body {
    margin: auto;
 }
+h5 {text-align:center;}
 </style>
 </head>
 
@@ -38,6 +39,8 @@ body {
                alert("비밀번호를 입력해주세요.");
                $("#password").focus();
                return false;
+            } else{
+            	alert("회원정보 수정이 완료되었습니다.");
             }
 
          });
@@ -48,7 +51,7 @@ body {
    </script>
    
    <body>
-   <div class="tstbite-components mb-5 pb-4">
+   <div class="warp" style="width: 600px; margin: auto">
    <h5
       class="border-bottom pt-md-5 pb-4 mb-5 font-weight-semibold inter-font">회원정보수정</h5>
       <section id="container">
@@ -69,14 +72,14 @@ body {
         	</div>
         	
         	<div class="name">
-            <label for="password" style="width: 120px; margin: auto">새 비밀번호
+            <label for="password" style="width: 120px; margin: auto">비밀번호
                </label> <input type="password" class="name_input"
                style="margin-bottom: 10px; width: 400px" id="password"
                name="password" />
         	</div>
         	
         	<div class="name">
-            <label for="passwordCheck" style="width: 120px; margin: auto">새 비밀번호
+            <label for="passwordCheck" style="width: 120px; margin: auto">비밀번호 확인
                </label> <input type="password" class="name_input"
                style="margin-bottom: 10px; width: 400px" id="passwordCheck"
                name="passwordCheck" />

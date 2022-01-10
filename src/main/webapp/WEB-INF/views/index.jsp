@@ -44,9 +44,19 @@
 
 						<!-- lab begin -->
 						<c:if test="${not empty login}">
+							<!-- 관리자 로그인 -->
+							<c:if test="${login.memberId == 'meoka'}">
+							<a href="/admin/index" 
+							   class="btn btn-sm btn-outline-dark ml-0 ml-md-4"
+							   style="width:120px; height:28px; padding:3px 20px 2px 20px;">관리자 모드</a>
+							</c:if>
+													
+							<!-- 일반사용자 로그인 -->	
+							<c:if test="${login.memberId != 'meoka'}">
 							<a href="user/info" class="ml-4 ml-md-4 mr-2 mr-md-0 circle">
 								<img src="./resources/img/avatar1.png" alt="Avatar">
 							</a>
+							</c:if>
 						</c:if>
 
 						<c:if test="${empty login}">

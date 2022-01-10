@@ -2,6 +2,7 @@ package org.zerock.persistence;
 
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import javax.inject.Inject;
 import org.apache.ibatis.session.SqlSession;
@@ -71,6 +72,32 @@ public class UserDAOImpl implements UserDAO {
 	@Override
 	public UserVO updateRandomPw(UserVO vo) {
 		return session.selectOne(namespace + ".updateRandomPw", vo);
+	}
+	
+	@Override
+	public List<UserVO> getUserList() throws Exception{
+		List<UserVO> userList = session.selectList(namespace+".getUserList");
+			
+		System.out.println("************************");
+		System.out.println("DAO:"+userList);
+		System.out.println("************************");
+			
+		return userList;
+	}
+	
+	@Override
+	  public UserVO getUserDetail(String memberId) throws Exception {
+	    return session.selectOne(namespace + ".getUserDetail", memberId);
+	  }
+
+	@Override
+	public void adminUserUpdate(UserVO vo) throws Exception {
+		session.update(namespace + ".adminUserUpdate", vo);		
+	}	
+	
+	@Override
+	public void adminUserDelete(UserVO vo) throws Exception {
+		session.delete(namespace + ".adminUserDelete", vo);		
 	}
 
 }

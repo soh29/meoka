@@ -13,10 +13,19 @@
 <body>
 
 	<c:if test="${not empty login}">
-		<script>
-			alert('${login.memberId}님, 환영합니다.');
-			self.location = "/";
-		</script>
+		<c:if test="${login.memberId == 'meoka'}">
+			<script>
+				alert('관리자로 로그인되었습니다.');
+				self.location = "/";
+			</script>
+		</c:if>
+		
+		<c:if test="${login.memberId != 'meoka'}">
+			<script>
+				alert('${login.memberId}님, 환영합니다.');
+				self.location = "/";
+			</script>
+		</c:if>
 	</c:if>
 
 	<c:if test="${empty login}">

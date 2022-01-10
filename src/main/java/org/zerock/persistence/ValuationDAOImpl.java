@@ -9,6 +9,7 @@ import javax.inject.Inject;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 import org.zerock.domain.Criteria;
+import org.zerock.domain.UserVO;
 import org.zerock.domain.ValuationVO;
 
 @Repository
@@ -59,5 +60,26 @@ public class ValuationDAOImpl implements ValuationDAO {
 		
 		return session.selectOne(namespace + ".avg", recipeno);
 	}
+	
+	@Override
+	public List<ValuationVO> getValuationList() throws Exception{
+		List<ValuationVO> valuationList = session.selectList(namespace+".getValuationList");
+			
+		return valuationList;
+	}
+	@Override
+	public List<ValuationVO> getValuationList2(String memberid) throws Exception{
+		List<ValuationVO> valuationList = session.selectList(namespace+".getValuationList2", memberid);
+			
+		return valuationList;
+	}
+	@Override
+	  public ValuationVO getValuationDetail(String comments) throws Exception {
+	    return session.selectOne(namespace + ".getValuationDetail", comments);
+	  }
+	@Override
+	public void valuationRestrict(ValuationVO vo) throws Exception {
+		session.update(namespace + ".valuationRestrict", vo);		
+	}	
 
 }

@@ -4,8 +4,10 @@ import java.util.List;
 
 import javax.inject.Inject;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.zerock.domain.Criteria;
+import org.zerock.domain.UserVO;
 import org.zerock.domain.ValuationVO;
 import org.zerock.persistence.ValuationDAO;
 
@@ -13,7 +15,7 @@ import org.zerock.persistence.ValuationDAO;
 public class ValuationServiceImpl implements ValuationService {
 	
 	@Inject
-	private ValuationDAO dao;
+	ValuationDAO dao;
 	
 	@Override
 	public void create(ValuationVO vo) throws Exception {
@@ -46,7 +48,21 @@ public class ValuationServiceImpl implements ValuationService {
 	public int avg(Integer recipeno) throws Exception {
 		return dao.avg(recipeno);
 	}
-	
-	
+	@Override	
+	public List<ValuationVO> getValuationList() throws Exception {
+	    return dao.getValuationList();
+	}
+	@Override
+	public ValuationVO getValuationDetail(String comments) throws Exception {
+	    return dao.getValuationDetail(comments);
+	}
+	@Override	
+	public List<ValuationVO> getValuationList2(String memberid) throws Exception {
+	    return dao.getValuationList2(memberid);
+	}
+	@Override
+	public void valuationRestrict(ValuationVO vo) throws Exception {
+		dao.valuationRestrict(vo);
+	}
 
 }
