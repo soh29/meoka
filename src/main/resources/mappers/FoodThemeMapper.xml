@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.zerock.mapper.FoodThemeMapper">
+
+
+   <!-- 게시물 목록 -->
+   <select id="list" resultType="org.zerock.domain.FoodThemeVO">
+      SELECT F.FOODNO, F.FOODNAME, T.THEMENO, T.THEMETYPE, T.THEMENAME
+        FROM
+        FOOD F, FOODTHEME FT, THEME T
+        WHERE F.FOODNO = FT.FOODNO AND FT.THEMENO = T.THEMENO
+        ORDER BY F.FOODNO asc
+   </select>
+
+   <!-- 게시물 작성 -->
+   <insert id="write" parameterType="org.zerock.domain.FoodThemeVO">
+      insert into
+      book_ex.FOODTHEME(FOODNO,THEMENO)
+      values(#{foodNo}, #{themeNo})
+   </insert>
+  
+   <!-- 게시물 삭제 -->
+   <delete id="delete" parameterType="org.zerock.domain.FoodThemeVO">
+      delete
+      from book_ex.FOODTHEME
+      where FOODNO = #{foodNo} and THEMENO = #{themeNo}
+   </delete>
+
+
+	<select id="getFoodList" resultType="org.zerock.domain.FoodVO">
+      SELECT *
+      FROM FOOD
+      ORDER BY FOODNO asc
+   </select>   
+   
+   <select id="getThemeTypes" resultType="String">
+	select distinct(themeType)
+	from theme
+   </select>
+   
+   <select id="getThemes" resultType="org.zerock.domain.ThemeVO">
+	select *
+	from theme
+	where themeType = #{themeType}
+   </select>
+   
+   <select id="foodThemeExists" resultType="int">
+	select count(*)
+	from foodTheme
+	where themeNo = #{themeNo} and foodNo = #{foodNo}
+   </select>
+
+</mapper>

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.zerock.mapper.ThemeMapper">
+	<select id="ThemeNo" resultType="int">
+		SELECT
+		ThemeNO_SEQ.CURRVAL
+		FROM
+		DUAL
+	</select>
+
+
+	<select id="list" resultType="org.zerock.domain.ThemeVO">
+		select * from theme t LEFT OUTER
+		JOIN (select themeNo, count(*) as count from foodTheme group by
+		themeNo) th
+		on t.themeno = th.themeno
+	</select>
+
+
+
+
+
+	<insert id="write" parameterType="org.zerock.domain.ThemeVO">
+		insert into
+		theme(themeno,
+		themetype, themename)
+		values(theme_ThemeNO_SEQ.nextVAL,#{themeType},#{themeName})
+	</insert>
+
+	<delete id="delete" parameterType="int">
+		delete
+		from theme
+		where themeno
+		= #{themeNo}
+	</delete>
+
+	<!-- 게시물 총 갯수 -->
+	<select id="listCount" resultType="int">
+   <![CDATA[ 
+      select count(*) from
+      theme
+      where themeno>0
+   ]]>
+	</select>
+
+	<!-- 게시물 목록 + 페이징 -->
+	<select id="listPage" parameterType="org.zerock.domain.Criteria"
+		resultType="org.zerock.domain.ThemeVO">
+<![CDATA[ 
+select *from(
+select t.*, ROWNUM as rnum from theme t 
+LEFT OUTER JOIN (select themeNo, count(*) as count from foodTheme group by themeNo) th
+on t.themeno = th.themeno)
+where rnum <= #{rowEnd} and rnum >= #{rowStart}
+order by themeno asc
+]]>
+	</select>
+	
+	   <!-- 검색 -->
+    <!--  <select id="listSearch" resultType="org.zerock.domain.FoodVO"
+      parameterType="org.zerock.domain.SearchCriteria">
+   <![CDATA[
+select themeno, themename,themetype from(
+select *from(
+select t.*, ROWNUM as rnum, count from theme t 
+LEFT OUTER JOIN (select themeNo, count(*) as count from foodTheme group by themeNo) th
+on t.themeno = th.themeno) fa
+    where themeno>0
+      ]]>
+              <include refid="search"></include>
+         
+         
+              
+<![CDATA[
+    )
+]]>
+   <![CDATA[
+     WHERE rnum >=#{scri.rowStart} and rnum <=#{scri.rowEnd}
+   ]]>
+</select>
+	-->
+	<select id="listSearch" resultType="org.zerock.domain.ThemeVO"
+      parameterType="org.zerock.domain.SearchCriteria">
+   <![CDATA[
+   select themeNo, themeType, themeName,rnum,count from
+					(select t.*, ROWNUM as rnum, count from theme t 
+                        LEFT OUTER JOIN (select themeNo, count(*) as count from foodTheme group by themeNo) th
+                    on t.themeno = th.themeno) fa
+                    where themeno>0 and rnum>=#{scri.rowStart} and rnum<=#{scri.rowEnd}
+                       ]]>
+                     <include refid="search"></include>
+
+	</select>
+	
+	   <select id="countSearch" resultType="int">
+   <![CDATA[
+      select count(*)
+      from theme
+     where themeno > 0
+        ]]>
+      <include refid="search"></include>
+   </select>
+
+   <sql id="search">
+      <if test="scri.searchType != null">
+         <if test="scri.searchType == 't'.toString()"> and themeName like '%' || #{scri.keyword} || '%'</if>
+         <if test="scri.searchType == 'w'.toString()">and themeType like '%' || #{scri.keyword} || '%'</if>
+      </if>
+   </sql>
+
+
+
+
+</mapper>

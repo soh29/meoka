@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.zerock.mapper.BoardMapper">
+
+	<!-- id 속성은 DAO 의 메소드와 같아야 한다. 여기의 boardVO 는 mybatis-confg.xml 에 Alias 되어 
+		있습니다. -->
+	<select id="selectBoardList" resultType="org.zerock.domain.BoardVO">
+		SELECT bno
+		, title
+		, content
+		, writer
+		, regdate
+		, viewcnt
+		FROM tbl_board
+		ORDER BY bno DESC
+	</select>
+	<insert id="register">
+		Insert into
+			tbl_board(bno,
+					title,
+					content,
+					writer,
+					regdate,
+					viewcnt,
+					commentcnt,
+					groupno,
+					grouporder,
+					depth)
+		values(TBL_BOARD_BNO_SEQ.NEXTVAL,
+				#{title},
+				#{content},
+				#{writer},
+				sysdate,
+				0,
+				0,
+				TBL_BOARD_BNO_SEQ.CURRVAL,
+				0,
+				0)
+	</insert>
+	<select id="read" resultType="org.zerock.domain.BoardVO">
+		SELECT *
+		FROM tbl_board
+		WHERE bno = #{bno}
+	</select>
+	<update id="modify">
+		UPDATE tbl_board
+		SET title=#{title}, content=#{content}, writer=#{writer}
+		WHERE bno=#{bno}	
+	</update>
+	<delete id="delete">
+		DELETE
+		FROM tbl_board
+		WHERE bno=#{bno}
+	</delete>
+	
+	
+	<select id="listAll" resultType="org.zerock.domain.BoardVO">
+	SELECT *
+	FROM (
+		SELECT ROWNUM RN, A.*
+		FROM (
+			SELECT *
+			FROM tbl_board
+			<!-- Where 절을 include 태그로 삽입 -->
+			<include refid="search"></include>
+			ORDER BY groupno desc, grouporder asc
+		) A
+	)
+	WHERE RN BETWEEN #{start} AND #{end}
+	
+	</select>
+	
+	<select id="countArticle" resultType="int">
+		SELECT count(*)
+		FROM tbl_board
+		<!-- Where 절을 include 태그로 삽입 -->
+		<include refid="search"></include>
+	</select>
+	
+	
+	<sql id="search">
+		<choose>
+			<!-- 검색옵션이 전체 검색일 경우 -->
+			<when test="searchOption == 'all'">
+				WHERE writer like '%'||#{keyword}||'%'
+				OR content like '%'||#{keyword}||'%'
+				OR title like '%'||#{keyword}||'%'
+			</when>
+			<!-- 전체 검색이 아닐 경우 -->
+			<otherwise>
+				WHERE ${searchOption} like '%'||#{keyword}||'%'
+			</otherwise>
+		</choose>
+	</sql>
+	
+	<select id="getGroupOrderPosition" resultType="int">
+	<![CDATA[
+		SELECT NVL(MIN(grouporder), 0)
+		FROM tbl_board
+		WHERE groupno = #{groupno}
+		AND grouporder > #{grouporder}
+		AND depth <= #{depth} 
+	]]>
+	</select>
+	<select id="getMaxGroupOrder" resultType="int">
+	SELECT NVL(MAX(grouporder), 0) + 1
+	FROM tbl_board
+	WHERE groupno = #{groupno}
+	
+	</select>
+	<update id="updateGroupOrder">
+	UPDATE tbl_board
+	SET grouporder = grouporder + 1
+	WHERE groupno = #{groupno}
+	AND grouporder >= #{grouporder}
+	</update>
+	
+	<insert id="reply">
+	INSERT INTO tbl_board(bno,
+					title,
+					content,
+					writer,
+					regdate,
+					viewcnt,
+					commentcnt,
+					groupno,
+					grouporder,
+					depth)
+		values(TBL_BOARD_BNO_SEQ.NEXTVAL,
+				#{title},
+				#{content},
+				#{writer},
+				sysdate,
+				0,
+				0,
+				#{groupno},
+				#{grouporder},
+				#{depth} + 1)
+
+	</insert>
+	
+	
+	
+	
+		
+	<update id="updateCommentCnt">
+		update tbl_board
+		set commentcnt = commentcnt + #{amount}
+		where bno = #{bno}
+	</update>
+	
+	
+	<update id="updateViewCnt">
+		update tbl_board
+		set viewcnt = viewcnt +1
+		where bno = #{bno}
+	</update>
+	
+	
+	 
+	<insert id="addAttach">
+		insert into tbl_attach(fullname, bno)
+		values (#{fullName}, TBL_BOARD_BNO_SEQ.CURRVAL)
+	</insert> 
+	
+	
+	<select id="getAttach" resultType="string">
+		select fullname
+		from tbl_attach
+		where bno = #{bno}
+		order by regdate
+	</select> 
+	
+	 
+	<delete id="deleteAttach">
+		delete from tbl_attach
+		where bno = #{bno}
+	</delete>
+	
+	<insert id="replaceAttach">
+		insert into tbl_attach(fullname, bno)
+		values (#{fullName}, #{bno})
+	</insert>
+
+
+
+
+
+</mapper>

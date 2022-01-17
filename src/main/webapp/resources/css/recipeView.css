@@ -1,0 +1,110 @@
+body{
+	font-family: 'Gowun Dodum', sans-serif !important;
+}
+
+.main-Img{
+	width: 300px;
+	height: 300px;
+}
+
+.blog-detail{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+#first-div{
+	text-align: center;
+	margin-top: 10%;
+	margin-bottom: 15%;
+}
+span{
+	font-size: 20px;
+	font-weight: bold;
+	margin-bottom: 5%;
+}
+
+ul{
+	margin-left: 2%;
+}
+
+.serv-span{
+	margin-left: 4% !important;
+	font-size: 13px !important;
+	margin : 0;
+}
+
+.row{
+	justify-content: center;
+}
+.mt-5{
+	display: flex;
+	flex-direction: column;
+    align-items: center;
+}
+.mt-5 img{
+	width: 300px;
+	height: 200px;
+}
+
+.d-sm-flex{
+	justify-content: flex-end;
+}
+.nameInput{
+	color: gray;
+	font-size: 14px;
+}
+.nameInput input{
+	border: none;
+	border-bottom: 1px solid gray;
+}
+
+.rating{
+	margin-left: 3%;
+	font-size: 30px;
+}
+
+.comment-item{
+	border-top: 1px solid lightgray;
+	margin-top: 3%;
+}
+
+.active{
+	background: none;
+}
+
+textarea{
+	height: 150px !important;
+}
+
+.comment-item strong{
+	display: inline-block;
+	width: 15%;
+	margin-left: 5%;
+}
+
+.comment-item button{
+	display: inline-block;
+	float: right;
+}
+.media{
+	padding-top: 10px !important;
+	padding-bottom: 10px !important;
+}
+.media span{
+	margin: 0;
+	margin-left: 5%;
+	width: 60% !important;
+}
+
+#modDiv{
+	text-align: center;
+}
+
+.pagination{
+	justify-content: center;
+	font-weight: bold;
+}
+.pagination li{
+	border: none !important;	
+}

@@ -1,0 +1,139 @@
+body{
+	font-family: 'Gowun Dodum', sans-serif;
+}
+.contents{
+	margin-top:10%;
+	display: block;
+}
+
+
+input, select{
+	border: 1px solid gray !important;
+	border-radius: 5px;
+}
+.title h3{
+	margin-bottom: 5%;
+}
+.write1{
+	width: 100% !important;
+	margin-bottom: 2%;
+}
+
+	 label{
+		float: left;
+		display: inline-block;
+		width: 100px;
+		height: 50px;
+		font-size: 20px;
+		text-align: right;
+		margin-right: 5%;
+		line-height: 40px;
+	}
+	.writeInput{
+		width: 450px !important;
+		height: 40px;
+	}
+
+	li small{
+		margin-bottom: 5% !important;
+	}
+
+#marginLi{
+	padding-left: 0;
+}
+
+.bg-custom{
+	height: 110px;
+	padding-top: -1%;
+}
+.blog-detail input, .blog-detail select{
+	height: 40px;
+}
+
+.spanDiv span{
+		display: inline-block;
+		width: 90px;
+		height: 50px;
+		font-size: 20px;
+		text-align: right;
+		margin-right: 5%;
+		line-height: 40px;
+}
+	 #marginSpan{
+		margin-top: 2%;
+}
+
+.rounded-12{
+	width: 150% !important;
+}
+
+.button{
+	display: flex;
+	justify-content: center;
+}
+	.textCenter{
+		text-align: center;
+	}
+	
+#newUtensilId div, #newIngredientId div{
+	border-bottom: 1px dotted gray;
+	margin-bottom: 1%;
+}
+#newUtensilId input{
+		margin-bottom: 1%;
+}
+
+#newIngredientId input{
+		margin-bottom: 1%;
+	}
+	
+#newIngredientId select{
+	width: 180px;
+}
+	#newIngredientId span, #newUtensilId span{
+		display: inline-block;
+		width: 100px;
+		font-size: 15px;
+	}
+	
+	.lineDiv{
+		width: 500px;
+		border: none;
+		border-bottom: 1px dotted gray;
+		margin-bottom: 2%;
+	}
+	.deleteBtn{
+		margin-left: 30%;
+		width: 70px;
+	}
+	.deleteBtn1{
+		margin-left: 3%;
+	}
+
+#recipedetailview span{
+		display: inline-block;
+		width: 100px;
+		font-size: 15px;
+		float: left;
+		line-height: 70px;
+}
+
+#recipedetailview textarea{
+	width: 500px;
+	height: 300px;
+	resize: none;
+}
+
+	.removeDetail{
+		margin-left: 53%;
+		margin-top: 1%;
+		margin-bottom: 1%;
+		width: 100px;
+	}
+	
+	.delBtn{
+		margin-left: 1%;
+		margin-top: 5.5%;
+	}
+
+
