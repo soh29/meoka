@@ -20,23 +20,23 @@ body{
    font-family: 'Gowun Dodum', sans-serif;
 }
 .paging {
-   text-align: center;
+	text-align: center;
+	wodtj: 50%
 }
 
 .paging a {
-   display: inline-block;
-   font-weight: bold;
-   text-decoration: none;
-   padding: 5px 8px;
-   border: 1px solid #ccc;
-   color: #f3f3f3;
-   background-color: #ffc1ab;
-   text-align: center;
+	display: inline-block;
+	font-weight: bold;
+	text-decoration: none;
+	padding: 5px 8px;
+	border: 1px solid #ccc;
+	color: #f3f3f3;
+	background-color: #ffc1ab;
 }
 /* 현재 페이징에 select 클래스를 적용한다*/
-.paging a.select {
-   color: #fff;
-   background-color: #FFA7A7;
+.paging a:hover {
+	color: #f2f2f2;
+	background-color: #faaea3;
 }
 table {
 border-width:2px;
@@ -63,7 +63,7 @@ border-width:2px;
       
    </div>
                 <div class="search">
-      <select name="searchType"style="border-radius:5px; border:1px solid gray;height:40px"; >
+      <select name="searchType" id="searchType"  >
          <option value="n"
             <c:out value="${scri.searchType == null ? 'selected' : ''}"/>>-----</option>
          <option value="t"
@@ -142,7 +142,7 @@ border-width:2px;
 
          <c:forEach begin="${pageMaker.startPage}" end="${pageMaker.endPage}"
                      var="idx">
-                     <a style="background-color:#ff642b; text-align: center;" href="list${pageMaker.makeSearch(idx)}">[${idx}]&nbsp;</a>
+                     <a href="list${pageMaker.makeSearch(idx)}">[${idx}]&nbsp;</a>
                   </c:forEach>
 
          <c:if test="${pageMaker.next && pageMaker.endPage > 0}">

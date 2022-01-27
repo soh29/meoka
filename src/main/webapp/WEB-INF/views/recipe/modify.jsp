@@ -15,25 +15,35 @@
 <script type="text/javascript" src="/resources/js/upload.js"></script>
 <link href="/resources/css/recipeWrite.css" rel="stylesheet"
 	type="text/css" media="all">
+
 <!-- 폰트 -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
-<link href="/resources/css/testbite-style.css" rel="stylesheet"
-	type="text/css" media="all">
 
  <style>
-.fileDrop {
-  width: 160px;
-  height: 120px;
-  border: 1px dotted gray;
-  background-color: lightslategrey;
-   overflow:hidden;
+body{
+	font-family: 'Gowun Dodum', sans-serif;
 }
+.fileDrop {
+	width: 160px;
+	height: 120px;
+	border: 1px dotted gray;
+	background-color: lightslategrey;
+	overflow: hidden;
+}
+
 .fileDrop img {
-	max-width: 100%;
- 	height: auto;
-  	
+	image-rendering: auto; 
+}
+.write1 {
+    width: 100% !important;
+    margin-bottom: 3%;
+}
+.write2 {
+    width: 100% !important;
+    margin-bottom: 3%;
+     right: 50px;
 }
 </style>	
 	
@@ -51,28 +61,28 @@
 		style="font-size: 40px; font-weight: 600; margin-top: 5%; margin-bottom: 5%; text-align: center;">
 		RECIPE MODIFY</h1>
 <form method="post">
-	<div class="container">
+	<div class="contents">
 
 			<section class="tstbite-components my-4 my-md-5">
-				<div class="d-sm-flex">
+				<div class="title">
 					
 					<div>
-						<div class="col-lg-9 col-8 col-6">
-						<h3><input type='text' class="py-2 py-md-3 mb-0" name="RECIPENAME" value="${view.RECIPENAME}"></h3> 
+						<div class="write1" >
+						<label>제목</label>
+						<input type='text'  name="RECIPENAME" value="${view.RECIPENAME}">
 						</div>
 					</div>
 				</div>
+				
 				<div class="d-flex flex-wrap">
-					<div class="my-2 mr-4">
+					<div class="write1">
 						<!--<img src="../resources/img/avatar11.png"
 							class="rounded-circle" alt="Avatar">--> 
 							<label>작성자</label> <input type="text" name="MEMBERID" value="${login.memberId }" readonly /><br />
 					</div>
-					<div class="my-2 mr-4">
-						<small>${view.REGDATE}</small>
-					</div>
-				</div>
-					<div class="write1">음식 선택: <span> 
+					
+				
+					<div class="write2">음식 선택: <span> 
 						<input id="foodName" type='text' value="${view.foodName}"
 							name="foodName" placeholder='음식 이름' readonly style="text-align-last: center; text-align: center; -ms-text-align-last: center; -moz-text-align-last: center;"> 
 						<input id="foodNo" value="${view.foodNo}" type='hidden' name="foodNo">
@@ -80,12 +90,15 @@
 								class="btn btn-lg btn-primary" style="width:100px; height:28px; padding:0px; font-size:1rem;">음식 선택
 						</button></span>
 					</div>
+					</div>
+					
 				<div class="blog-detail">
-					<div ><!-- class="row mt-0 mt-md-5" -->
+					<div class="bg-lightest-gray bg-custom">
+					
 						<div class="col-md-12">
-						<h6>요리정보</h6>
+						<label style="padding-left:40px;padding-top:20px; width:120px;">요리정보</label>
 							<ul class="list-unstyled component-list tstbite-svg">
-								<li><small>조리시간</small><span><input type="text" name="COOKINGTIME" value="${view.COOKINGTIME}" /></span><br /></li>
+								<li id="marginLi"><small>조리시간</small><span><input type="text" name="COOKINGTIME" value="${view.COOKINGTIME}" /></span><br /></li>
 								<li><small>수준</small>
 									<span>
 											<select name="RANKNO" value = "${view.RANKNO}">
@@ -105,7 +118,7 @@
 							<div class="row mt-4 g-0">
 								<div class="col-lg-8">
 									<div class="rounded-12 bg-lightest-gray p-4">
-										<h6> 도 구 </h6>
+										<span>도 구</span>
 										<div id="newUtensilId">
 											<c:forEach items="${viewUtensil}" var="UtensilVO">
 												<div>
@@ -118,7 +131,7 @@
 										<div id="dynamicCheck">
 										   <input type="button" value="도구 추가" onclick="createNewUtensil();"/>
 										</div>
-										<h6> 재 료 </h6>
+										<span id="marginSpan">재 료</span>
 										<div id="newIngredientId">
 										
 										<c:forEach items="${viewIngredient}" var="IngredientVO">
@@ -147,14 +160,14 @@
 								</div>
 							</div>
 						</div>
-						<div class="col-md-6">
-							<div class="mt-5">
-								<h6>조리 방법</h6>
+						<div class="col-md-8 spanDiv">
+					<div class=" rounded-12 bg-lightest-gray p-4">
+						<span>조리 방법</span>
 										<!-- 레시피 디테일 text 작성기능 -->
-										<div id="dynamicCheck">
-										   <input type="button" value="조리 방법 추가" onclick="createNewElement();"/>
-										</div>
-										</br>
+											<div id="dynamicCheck">
+								<input type="button" value="방법 추가"
+									onclick="createNewElement();" />
+							</div>
 										<strong> 내 용 </strong>
 										
 										<div id="newElementId">
@@ -177,8 +190,8 @@
 										</div>
 								</div>
 						</div>
-					</div>
-				</div>
+					
+			
 							<section class="tstbite-components my-4 my-md-5">
 				<div class="row align-items-center pt-0 pt-md-5">
 					<div class="col-lg-3 col-4 text-right">

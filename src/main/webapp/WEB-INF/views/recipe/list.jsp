@@ -20,7 +20,8 @@
 	href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap"
 	rel="stylesheet">
 <!-- 별 스타일 -->
-    <link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <title>Tastebite - Search Result</title>
 
@@ -31,6 +32,7 @@ body {
 
 .paging {
 	text-align: center;
+	wodtj: 50%
 }
 
 .paging a {
@@ -43,14 +45,9 @@ body {
 	background-color: #ffc1ab;
 }
 /* 현재 페이징에 select 클래스를 적용한다*/
-.paging a.select {
-	color: #fff;
-	background-color: #FFA7A7;
-}
-.fa-star.active {
-  cursor: pointer;
-  color: #dabd18b2;
-  background-color : #FFF;
+.paging a:hover {
+	color: #f2f2f2;
+	background-color: #faaea3;
 }
 </style>
 </head>
@@ -59,17 +56,16 @@ body {
 	<section class="tstbite-section p-0">
 
 
-<h1
-		style="font-size: 40px; font-weight: 600; margin-top: 5%; margin-bottom: 5%; text-align: center; font-family: inter,sans-serif;"">
-		RECIPE LIST</h1>
+		<h1
+			style="font-size: 40px; font-weight: 600; margin-top: 5%; margin-bottom: 5%; text-align: center; font-family: inter, sans-serif;"">
+			RECIPE LIST</h1>
 		<div>
 
 			<section class="tstbite-components my-4 my-md-5">
-				
+
 				<!-- 검색기능 -->
 				<div class="search">
-					<select name="searchType" id="searchType" style="border: 1px solid gray; border-radius: 5px;"
-					>
+					<select name="searchType" id="searchType">
 						<option value="n"
 							<c:out value="${scri.searchType == null ? 'selected' : ''}"/>>-----</option>
 						<option value="t"
@@ -121,43 +117,48 @@ body {
 								<a href="/recipe/view?RECIPENO=${list.RECIPENO}"
 									class="tstbite-animation stretched-link rounded-6"> <img
 									src="${list.PHOTO}" class="w-100" alt="Menu"
-									style="width: 280px !important; height: 300px !important; image-rendering: auto; ">
+									style="width: 280px !important; height: 300px !important; image-rendering: auto;">
 								</a>
 								<figcaption class="mt-2">
 									<a href="/recipe/view?RECIPENO=${list.RECIPENO}"><strong>${list.RECIPENAME}</strong></a><br>
-									<small>${list.MEMBERID}</small>
-									<small>
-								<c:forEach var="i" begin="1" end="${list.point}">
-									<i class='fa fa-star active'></i>
-								</c:forEach>
-								<c:forEach var="i" begin="${list.point+1}" end="5">
-									<i class='fa fa-star'></i>
-								</c:forEach>
-								</small>
+									<small>${list.MEMBERID}</small> <small> <c:forEach
+											var="i" begin="1" end="${list.point}">
+											<i class='fa fa-star active'></i>
+										</c:forEach> <c:forEach var="i" begin="${list.point+1}" end="5">
+											<i class='fa fa-star'></i>
+										</c:forEach>
+									</small>
 								</figcaption>
 							</figure>
 						</div>
 					</c:forEach>
 
 				</div>
-				<div id="page" class="paging">
+				<div class="paging">
 					<ul>
 						<c:if test="${pageMaker.prev}">
 							<li><a
-								href="list${pageMaker.makeSearch(pageMaker.startPage - 1)}">이전</a></li>
+								href="list${pageMaker.makeSearch(pageMaker.startPage - 1)}"><</a></li>
 						</c:if>
 
 						<c:forEach begin="${pageMaker.startPage}"
 							end="${pageMaker.endPage}" var="idx">
-							<a style="background-color:#ff642b;" href="list${pageMaker.makeSearch(idx)}">[${idx}]&nbsp;</a>
+							<c:if test="${param.page==idx}">
+								<a style="background-color: #faaea3 !important;"
+									href="list${pageMaker.makeSearch(idx)}">[${idx}]</a>
+							</c:if>
+							<c:if test="${param.page!=idx}">
+								<a href="list${pageMaker.makeSearch(idx)}">[${idx}]</a>
+							</c:if>
 						</c:forEach>
 
 						<c:if test="${pageMaker.next && pageMaker.endPage > 0}">
 							<li><a
-								href="list${pageMaker.makeSearch(pageMaker.endPage + 1)}">다음</a></li>
+								href="list${pageMaker.makeSearch(pageMaker.endPage + 1)}">></a></li>
 						</c:if>
 					</ul>
 				</div>
+
 				<div id="writeBtn">
 					<div class="button-8">
 						<div class="eff-8"></div>

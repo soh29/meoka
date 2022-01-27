@@ -1,17 +1,24 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-
 <%@include file="../include/header.jsp"%>
+
+
 <!DOCTYPE html>
-<html>
+<html dir="ltr" lang="ko">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=euc-kr" />
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr"/>
 <title>Home</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
+
 <link href="/resources/css/testbite-style.css" rel="stylesheet"
 	type="text/css" media="all">
 
-<style type="text/css">
+
+<style >
 .modal {
 	display: none;
 	background: rgba(0, 0, 0, 0);
@@ -84,6 +91,17 @@ body {
 	word-break: break-all;
 	width: 70px;
 }
+
+.eff-8 {
+    width: 100px;
+    height: 50px;
+    border: 0px solid #ffc1ab;
+    position: absolute;
+    transition: all .5s ease;
+    z-index: 1;
+    box-sizing: border-box;
+    border-radius: 5px;
+ }
 </style>
 
 
@@ -93,18 +111,6 @@ body {
 
 
 <section class="tstbite-section p-0">
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -133,18 +139,18 @@ body {
 		<textarea class="form-control bg-lightest-gray" readonly
 			style="height: 500px; resize: none;">${boardVO.content}</textarea>
 
-		<button class="btn btn-primary" type="button"
-			onclick="location.href='list'">글 목록</button>
+		<button class="btn btn-primary" type="button" style="width: 100px;"
+			onclick="location.href='list'" >글 목록</button>
 
 		<c:if test="${not empty login }">
 
-			<button class="btn btn-primary" type="button"
+			<button class="btn btn-primary" type="button" style="width: 100px;"
 				onclick="location.href='modifyPage?bno=${boardVO.bno}'">글
 				수정</button>
-			<button class="btn btn-primary" type="button"
+			<button class="btn btn-primary" type="button" style="width: 100px;"
 				onclick="location.href='deletePage?bno=${boardVO.bno}'">글
 				삭제</button>
-			<button class="btn btn-primary" type="button"
+			<button class="btn btn-primary" type="button" style="width: 100px;"
 				onclick="location.href='replyPage?bno=${boardVO.bno}'">답글
 				작성</button>
 
@@ -178,20 +184,20 @@ body {
 							<input type="text" class="form-control" placeholder="USER ID"
 								id="newCommentWriter" value="${login.memberId}" readonly><br />
 							<h6> Comment Text</h6> <input
-								class="form-control" type="text" placeholder="REPLY TEXT"
+								class="form-control" type="text" placeholder="댓글을 입력하세요."
 								id="newCommentText"><br />
 						</div>
 
 						<div class="box-footer">
-							<button type="submit" class="btn btn-primary" id="contentAddBtn">ADD
-								REPLY</button>
+							<button type="submit" class="btn btn-primary" id="contentAddBtn">댓글 작성
+								</button>
 						</div>
 					</c:if>
 
 					<c:if test="${empty login}">
 						<div class="box-body">
 							<div>
-								<a href="javascript:goLogin();">Login to leave comments</a>
+								<a href="javascript:goLogin();">로그인 후 이용 가능합니다</a>
 							</div>
 						</div>
 					</c:if>
@@ -239,11 +245,11 @@ body {
 						</p>
 					</div>
 					<div class="modal-footer">
-						<button type="button" class="btn btn-info" data-dismiss="modal"
-							id="contentModBtn">Modify</button>
-						<button type="button" class="btn btn-danger" data-dismiss="modal"
-							id="contentDelBtn">DELETE</button>
-						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-primary" data-dismiss="modal"
+							id="contentModBtn">수정</button>
+						<button type="button" class="btn btn-primary" data-dismiss="modal"
+							id="contentDelBtn">삭제</button>
+						<button type="button" class="btn btn-primary" data-dismiss="modal">닫기</button>
 					</div>
 				</div>
 			</div>
@@ -292,10 +298,10 @@ body {
 											
 							{{#eqWriter writer }}
                   <a class="btn btn-primary btn-xs" 
-									data-toggle="modal" data-target="#modifyModal">Modify</a>
+									data-toggle="modal" data-target="#modifyModal">수정</a>
 								{{/eqWriter}}
 <c:if test="${not empty login}">
-				<a class="btn btn-primary btn-xs replyComment">Reply Comment</a>
+				<a class="btn btn-primary btn-xs replyComment">댓글 달기</a>
 </c:if>
 					
 										</div>

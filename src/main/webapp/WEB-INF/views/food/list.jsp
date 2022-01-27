@@ -12,11 +12,13 @@
 <title>Tastebite - Search Result</title>
 <link href="/resources/css/foodThemeList.css" rel="stylesheet"
    type="text/css" media="all">
+<link rel="stylesheet" href="/css/bootstrap.min.css" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
 <link href="/resources/css/recipeList.css" rel="stylesheet"
    type="text/css" media="all">
+  
 
 <style>
 body{
@@ -26,24 +28,26 @@ table {
 border-width:2px;
 }
 .paging {
-   text-align: center;
+	text-align: center;
+	wodtj: 50%
 }
 
 .paging a {
-   display: inline-block;
-   font-weight: bold;
-   text-decoration: none;
-   padding: 5px 8px;
-   border: 1px solid #ccc;
-   color: #f3f3f3;
-   background-color: #ffc1ab;
-   text-align: center;
+	display: inline-block;
+	font-weight: bold;
+	text-decoration: none;
+	padding: 5px 8px;
+	border: 1px solid #ccc;
+	color: #f3f3f3;
+	background-color: #ffc1ab;
 }
 /* 현재 페이징에 select 클래스를 적용한다*/
-.paging a.select {
-   color: #fff;
-   background-color: #FFA7A7;
+.paging a:hover {
+	color: #f2f2f2;
+	background-color: #faaea3;
 }
+
+
 </style>
 <script src='https://code.jquery.com/jquery-3.3.1.min.js'></script>
 
@@ -57,7 +61,7 @@ border-width:2px;
             
       
    <div class="search">
-         <select name="searchType" style="border-radius:5px; border:1px solid gray;height:40px";>
+         <select name="searchType" id="searchType"  >
             <option value="n"
                <c:out value="${scri.searchType == null ? 'selected' : ''}"/>>-----</option>
             <option value="t"
@@ -109,7 +113,7 @@ border-width:2px;
                      <td>${item.foodName}</td>
                      <td>${item.foodType}</td>
                         <c:if test="${item.count1==0&&item.count2==0}">
-                               <td><a style="background-color:#ff642b;" href= "/food/delete?foodNo=${item.foodNo}" class="btn btn-primary px-5 btn-hover" onclick="if(!confirm('삭제 하시겠습니까?')){return false;}">삭제</a></td>
+                               <td><a class="btn btn-primary px-5 btn-hover" href= "/food/delete?foodNo=${item.foodNo}" class="btn btn-primary px-5 btn-hover" onclick="if(!confirm('삭제 하시겠습니까?')){return false;}">삭제</a></td>
                            </c:if>
                            <c:if test="${item.count1 !=0||item.count2!=0}">
                                <td><a  class="btn btn-primary px-5 btn-hover" >삭제 불가</a></td>
@@ -117,21 +121,29 @@ border-width:2px;
                   </tr>
                </c:forEach>
             </table>
+            
+            
+            
+            
+            
+            
+    
+
             <div class="paging">
                <ul>
                   <c:if test="${pageMaker.prev}">
                      <a
-                        href="list${pageMaker.makeSearch(pageMaker.startPage - 1)}">이전</a>
+                        href="list${pageMaker.makeSearch(pageMaker.startPage - 1)}"><</a>
                   </c:if>
          
                   <c:forEach begin="${pageMaker.startPage}" end="${pageMaker.endPage}"
                      var="idx">
-                     <a style="background-color:#ff642b;" href="list${pageMaker.makeSearch(idx)}">[${idx}]&nbsp;</a>
+                     <a  href="list${pageMaker.makeSearch(idx)}">[${idx}]&nbsp;</a>
                   </c:forEach>
          
                   <c:if test="${pageMaker.next && pageMaker.endPage > 0}">
                      <a
-                        href="list${pageMaker.makeSearch(pageMaker.endPage + 1)}">다음</a>
+                        href="list${pageMaker.makeSearch(pageMaker.endPage + 1)}">></a>
                   </c:if>
                </ul>
             </div>

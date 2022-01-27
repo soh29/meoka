@@ -46,7 +46,7 @@ body {
 	<h6>작성자</h6>
 	<input class="form-control bg-lightest-gray"  type="text" name="writer" value="${login.memberId }"><br>
 	<h6>내용</h6>
-	<textarea class="form-control bg-lightest-gray"  name="content"></textarea>
+	<textarea class="form-control bg-lightest-gray"  name="content" style="height:500px; resize: none;"></textarea>
 	
 	<button class="btn btn-primary" type="submit">작성</button>
 	<button class="btn btn-primary" type="button" onclick="location.href='list'">글 목록</button>

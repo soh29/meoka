@@ -25,6 +25,15 @@
 
     <link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">  
 <style>
+
+	
+.fa.active {
+	color: orange;
+}
+.fa {
+	color: black;
+}
+
 body{
 	font-family: 'Gowun Dodum', sans-serif;
 }
@@ -179,7 +188,7 @@ body{
 							</div>
 						</div>
 						<div class="container">
-							<div class="mt-5">
+							<div class="mt-6">
 								<span>조리 방법</span>
 									<div id="recipedetailview">
 										<c:forEach items="${list}" var="RecipeDetailVO">
@@ -228,9 +237,9 @@ body{
 									<input type='text' id='comments'>
 								</div>
 								<div>
-									<button type="button" id="valuationModBtn">Modify</button>
-									<button type="button" id="valuationDelBtn">DELETE</button>
-									<button type="button" id='closeBtn'>Close</button>
+									<button type="button" id="valuationModBtn">수정</button>
+									<button type="button" id="valuationDelBtn">삭제</button>
+									<button type="button" id='closeBtn'>닫기</button>
 								</div>
 							
 							
@@ -267,14 +276,7 @@ body{
        <i class = "rating__star fa fa-star active" aria-hidden = "true" id = "st4"></i>  
        <i class = "rating__star fa fa-star" aria-hidden = "true" id = "st5"></i>  
        </div>  
-	<style>
-	.fa.active {
-	color: orange;
-	}
-	.fa {
-	color: black;
-	}
-	</style>
+
 	    <script>  
 	    const ratingStars = [...document.getElementsByClassName("rating__star")];
 

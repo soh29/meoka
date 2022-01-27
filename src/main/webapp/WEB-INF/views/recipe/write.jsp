@@ -148,7 +148,7 @@ body{
 					</div>
 				</div>
 		</div>
-		</div>
+		
 		<section class="tstbite-components my-4 my-md-5">
 			<div class="align-items-center pt-0 pt-md-5 button">
 				<div class="col-lg-3 col-4 textCenter">
