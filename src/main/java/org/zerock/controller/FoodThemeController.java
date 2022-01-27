@@ -20,9 +20,11 @@ import org.zerock.domain.CommentVO;
 import org.zerock.domain.FoodThemeVO;
 import org.zerock.domain.FoodVO;
 import org.zerock.domain.PageMaker;
+import org.zerock.domain.RecipeVO;
 import org.zerock.domain.SearchCriteria;
 import org.zerock.domain.ThemeVO;
 import org.zerock.service.FoodThemeService;
+import org.zerock.service.RecipeService;
 
 @Controller
 @RequestMapping("/foodTheme/*")
@@ -31,13 +33,20 @@ public class FoodThemeController {
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	@Inject
 	FoodThemeService service;
-
+	
+	
 	// 게시물 목록 리스트페이지 기능 추가
 	@RequestMapping(value = "/list", method = RequestMethod.GET)
-	public void getList(Model model) throws Exception {
+	public void getList(@ModelAttribute("scri") SearchCriteria scri, Model model) throws Exception {
 		// logger.info("get list page");
-		List<FoodThemeVO> list = service.list();
-		model.addAttribute("list", list);
+		List<FoodThemeVO> list = service.list(scri);
+	      model.addAttribute("list", list);
+
+	      /*PageMaker pageMaker = new PageMaker();
+	      pageMaker.setCri(scri);
+	      pageMaker.setTotalCount(service.countSearch(scri));
+	      model.addAttribute("pageMaker", pageMaker);
+	      */
 	}
 
 	// 게시물 작성
@@ -143,4 +152,15 @@ public class FoodThemeController {
 		return entity;
 
 	}
+	
+	// 게시물 목록 리스트페이지 기능 추가
+		@RequestMapping(value = "/listByTheme", method = RequestMethod.GET)
+		public void getListByTheme(ThemeVO themeVO, Model model) throws Exception {
+		      List<String> themeTypes = service.getThemeTypes();
+			  model.addAttribute("themeTypes", themeTypes);
+
+		      List<RecipeVO> list = service.listByTheme(themeVO);
+		      model.addAttribute("list", list);
+		      model.addAttribute("themeVO", themeVO);
+		}
 }

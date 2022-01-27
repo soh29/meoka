@@ -7,13 +7,22 @@
 
    <!-- 게시물 목록 -->
    <select id="list" resultType="org.zerock.domain.FoodThemeVO">
-      SELECT F.FOODNO, F.FOODNAME, T.THEMENO, T.THEMETYPE, T.THEMENAME
+      	SELECT F.FOODNO, F.FOODNAME, T.THEMENO, T.THEMETYPE, T.THEMENAME
         FROM
         FOOD F, FOODTHEME FT, THEME T
         WHERE F.FOODNO = FT.FOODNO AND FT.THEMENO = T.THEMENO
+        <include refid="search"></include>
         ORDER BY F.FOODNO asc
    </select>
-
+   
+   <sql id="search">
+      <if test="searchType != null">
+         <if test="searchType == 'fn'.toString()"> and F.FOODNAME like '%' || #{keyword} || '%'</if>
+         <if test="searchType == 'tt'.toString()">and T.THEMETYPE like '%' || #{keyword} || '%'</if>
+         <if test="searchType == 'tn'.toString()">and T.THEMENAME like '%' || #{keyword} || '%'</if>
+      </if>
+   </sql>
+   
    <!-- 게시물 작성 -->
    <insert id="write" parameterType="org.zerock.domain.FoodThemeVO">
       insert into
@@ -50,6 +59,27 @@
 	select count(*)
 	from foodTheme
 	where themeNo = #{themeNo} and foodNo = #{foodNo}
+   </select>
+   
+   <select id="listByTheme" resultType="org.zerock.domain.RecipeVO">
+        SELECT R.*, photo
+        FROM
+        (
+            SELECT rd.recipeno, rd.photo
+            FROM recipedetail rd, (
+            select recipeno, max(recipedetailno) as MAXIMUM
+                from recipedetail
+                group by recipeno) rdm
+            WHERE rd.recipeno = rdm.recipeno
+            AND rd.recipedetailno = rdm.MAXIMUM
+        ) P, RECIPE R
+        WHERE P.RECIPENO = R.RECIPENO
+        AND R.FOODNO in (
+        	SELECT ft.foodno
+			FROM FOODTHEME FT
+			WHERE THEMENO=#{themeNo}
+        )
+        ORDER BY R.RECIPENO
    </select>
 
 </mapper>

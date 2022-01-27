@@ -4,12 +4,13 @@ import java.util.List;
 
 import org.zerock.domain.FoodThemeVO;
 import org.zerock.domain.FoodVO;
+import org.zerock.domain.RecipeVO;
 import org.zerock.domain.SearchCriteria;
 import org.zerock.domain.ThemeVO;
 
 public interface FoodThemeService {
 
-	public List<FoodThemeVO> list() throws Exception;
+	public List<FoodThemeVO> list(SearchCriteria scri) throws Exception;
 
 	// 레피시 작성
 	public int write(FoodThemeVO vo) throws Exception;
@@ -28,5 +29,7 @@ public interface FoodThemeService {
 	public List<ThemeVO> getThemes(String themeType);
 
 	public int foodThemeExists(FoodThemeVO vo);
+
+	public List<RecipeVO> listByTheme(ThemeVO themeVO);
 
 }

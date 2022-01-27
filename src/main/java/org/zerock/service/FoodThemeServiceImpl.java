@@ -8,6 +8,7 @@ import javax.inject.Inject;
 import org.springframework.stereotype.Service;
 import org.zerock.domain.FoodThemeVO;
 import org.zerock.domain.FoodVO;
+import org.zerock.domain.RecipeVO;
 import org.zerock.domain.SearchCriteria;
 import org.zerock.domain.ThemeVO;
 import org.zerock.persistence.FoodDAO;
@@ -24,8 +25,8 @@ public class FoodThemeServiceImpl implements FoodThemeService {
 	
 
 	@Override
-	public List<FoodThemeVO> list() throws Exception {
-		return dao.list();
+	public List<FoodThemeVO> list(SearchCriteria scri) throws Exception {
+		return dao.list(scri);
 	}
 
 	// 레시피 작성
@@ -70,5 +71,11 @@ public class FoodThemeServiceImpl implements FoodThemeService {
 	public int foodThemeExists(FoodThemeVO vo) {
 		// TODO Auto-generated method stub
 		return dao.foodThemeExists(vo);
+	}
+
+	@Override
+	public List<RecipeVO> listByTheme(ThemeVO themeVO) {
+		// TODO Auto-generated method stub
+		return dao.listByTheme(themeVO);
 	}
 }

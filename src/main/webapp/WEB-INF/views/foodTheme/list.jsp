@@ -8,6 +8,9 @@
 <!-- saved from url=(0053)search-result.html -->
 <html dir="ko" lang="UTF-8">
 <head>
+<script src='/resources/plugins/jQuery/jQuery-2.1.4.min.js'></script>
+<link href="/resources/css/recipeList.css" rel="stylesheet"
+	type="text/css" media="all">
 <link href="/resources/css/foodThemeList.css" rel="stylesheet"
 	type="text/css" media="all">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -35,6 +38,52 @@ border-width:2px;
 			<h1
 		style="font-size: 40px; font-weight: 600; margin-top: 5%; margin-bottom: 5%; text-align: center;font-family: inter,sans-serif;">
 		FOOD-THEME PAGE</h1>
+		
+		
+		
+		
+		
+		<!-- 검색기능 -->
+				<div class="search">
+					<select name="searchType" id="searchType" style="border: 1px solid gray; border-radius: 5px;"
+					>
+						<option value="fn"
+							<c:out value="${scri.searchType eq 'fn' ? 'selected' : ''}"/>>음식</option>
+						<option value="tt"
+							<c:out value="${scri.searchType eq 'tt' ? 'selected' : ''}"/>>테마타입</option>
+						<option value="tn"
+							<c:out value="${scri.searchType eq 'tn' ? 'selected' : ''}"/>>테마이름</option>
+					</select> <input type="text" name="keyword" id="keywordInput"
+						value="${scri.keyword}" placeholder=" Search"
+						class="input-group search-box" />
+
+					<div class="button-8" id="searchBtn">
+						<div class="eff-8"></div>
+						<a href="#"> Search </a>
+					</div>
+					<script>
+						$(function() {
+							$('#searchBtn')
+									.click(
+											function() {
+												//alert();
+												self.location = "list"
+														+ "?searchType="
+														+ $("select option:selected").val()
+														+ "&keyword="
+														+ encodeURIComponent($('#keywordInput').val());
+											});
+						});
+					</script>
+				</div>
+		
+		
+		
+		
+		
+		
+		
+		
 			<div>
 				<table class="table table-bordered">
 					<tr>
