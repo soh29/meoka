@@ -137,8 +137,7 @@ body {
 				<div class="paging">
 					<ul>
 						<c:if test="${pageMaker.prev}">
-							<li><a
-								href="list${pageMaker.makeSearch(pageMaker.startPage - 1)}"><</a></li>
+							<a href="list${pageMaker.makeSearch(pageMaker.startPage - 1)}"><</a>
 						</c:if>
 
 						<c:forEach begin="${pageMaker.startPage}"
@@ -153,8 +152,7 @@ body {
 						</c:forEach>
 
 						<c:if test="${pageMaker.next && pageMaker.endPage > 0}">
-							<li><a
-								href="list${pageMaker.makeSearch(pageMaker.endPage + 1)}">></a></li>
+							<a	href="list${pageMaker.makeSearch(pageMaker.endPage + 1)}">></a>
 						</c:if>
 					</ul>
 				</div>

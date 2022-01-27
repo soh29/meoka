@@ -60,16 +60,16 @@ body{
 
 			<section class="tstbite-components my-4 my-md-5">
 				<h1
-		style="font-size: 40px; font-weight: 600; margin-top: 5%; margin-bottom: 5%; text-align: center; font-family: inter,sans-serif;"">
-		FOODTHEME LIST</h1>
+		style="font-size: 40px; font-weight: 600; margin-top: 5%; margin-bottom: 5%; text-align: center; font-family: inter,sans-serif;">
+		FOOD BY THEME LIST</h1>
 				
 				 <!-- 검색기능 -->
 	<div class="search">
 	   <select name="themeType" id="themeTypeSelect" style="height:40px; text-align-last: center; text-align: center; -ms-text-align-last: center; -moz-text-align-last: center;">
         <c:forEach items="${themeTypes}" var="item">
 			<option value="${item}"${item == themeVO.themeType ? " selected":"" }>${item}</option>
-		</c:forEach>
-       </select> 
+		</c:forEach> 
+       </select> &nbsp;&nbsp;&nbsp;&nbsp;
 
 		<select name="themeNo" id="themeSelect"
 			style="height:40px; text-align-last: center; text-align: center; -ms-text-align-last: center; -moz-text-align-last: center;">

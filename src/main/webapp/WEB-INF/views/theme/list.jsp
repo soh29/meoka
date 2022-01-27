@@ -118,7 +118,7 @@ border-width:2px;
 
                             <c:if test="${item.count == 0}">
                               <td>
-                                 <a style="background-color: #FF642B;" href="/theme/delete?themeNo=${item.themeNo}"class="btn btn-primary px-5 btn-hover">테마 삭제</a>
+                                 <a  href="/theme/delete?themeNo=${item.themeNo}"class="btn btn-primary px-5 btn-hover">테마 삭제</a>
                               </td>
                             </c:if>
                              <c:if test="${item.count != 0}">

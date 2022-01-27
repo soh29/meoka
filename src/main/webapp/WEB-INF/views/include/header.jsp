@@ -270,7 +270,8 @@ table th {
 							</a>
 								<div class="dropdown-menu" aria-labelledby="HomePage">
 									<a class="dropdown-item" href="/recipe/list">RECIPE LIST</a> <a
-										class="dropdown-item" href="/rec/list">SUGGESTION</a>  
+										class="dropdown-item" href="/rec/list">SUGGESTION</a>
+										<a class="dropdown-item" href="/foodTheme/listByTheme">FOOD BY THEME</a> 
 										<a class="dropdown-item" href="/recipe/write">RECIPE REGISTER</a>
 								</div></li>
 							<li class="nav-item dropdown"><a class="nav-link" href="#"

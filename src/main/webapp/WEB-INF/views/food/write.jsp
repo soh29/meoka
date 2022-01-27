@@ -73,8 +73,7 @@ body {
 
 
 			<section class="tstbite-components my-4 my-md-5">
-			<div class="row align-items-center pt-0 pt-md-5">
-			<div class="col-lg-3 col-4 text-right">
+		
 				<!-- 수정 필요. 밑에 form으로 -->
 				<button id="submitButton"
 					class="btn btn-lg btn-primary px-4 px-md-5 text-uppercase"

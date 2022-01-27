@@ -45,7 +45,7 @@ border-width:2px;
 		
 		<!-- 검색기능 -->
 				<div class="search">
-					<select name="searchType" id="searchType" style="border: 1px solid gray; border-radius: 5px;"
+					<select name="searchType" id="searchType" 
 					>
 						<option value="fn"
 							<c:out value="${scri.searchType eq 'fn' ? 'selected' : ''}"/>>음식</option>
@@ -88,7 +88,7 @@ border-width:2px;
 				<table class="table table-bordered">
 					<tr>
 						<th>이름</th>
-						<th>타입</th>
+						<th>테마</th>
 						<th>주제</th>
 						<th>삭제</th>
 					</tr>

@@ -23,6 +23,21 @@
 body {
 	font-family: 'Gowun Dodum', sans-serif;
 }
+
+.paging {
+	text-align: center;
+	wodtj: 50%
+}
+
+.paging a {
+	display: inline-block;
+	font-weight: bold;
+	text-decoration: none;
+	padding: 5px 8px;
+	border: 1px solid #ccc;
+	color: #f3f3f3;
+	background-color: #ffc1ab;
+}
 </style>
 <script src='https://code.jquery.com/jquery-3.3.1.min.js'></script>
 <body>
@@ -59,11 +74,11 @@ body {
 
 	</table>
 
-	<div>
+	<div class="paging">
 		<ul>
 			<c:if test="${pageMaker.prev}">
 				<li><a
-					href="foodList${pageMaker.makeSearch(pageMaker.startPage - 1)}">이전</a></li>
+					href="foodList${pageMaker.makeSearch(pageMaker.startPage - 1)}"><</a></li>
 			</c:if>
 
 			<c:forEach begin="${pageMaker.startPage}" end="${pageMaker.endPage}"
@@ -73,7 +88,7 @@ body {
 
 			<c:if test="${pageMaker.next && pageMaker.endPage > 0}">
 				<li><a
-					href="foodList${pageMaker.makeSearch(pageMaker.endPage + 1)}">다음</a></li>
+					href="foodList${pageMaker.makeSearch(pageMaker.endPage + 1)}">></a></li>
 			</c:if>
 		</ul>
 	</div>

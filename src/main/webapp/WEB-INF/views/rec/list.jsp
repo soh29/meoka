@@ -60,7 +60,7 @@ body {
 
 			<!-- 검색기능 -->
 			<div class="search">
-				<select name="searchType" style="height: 40px">
+				<select name="searchType" id ="searchType" >
 					<option value="n"
 						<c:out value="${scri.searchType == null ? 'selected' : ''}"/>>-----</option>
 					<option value="t"
@@ -126,7 +126,7 @@ body {
 
 					<c:forEach begin="${pageMaker.startPage}"
 						end="${pageMaker.endPage}" var="idx">
-						<a style="background-color: #faaea3 !important;" href="list${pageMaker.makeSearch(idx)}">[${idx}]</a>
+						<a  href="list${pageMaker.makeSearch(idx)}">[${idx}]</a>
 					</c:forEach>
 
 					<c:if test="${pageMaker.next && pageMaker.endPage > 0}">

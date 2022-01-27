@@ -36,7 +36,7 @@ table tr:first-child {
 }
 
 .btn-hover{
-  background:#FF4500;
+  background:#ffc1ab;
   color:#fff;
   border:none;
   position:relative;
@@ -50,7 +50,7 @@ table tr:first-child {
 }
 .btn-hover:hover{
   background:#fff;
-  color:#FF4500 !important;
+  color:#ffc1ab !important;
 }
 .btn-hover:before,.btn-hover:after{
   content:'';
@@ -59,7 +59,7 @@ table tr:first-child {
   right:0;
   height:2px;
   width:0;
-  background: #FF4500;
+  background: #ffc1ab;
   transition:400ms ease all;
 }
 .btn-hover:after{
@@ -70,7 +70,7 @@ table tr:first-child {
 }
 .btn-hover:hover:before,.btn-hover:hover:after{
   width:100%;
-  color: #FF4500;   /* #ff642b */
+  color: #ffc1ab;   /* #ff642b */
   transition:800ms ease all;
 }
 
